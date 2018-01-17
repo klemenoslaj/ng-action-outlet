@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ActionOutletModule, ActionOutletFactory } from '../lib/public_api';
 
 import { AppComponent } from './app.component';
 
@@ -10,9 +10,14 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ActionOutletModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ActionOutletFactory
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
