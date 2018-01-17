@@ -9,7 +9,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng-packagr -p ng-package.json"
+    "build:lib": "ng-packagr -p ng-package.json",
+    "docs:coverage": "compodoc ./src -p ./src/tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 80",
+    "docs:build.prod": "yarn docs:coverage && compodoc ./src -p ./src/tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --toggleMenuItems classes --output docs",
+    "docs:build.serve": "compodoc ./src -p ./src/tsconfig.docs.json --disableLifeCycleHooks --disableInternal -s -w"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +25,7 @@
     "@angular/platform-browser": "^5.1.0",
     "@angular/platform-browser-dynamic": "^5.1.0",
     "@angular/router": "^5.1.0",
+    "@compodoc/compodoc": "^1.0.5",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
