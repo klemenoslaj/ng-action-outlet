@@ -3,7 +3,7 @@
 The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on runtime,  
 and have the possibility to get notified for each and every change,  
 that happens to any particular action.  
-e.g. Title change, icon change, disabled state, etc.
+*e.g. Title change, icon change, disabled state, etc.*
 
 ## Getting started
 
