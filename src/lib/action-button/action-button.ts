@@ -15,7 +15,7 @@ import { ActionButtonComponentImpl, ActionButtonEvent, ActionButtonOptions } fro
 const defaultButtonOptions: ActionButtonOptions = { };
 
 /**
- * `ActionButton` used to create basic button like action
+ * `ActionButton` used to create basic button action  
  *
  * ## Example
  *
