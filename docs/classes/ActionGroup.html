@@ -705,21 +705,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/lib/action-group/action-group.ts:143</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/lib/action-group/action-group.ts:151</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Activates group action and <strong>all</strong> it&#39;s children</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.activate();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.activate();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -746,14 +741,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="256" class="link-to-prism">src/lib/action-group/action-group.ts:256</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="291" class="link-to-prism">src/lib/action-group/action-group.ts:291</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Adds provided action <strong>at the end</strong> of children stach</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const child = actionFactory.createButton({ title: &#39;Test&#39; });
+            group.appendChild(child);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -781,11 +778,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child = actionFactory.createButton({ title: &amp;#39;Test&amp;#39; });
-            group.appendChild(child);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -813,14 +805,17 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="273" class="link-to-prism">src/lib/action-group/action-group.ts:273</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="311" class="link-to-prism">src/lib/action-group/action-group.ts:311</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Adds provided actions <strong>at the end</strong> of children stach</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+            const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+            group.appendChildren([ child1, child2 ]);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -848,12 +843,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createButton({ title: &amp;#39;Test 1&amp;#39; });
-            const child2 = actionFactory.createButton({ title: &amp;#39;Test 2&amp;#39; });
-            group.appendChildren([ child1, child2 ]);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -881,14 +870,15 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">src/lib/action-group/action-group.ts:211</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="237" class="link-to-prism">src/lib/action-group/action-group.ts:237</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Creates a new <code>ActionButton</code> and <strong>appends</strong> it to the children stack</p>
-            <pre class="line-numbers"><code class="language-typescript">const a = 1;</code></pre></div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const childButton = group.createButton({ title: &#39;Test&#39; });</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -962,14 +952,15 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="226" class="link-to-prism">src/lib/action-group/action-group.ts:226</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="255" class="link-to-prism">src/lib/action-group/action-group.ts:255</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Creates a new <code>ActionGroup</code> and <strong>appends</strong> it to the children stack</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const childGroup = group.createGroup({ dropdown: true });</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1009,10 +1000,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const childGroup = group.createGroup({ dropdown: true });</code></pre>
-                                                    </div>
                                         </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
@@ -1047,14 +1034,15 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="241" class="link-to-prism">src/lib/action-group/action-group.ts:241</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="273" class="link-to-prism">src/lib/action-group/action-group.ts:273</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Creates a new <code>ActionToggle</code> and <strong>appends</strong> it to the children stack</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const childToggle = group.createToggle({ checked: true });</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1094,10 +1082,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const childToggle = group.createToggle({ checked: true });</code></pre>
-                                                    </div>
                                         </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="../classes/ActionToggle.html" target="_self" >ActionToggle</a></code>
@@ -1132,21 +1116,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/lib/action-group/action-group.ts:158</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/lib/action-group/action-group.ts:170</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Deactivates group action and <strong>all</strong> it&#39;s children</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.deactivate();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.deactivate();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1173,21 +1152,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/lib/action-group/action-group.ts:173</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="189" class="link-to-prism">src/lib/action-group/action-group.ts:189</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Destroys group action, <strong>destroys</strong> and <strong>removes</strong> <strong>all</strong> it&#39;s children</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.destroy();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.destroy();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1214,21 +1188,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">src/lib/action-group/action-group.ts:196</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="220" class="link-to-prism">src/lib/action-group/action-group.ts:220</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Disables group action and <strong>all</strong> it&#39;s children</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.disable();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.disable();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1255,21 +1224,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="431" class="link-to-prism">src/lib/action-group/action-group.ts:431</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="507" class="link-to-prism">src/lib/action-group/action-group.ts:507</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Transforms dropdown to group</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.disableDropdown();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.disableDropdown();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1296,21 +1260,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">src/lib/action-group/action-group.ts:185</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="205" class="link-to-prism">src/lib/action-group/action-group.ts:205</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Enables group action and <strong>all</strong> it&#39;s children</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.enable();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.enable();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1337,21 +1296,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="420" class="link-to-prism">src/lib/action-group/action-group.ts:420</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="492" class="link-to-prism">src/lib/action-group/action-group.ts:492</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Transforms the group to dropdown</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.enableDropdown();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.enableDropdown();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1378,14 +1332,15 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="394" class="link-to-prism">src/lib/action-group/action-group.ts:394</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="458" class="link-to-prism">src/lib/action-group/action-group.ts:458</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Returns child action at given index</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const child = group.getChild(0);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1413,10 +1368,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child = group.getChild(0);</code></pre>
-                                                    </div>
                                         </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction</a></code>
@@ -1451,28 +1402,20 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="382" class="link-to-prism">src/lib/action-group/action-group.ts:382</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="443" class="link-to-prism">src/lib/action-group/action-group.ts:443</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Returns the current children</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const children = group.getChildren();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const children = group.getChildren();</code></pre>
-                                                    </div>
-                                        </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code>[]</code>
             
                                         </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1499,28 +1442,20 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="410" class="link-to-prism">src/lib/action-group/action-group.ts:410</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="478" class="link-to-prism">src/lib/action-group/action-group.ts:478</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Returns boolean defining whether group is dropdown or not</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const isDropdown = group.isDropdown();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const isDropdown = group.isDropdown();</code></pre>
-                                                    </div>
-                                        </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
             
                                         </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1547,14 +1482,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="288" class="link-to-prism">src/lib/action-group/action-group.ts:288</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="329" class="link-to-prism">src/lib/action-group/action-group.ts:329</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Adds provided action <strong>at the beginning</strong> of children stack</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const child = actionFactory.createButton({ title: &#39;Test&#39; });
+            group.prependChild(child);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1582,11 +1519,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child = actionFactory.createButton({ title: &amp;#39;Test&amp;#39; });
-            group.prependChild(child);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -1614,14 +1546,17 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="304" class="link-to-prism">src/lib/action-group/action-group.ts:304</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="348" class="link-to-prism">src/lib/action-group/action-group.ts:348</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Adds provided actions <strong>at the beginning</strong> of children stack</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+            const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+            group.prependChildren([ child1, child2 ]);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1649,12 +1584,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createButton({ title: &amp;#39;Test 1&amp;#39; });
-            const child2 = actionFactory.createButton({ title: &amp;#39;Test 2&amp;#39; });
-            group.prependChildren([ child1, child2 ]);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -1682,14 +1611,15 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="318" class="link-to-prism">src/lib/action-group/action-group.ts:318</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="365" class="link-to-prism">src/lib/action-group/action-group.ts:365</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Removes provided child action from group</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.removeChild(child);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1717,10 +1647,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.removeChild(child);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -1748,14 +1674,15 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="331" class="link-to-prism">src/lib/action-group/action-group.ts:331</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="381" class="link-to-prism">src/lib/action-group/action-group.ts:381</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Removes child action from group at given index</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.removeChildByIndex(0);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1783,10 +1710,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.removeChildByIndex(0);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -1814,21 +1737,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="349" class="link-to-prism">src/lib/action-group/action-group.ts:349</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="403" class="link-to-prism">src/lib/action-group/action-group.ts:403</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Removes <strong>all</strong> children from group</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.removeChildren();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.removeChildren();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1855,7 +1773,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="367" class="link-to-prism">src/lib/action-group/action-group.ts:367</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="424" class="link-to-prism">src/lib/action-group/action-group.ts:424</a></div>
                                         </td>
                                     </tr>
             
@@ -1866,7 +1784,10 @@ group.createToggle().check();</code></pre>
             <li><strong>Apply</strong> as <strong>unique</strong> array  </li>
             <li><strong>Ignore</strong> actions with different parent</li>
             </ul>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+            const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+            group.setChildren([ child1, child2 ]);</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1894,12 +1815,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createButton({ title: &amp;#39;Test 1&amp;#39; });
-            const child2 = actionFactory.createButton({ title: &amp;#39;Test 2&amp;#39; });
-            group.setChildren([ child1, child2 ]);</code></pre>
-                                                    </div>
                                         </div>
                                 </td>
                             </tr>
@@ -1927,22 +1842,16 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/lib/action-group/action-group.ts:133</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">src/lib/action-group/action-group.ts:137</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-description"><p>Trigger for group action.
-            In case of <code>ActionGroup</code> <strong>Noop</strong></p>
-            </div>
+                                        <div class="io-description"><p>Trigger for group action.<br>In case of <code>ActionGroup</code> <strong>Noop</strong>  </p>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">group.trigger();</code></pre></div>
             
-                                        <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">group.trigger();</code></pre>
-                                                    </div>
-                                        </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2251,11 +2160,15 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     }
 
     /**
-     * Trigger for group action.
-     * In case of &#x60;ActionGroup&#x60; **Noop**
-     *
-     * @example
+     * Trigger for group action.  
+     * In case of &#x60;ActionGroup&#x60; **Noop**  
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.trigger();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method trigger
      */
     trigger(): this {
         return this;
@@ -2264,8 +2177,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Activates group action and **all** it&#x27;s children
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.activate();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method activate
      */
     activate(): this {
         if (this.isDestroyed()) {
@@ -2279,8 +2196,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Deactivates group action and **all** it&#x27;s children
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.deactivate();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method deactivate
      */
     deactivate(): this {
         if (this.isDestroyed()) {
@@ -2294,8 +2215,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Destroys group action, **destroys** and **removes** **all** it&#x27;s children
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.destroy();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method destroy
      */
     destroy(): this {
         this.getChildren().forEach(child &#x3D;&gt; child.destroy());
@@ -2306,8 +2231,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Enables group action and **all** it&#x27;s children
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.enable();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method enable
      */
     enable(): this {
         this.getChildren().forEach(child &#x3D;&gt; child.enable());
@@ -2317,8 +2246,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Disables group action and **all** it&#x27;s children
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.disable();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method disable
      */
     disable(): this {
         this.getChildren().forEach(child &#x3D;&gt; child.disable());
@@ -2328,10 +2261,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Creates a new &#x60;ActionButton&#x60; and **appends** it to the children stack
      *
+     * #### Example:
      * &#x60;&#x60;&#x60;typescript
-     * const a &#x3D; 1;
+     * const childButton &#x3D; group.createButton({ title: &#x27;Test&#x27; });
      * &#x60;&#x60;&#x60;
      *
+     * @method createButton
      * @param options Options for &#x60;ActionButton&#x60;
      * @param component Optional &#x60;Component&#x60;
      */
@@ -2344,9 +2279,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Creates a new &#x60;ActionGroup&#x60; and **appends** it to the children stack
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const childGroup &#x3D; group.createGroup({ dropdown: true });
+     * &#x60;&#x60;&#x60;
      *
+     * @method createGroup
      * @param options Options for &#x60;ActionGroup&#x60;
      * @param component Optional &#x60;Component&#x60;
      */
@@ -2359,9 +2297,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Creates a new &#x60;ActionToggle&#x60; and **appends** it to the children stack
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const childToggle &#x3D; group.createToggle({ checked: true });
+     * &#x60;&#x60;&#x60;
      *
+     * @method createToggle
      * @param options Options for &#x60;ActionToggle&#x60;
      * @param component Optional &#x60;Component&#x60;
      */
@@ -2374,10 +2315,13 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Adds provided action **at the end** of children stach
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
      * group.appendChild(child);
+     * &#x60;&#x60;&#x60;
      *
+     * @method appendChild
      * @param action Action to append
      */
     appendChild(action: AnyAction): this {
@@ -2389,11 +2333,14 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Adds provided actions **at the end** of children stach
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
      * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
      * group.appendChildren([ child1, child2 ]);
+     * &#x60;&#x60;&#x60;
      *
+     * @method appendChildren
      * @param actions Actions to append
      *
      */
@@ -2406,10 +2353,13 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Adds provided action **at the beginning** of children stack
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
      * group.prependChild(child);
+     * &#x60;&#x60;&#x60;
      *
+     * @method prependChild
      * @param action Action to prepend
      */
     prependChild(action: AnyAction): this {
@@ -2421,11 +2371,14 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Adds provided actions **at the beginning** of children stack
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
      * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
      * group.prependChildren([ child1, child2 ]);
+     * &#x60;&#x60;&#x60;
      *
+     * @method prependChildren
      * @param actions Actions to prepend
      */
     prependChildren(actions: AnyAction[]): this {
@@ -2437,9 +2390,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Removes provided child action from group
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.removeChild(child);
+     * &#x60;&#x60;&#x60;
      *
+     * @method removeChild
      * @param action Child action to be removed
      */
     removeChild(action: AnyAction): this {
@@ -2450,9 +2406,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Removes child action from group at given index
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.removeChildByIndex(0);
+     * &#x60;&#x60;&#x60;
      *
+     * @method removeChildByIndex
      * @param index Index of child action
      */
     removeChildByIndex(index: number): this {
@@ -2470,8 +2429,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Removes **all** children from group
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.removeChildren();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method removeChildren
      */
     removeChildren(): this {
         this.getChildren().forEach(child &#x3D;&gt; child._unsetParent());
@@ -2484,11 +2447,14 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * - **Apply** as **unique** array  
      * - **Ignore** actions with different parent
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
      * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
      * group.setChildren([ child1, child2 ]);
+     * &#x60;&#x60;&#x60;
      *
+     * @method setChildren
      * @param children Actions to become children
      */
     setChildren(children: AnyAction[]): this {
@@ -2503,8 +2469,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Returns the current children
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const children &#x3D; group.getChildren();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method getChildren
      */
     getChildren(): AnyAction[] {
         return [...this.children.getValue()];
@@ -2513,9 +2483,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Returns child action at given index
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const child &#x3D; group.getChild(0);
+     * &#x60;&#x60;&#x60;
      *
+     * @method getChild
      * @param index Index of child action
      */
     getChild(index: number): AnyAction {
@@ -2531,8 +2504,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Returns boolean defining whether group is dropdown or not
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * const isDropdown &#x3D; group.isDropdown();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method isDropdown
      */
     isDropdown(): boolean {
         return this.dropdown.getValue();
@@ -2541,8 +2518,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Transforms the group to dropdown
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.enableDropdown();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method enableDropdown
      */
     enableDropdown(): this {
         this.dropdown.next(true);
@@ -2552,8 +2533,12 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Transforms dropdown to group
      *
-     * @example
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
      * group.disableDropdown();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method disableDropdown
      */
     disableDropdown(): this {
         this.dropdown.next(false);

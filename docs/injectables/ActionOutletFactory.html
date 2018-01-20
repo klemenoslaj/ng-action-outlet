@@ -539,14 +539,15 @@ In order to keep the code clean, use only one approach.</p>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/action-outlet.service.ts:42</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/action-outlet.service.ts:48</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Will create and return a new instance of <code>ActionButton</code> with default options and component</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -620,14 +621,15 @@ In order to keep the code clean, use only one approach.</p>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/action-outlet.service.ts:51</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/action-outlet.service.ts:63</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Will create and return a new instance of <code>ActionGroup</code> with default options and component</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const group = this.actionOutlet.createGroup({ dropdown: true });</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -701,14 +703,15 @@ In order to keep the code clean, use only one approach.</p>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/action-outlet.service.ts:60</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/action-outlet.service.ts:78</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Will create and return a new instance of <code>ActionToggle</code> with default options and component</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const toggle = this.actionOutlet.createToggle({ checked: true });</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -805,6 +808,12 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from &#x27;./action-to
 export class ActionOutletFactory implements ActionOutlet {
     /**
      * Will create and return a new instance of &#x60;ActionButton&#x60; with default options and component
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const button &#x3D; this.actionOutlet.createButton({ title: &#x27;Test&#x27; });
+     * &#x60;&#x60;&#x60;
+     * 
      * @param options Override the default options for &#x60;ActionButton&#x60;
      * @param component Override the default component for &#x60;ActionButton&#x60;
      */
@@ -814,6 +823,12 @@ export class ActionOutletFactory implements ActionOutlet {
 
     /**
      * Will create and return a new instance of &#x60;ActionGroup&#x60; with default options and component
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const group &#x3D; this.actionOutlet.createGroup({ dropdown: true });
+     * &#x60;&#x60;&#x60;
+     *
      * @param options Override the default options for &#x60;ActionGroup&#x60;
      * @param component Override the default component for &#x60;ActionGroup&#x60;
      */
@@ -823,6 +838,12 @@ export class ActionOutletFactory implements ActionOutlet {
 
     /**
      * Will create and return a new instance of &#x60;ActionToggle&#x60; with default options and component
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const toggle &#x3D; this.actionOutlet.createToggle({ checked: true });
+     * &#x60;&#x60;&#x60;
+     *
      * @param options Override the default options for &#x60;ActionToggle&#x60;
      * @param component Override the default component for &#x60;ActionToggle&#x60;
      */

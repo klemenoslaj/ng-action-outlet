@@ -85,6 +85,13 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
     /**
      * Will toggle current checked state when invoked  
      * Should be called in view component on click
+     * 
+     * #### Example:
+     * ```typescript
+     * toggle.trigger();
+     * ```
+     * 
+     * @method trigger
      */
     trigger(): this {
         this.fire.next(!this.fire.getValue());
@@ -94,6 +101,13 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
     /**
      * Will set checked status to `true`  
      * It will **not** produce second notification if already checked
+     * 
+     * #### Example:
+     * ```typescript
+     * toggle.check();
+     * ```
+     * 
+     * @method check
      */
     check(): this {
         this.fire.next(true);
@@ -103,6 +117,13 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
     /**
      * Will set checked status to `false`  
      * It will **not** produce second notification if already unchecked
+     * 
+     * #### Example:
+     * ```typescript
+     * toggle.uncheck();
+     * ```
+     * 
+     * @method uncheck
      */
     uncheck(): this {
         this.fire.next(false);
@@ -111,6 +132,13 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
 
     /**
      * Returns boolean defining whether action is checked
+     * 
+     * #### Example:
+     * ```typescript
+     * const isChecked = toggle.isChecked();
+     * ```
+     * 
+     * @method isChecked
      */
     isChecked(): boolean {
         return this.fire.getValue();
@@ -118,6 +146,13 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
 
     /**
      * Returns boolean defining whether action is unchecked
+     * 
+     * #### Example:
+     * const isUnchecked = toggle.isUnchecked();
+     * ```typescript
+     * ```
+     * 
+     * @example isUnchecked
      */
     isUnchecked(): boolean {
         return !this.fire.getValue();

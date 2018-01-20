@@ -79,6 +79,13 @@ export class ActionButton extends ActionAbstract<ActionButtonOptions, ActionButt
     /**
      * Will trigger `fire$` subscribers  
      * Should be called in view component on click
+     * 
+     * #### Example:
+     * ```typescript
+     * button.trigger();
+     * ```
+     * 
+     * @method trigger
      */
     trigger(): this {
         this.fire.next({ action: this });

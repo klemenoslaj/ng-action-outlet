@@ -627,10 +627,18 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:98</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:112</a></div>
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Will set checked status to <code>true</code><br>It will <strong>not</strong> produce second notification if already checked</p>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">toggle.check();</code></pre></div>
+            
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -655,14 +663,15 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:115</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:143</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Returns boolean defining whether action is checked</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">const isChecked = toggle.isChecked();</code></pre></div>
             
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
@@ -694,19 +703,30 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:122</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:157</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Returns boolean defining whether action is unchecked</p>
-            </div>
+            <h4 id="example-">Example:</h4>
+            <p>const isUnchecked = toggle.isUnchecked();</p>
+            <pre class="line-numbers"><code class="language-typescript"></code></pre></div>
             
+                                        <div>
+                                                <b>Example :</b>
+                                                    <div>
+                                                        <pre class="line-numbers"><code class="language-html">isUnchecked</code></pre>
+                                                    </div>
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -733,10 +753,18 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:89</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:96</a></div>
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Will toggle current checked state when invoked<br>Should be called in view component on click</p>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">toggle.trigger();</code></pre></div>
+            
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -761,10 +789,18 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:107</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/lib/action-toggle/action-toggle.ts:128</a></div>
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Will set checked status to <code>false</code><br>It will <strong>not</strong> produce second notification if already unchecked</p>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">toggle.uncheck();</code></pre></div>
+            
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -950,6 +986,13 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
     /**
      * Will toggle current checked state when invoked  
      * Should be called in view component on click
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * toggle.trigger();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method trigger
      */
     trigger(): this {
         this.fire.next(!this.fire.getValue());
@@ -959,6 +1002,13 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
     /**
      * Will set checked status to &#x60;true&#x60;  
      * It will **not** produce second notification if already checked
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * toggle.check();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method check
      */
     check(): this {
         this.fire.next(true);
@@ -968,6 +1018,13 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
     /**
      * Will set checked status to &#x60;false&#x60;  
      * It will **not** produce second notification if already unchecked
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * toggle.uncheck();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method uncheck
      */
     uncheck(): this {
         this.fire.next(false);
@@ -976,6 +1033,13 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
 
     /**
      * Returns boolean defining whether action is checked
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const isChecked &#x3D; toggle.isChecked();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method isChecked
      */
     isChecked(): boolean {
         return this.fire.getValue();
@@ -983,6 +1047,13 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
 
     /**
      * Returns boolean defining whether action is unchecked
+     * 
+     * #### Example:
+     * const isUnchecked &#x3D; toggle.isUnchecked();
+     * &#x60;&#x60;&#x60;typescript
+     * &#x60;&#x60;&#x60;
+     * 
+     * @example isUnchecked
      */
     isUnchecked(): boolean {
         return !this.fire.getValue();

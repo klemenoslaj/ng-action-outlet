@@ -615,10 +615,18 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/action-button/action-button.ts:83</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/action-button/action-button.ts:90</a></div>
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Will trigger <code>fire$</code> subscribers<br>Should be called in view component on click</p>
+            <h4 id="example-">Example:</h4>
+            <pre class="line-numbers"><code class="language-typescript">button.trigger();</code></pre></div>
+            
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -798,6 +806,13 @@ export class ActionButton extends ActionAbstract&lt;ActionButtonOptions, ActionB
     /**
      * Will trigger &#x60;fire$&#x60; subscribers  
      * Should be called in view component on click
+     * 
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * button.trigger();
+     * &#x60;&#x60;&#x60;
+     * 
+     * @method trigger
      */
     trigger(): this {
         this.fire.next({ action: this });

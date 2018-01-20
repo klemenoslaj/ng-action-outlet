@@ -36,6 +36,13 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from './action-toggle/
 export class ActionOutletFactory implements ActionOutlet {
     /**
      * Will create and return a new instance of `ActionButton` with default options and component
+     * 
+     * #### Example:
+     * ```typescript
+     * const button = this.actionOutlet.createButton({ title: 'Test' });
+     * ```
+     * 
+     * @method createButton
      * @param options Override the default options for `ActionButton`
      * @param component Override the default component for `ActionButton`
      */
@@ -45,6 +52,13 @@ export class ActionOutletFactory implements ActionOutlet {
 
     /**
      * Will create and return a new instance of `ActionGroup` with default options and component
+     * 
+     * #### Example:
+     * ```typescript
+     * const group = this.actionOutlet.createGroup({ dropdown: true });
+     * ```
+     *
+     * @method createGroup
      * @param options Override the default options for `ActionGroup`
      * @param component Override the default component for `ActionGroup`
      */
@@ -54,6 +68,13 @@ export class ActionOutletFactory implements ActionOutlet {
 
     /**
      * Will create and return a new instance of `ActionToggle` with default options and component
+     *
+     * #### Example:
+     * ```typescript
+     * const toggle = this.actionOutlet.createToggle({ checked: true });
+     * ```
+     *
+     * @method createToggle
      * @param options Override the default options for `ActionToggle`
      * @param component Override the default component for `ActionToggle`
      */
