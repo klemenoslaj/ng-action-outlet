@@ -2,7 +2,6 @@ import { Type } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/observable/if';
 import 'rxjs/add/observable/never';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/filter';
@@ -244,7 +243,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      * @param observable `Observable` to handle pausing
      */
     protected handleActivateState<T>(observable: Observable<T>): Observable<T> {
-        return this.state.switchMap(state => Observable.if(() => state === ActionState.Inactive, (Observable.never<T>()), observable));
+        return this.state.switchMap(state => state === ActionState.Inactive ? (Observable.never<T>()) : observable);
     }
 
     /**
