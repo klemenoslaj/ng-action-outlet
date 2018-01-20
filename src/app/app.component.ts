@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const group = this.actionOutlet.createGroup();
 
-    group.createAction({ title: 'Button' });
+    group.createButton({ title: 'Button' });
 
     console.log('#', group);
   }

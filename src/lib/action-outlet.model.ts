@@ -25,7 +25,7 @@ export interface ActionOutlet {
      * @param options Should override the default options for `ActionButton`
      * @param component Should override the default component for `ActionButton`
      */
-    createAction(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton;
+    createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton;
 
     /**
      * When implemented should create and return a new instance of `ActionGroup` with default options and component

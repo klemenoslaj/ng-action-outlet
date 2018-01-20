@@ -25,8 +25,7 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from './action-toggle/
  *
  * **Can do**
  * ```typescript
- * const buttonAction = this.actionOutletFactory
- *    .action()
+ * const buttonAction = this.actionOutletFactory.createButton()
  *    .setTitle('Action Title')
  *    .setIcon('icon')
  *    .fire$.subscribe(callbackMethod);
@@ -40,7 +39,7 @@ export class ActionOutletFactory implements ActionOutlet {
      * @param options Override the default options for `ActionButton`
      * @param component Override the default component for `ActionButton`
      */
-    createAction(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton {
+    createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton {
         return new ActionButton(options, component);
     }
 

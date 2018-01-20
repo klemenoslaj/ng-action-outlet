@@ -476,8 +476,7 @@ In order to keep the code clean, use only one approach.</p>
     icon: &#39;icon&#39;,
     callback: callbackMethod
 });</code></pre><p><strong>Can do</strong></p>
-<pre class="line-numbers"><code class="language-typescript">const buttonAction = this.actionOutletFactory
-    .action()
+<pre class="line-numbers"><code class="language-typescript">const buttonAction = this.actionOutletFactory.createButton()
     .setTitle(&#39;Action Title&#39;)
     .setIcon(&#39;icon&#39;)
     .fire$.subscribe(callbackMethod);</code></pre>
@@ -497,7 +496,7 @@ In order to keep the code clean, use only one approach.</p>
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                        <a href="#createAction">createAction</a>
+                                        <a href="#createButton">createButton</a>
                                     </li>
                                     <li>
                                         <a href="#createGroup">createGroup</a>
@@ -522,25 +521,25 @@ In order to keep the code clean, use only one approach.</p>
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="createAction"></a>
+                                    <a name="createButton"></a>
                                     <span class="name">
                                         <b>
-                                        createAction
+                                        createButton
                                         </b>
-                                        <a href="#createAction"><span class="fa fa-link"></span></a>
+                                        <a href="#createButton"><span class="fa fa-link"></span></a>
                                     </span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>createAction(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
+            <code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/action-outlet.service.ts:43</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/action-outlet.service.ts:42</a></div>
                                         </td>
                                     </tr>
             
@@ -621,7 +620,7 @@ In order to keep the code clean, use only one approach.</p>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/action-outlet.service.ts:52</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/action-outlet.service.ts:51</a></div>
                                         </td>
                                     </tr>
             
@@ -702,7 +701,7 @@ In order to keep the code clean, use only one approach.</p>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/action-outlet.service.ts:61</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/action-outlet.service.ts:60</a></div>
                                         </td>
                                     </tr>
             
@@ -795,8 +794,7 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from &#x27;./action-to
  *
  * **Can do**
  * &#x60;&#x60;&#x60;typescript
- * const buttonAction &#x3D; this.actionOutletFactory
- *    .action()
+ * const buttonAction &#x3D; this.actionOutletFactory.createButton()
  *    .setTitle(&#x27;Action Title&#x27;)
  *    .setIcon(&#x27;icon&#x27;)
  *    .fire$.subscribe(callbackMethod);
@@ -810,7 +808,7 @@ export class ActionOutletFactory implements ActionOutlet {
      * @param options Override the default options for &#x60;ActionButton&#x60;
      * @param component Override the default component for &#x60;ActionButton&#x60;
      */
-    createAction(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton {
+    createButton(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton {
         return new ActionButton(options, component);
     }
 

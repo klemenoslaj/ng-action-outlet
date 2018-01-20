@@ -1,8 +1,7 @@
 # NgActionOutlet
 
-The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on runtime,  
-and have the possibility to get notified for each and every change,  
-that happens to any particular action.  
+The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on runtime  
+and have the possibility to get notified for each and every change, that happens to any particular action.  
 *e.g. Title change, icon change, disabled state, etc.*
 
 ## Getting started
@@ -18,7 +17,7 @@ Choose the tool that is appropriate for your project.
 `yarn add ng-action-outlet`
 
 ### Step 2: Import `ActionOutletModule`
-Import and use Action Outlet **NgModule**
+Import Action Outlet **NgModule** to your Angular module
 ```typescript
 import { ActionOutletModule } from 'ng-action-outlet';
 
@@ -33,7 +32,7 @@ export class ExampleModule { }
 ### Step 3: Define what component to use with what action
 Use providers to set default components for each action to be used for rendering.  
 Provide action class and use value pointing to your component class,
-so that action outlet cam associate component to used action.
+so that action outlet can associate component to provided action.
 ```typescript
 import { ActionOutletModule, ActionButton, ActionGroup, ActionToggle } from 'ng-action-outlet';
 
@@ -61,7 +60,7 @@ export class ExampleModule { }
 
 ### Step 4: Override default's in your component
 In order to override your default settings, do the same as initially in a module,  
-but only for actions that you actoually wish to change.
+but only for actions that you actually wish to change.
 ```typescript
 import { ActionToggle } from 'ng-action-outlet';
 
@@ -79,7 +78,7 @@ export class ExampleComponent { }
 ```
 
 ### Step 5: Create action instances
-Create actions in you component class so that you can access them from template.
+Create actions in a component class so that they can be accessed from the template.
 ```typescript
 import { ActionOutletFactory } from 'ng-action-outlet';
 
@@ -108,8 +107,8 @@ Bind created actions to `actionOutlet` renderer directive.
 
 ## Available actions
 
-* [ActionButton](./classes/ActionButton.html)
-* [ActionGroup](./classes/ActionGroup.html)
-* [ActionToggle](./classes/ActionToggle.html)
+* [ActionButton](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionButton.html)
+* [ActionGroup](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionGroup.html)
+* [ActionToggle](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionToggle.html)
 
-In order to create custom action class, refer to [ActionAbstract](./classes/ActionAbstract.html).
+In order to create custom action class, refer to [ActionAbstract](./classes/ActionAbstract.html) class.

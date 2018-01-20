@@ -24,7 +24,7 @@ describe('Service: ActionOutletFactory', () => {
     });
 
     it('should return instance of ActionButton', () => {
-        expect(factory.createAction()).toEqual(jasmine.any(ActionButton));
+        expect(factory.createButton()).toEqual(jasmine.any(ActionButton));
     });
 
     it('should return instance of ActionGroup', () => {

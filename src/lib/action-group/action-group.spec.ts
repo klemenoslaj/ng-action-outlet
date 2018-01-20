@@ -32,7 +32,7 @@ describe('Class: ActionGroup', function (): void {
             expect(this.action.destroy).toEqual(jasmine.any(Function));
             expect(this.action.enable).toEqual(jasmine.any(Function));
             expect(this.action.disable).toEqual(jasmine.any(Function));
-            expect(this.action.createAction).toEqual(jasmine.any(Function));
+            expect(this.action.createButton).toEqual(jasmine.any(Function));
             expect(this.action.createGroup).toEqual(jasmine.any(Function));
             expect(this.action.createToggle).toEqual(jasmine.any(Function));
             expect(this.action.appendChild).toEqual(jasmine.any(Function));
@@ -296,7 +296,7 @@ describe('Class: ActionGroup', function (): void {
         });
 
         it('should create attach and return instance of ActionButton', function (this: TestContext): void {
-            const actionButton = this.action.createAction();
+            const actionButton = this.action.createButton();
 
             expect(actionButton).toEqual(jasmine.any(ActionButton));
             expect(actionButton.getParent()).toBe(this.action);

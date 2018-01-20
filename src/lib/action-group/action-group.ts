@@ -51,7 +51,7 @@ const unique = (children: AnyAction[]) => Array.from(
  *
  * ```typescript
  * const group = actionFactory.createGroup().appendChildren([
- *     actionFactory.createAction().setTitle('Test'),
+ *     actionFactory.createButton().setTitle('Test'),
  *     actionFactory.createGroup().enableDropdown(),
  *     actionFactory.createToggle().check()
  * ]);
@@ -61,7 +61,7 @@ const unique = (children: AnyAction[]) => Array.from(
  *
  * ```typescript
  * const group = actionFactory.createGroup();
- * group.createAction().setTitle('Test');
+ * group.createButton().setTitle('Test');
  * group.createGroup().enableDropdown();
  * group.createToggle().check();
  * ```
@@ -202,12 +202,12 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Creates a new `ActionButton` and **appends** it to the children stack
      *
      * @example
-     * const childButton = group.createAction({ title: 'Test' });
+     * const childButton = group.createButton({ title: 'Test' });
      *
      * @param options Options for `ActionButton`
      * @param component Optional `Component`
      */
-    createAction(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton {
+    createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton {
         const action = new ActionButton(options, component);
         this.appendChild(action);
         return action;
@@ -247,7 +247,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided action **at the end** of children stach
      *
      * @example
-     * const child = actionFactory.createAction({ title: 'Test' });
+     * const child = actionFactory.createButton({ title: 'Test' });
      * group.appendChild(child);
      *
      * @param action Action to append
@@ -262,8 +262,8 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided actions **at the end** of children stach
      *
      * @example
-     * const child1 = actionFactory.createAction({ title: 'Test 1' });
-     * const child2 = actionFactory.createAction({ title: 'Test 2' });
+     * const child1 = actionFactory.createButton({ title: 'Test 1' });
+     * const child2 = actionFactory.createButton({ title: 'Test 2' });
      * group.appendChildren([ child1, child2 ]);
      *
      * @param actions Actions to append
@@ -279,7 +279,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided action **at the beginning** of children stack
      *
      * @example
-     * const child = actionFactory.createAction({ title: 'Test' });
+     * const child = actionFactory.createButton({ title: 'Test' });
      * group.prependChild(child);
      *
      * @param action Action to prepend
@@ -294,8 +294,8 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided actions **at the beginning** of children stack
      *
      * @example
-     * const child1 = actionFactory.createAction({ title: 'Test 1' });
-     * const child2 = actionFactory.createAction({ title: 'Test 2' });
+     * const child1 = actionFactory.createButton({ title: 'Test 1' });
+     * const child2 = actionFactory.createButton({ title: 'Test 2' });
      * group.prependChildren([ child1, child2 ]);
      *
      * @param actions Actions to prepend
@@ -357,8 +357,8 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * - **Ignore** actions with different parent
      *
      * @example
-     * const child1 = actionFactory.createAction({ title: 'Test 1' });
-     * const child2 = actionFactory.createAction({ title: 'Test 2' });
+     * const child1 = actionFactory.createButton({ title: 'Test 1' });
+     * const child2 = actionFactory.createButton({ title: 'Test 2' });
      * group.setChildren([ child1, child2 ]);
      *
      * @param children Actions to become children

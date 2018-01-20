@@ -480,12 +480,12 @@
     ]
 });</code></pre><p><strong>Or</strong></p>
 <pre class="line-numbers"><code class="language-typescript">const group = actionFactory.createGroup().appendChildren([
-     actionFactory.createAction().setTitle(&#39;Test&#39;),
+     actionFactory.createButton().setTitle(&#39;Test&#39;),
      actionFactory.createGroup().enableDropdown(),
      actionFactory.createToggle().check()
 ]);</code></pre><p><strong>Or</strong></p>
 <pre class="line-numbers"><code class="language-typescript">const group = actionFactory.createGroup();
-group.createAction().setTitle(&#39;Test&#39;);
+group.createButton().setTitle(&#39;Test&#39;);
 group.createGroup().enableDropdown();
 group.createToggle().check();</code></pre>
             </p>
@@ -554,7 +554,7 @@ group.createToggle().check();</code></pre>
                                         <a href="#appendChildren">appendChildren</a>
                                     </li>
                                     <li>
-                                        <a href="#createAction">createAction</a>
+                                        <a href="#createButton">createButton</a>
                                     </li>
                                     <li>
                                         <a href="#createGroup">createGroup</a>
@@ -746,7 +746,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="255" class="link-to-prism">src/lib/action-group/action-group.ts:255</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="256" class="link-to-prism">src/lib/action-group/action-group.ts:256</a></div>
                                         </td>
                                     </tr>
             
@@ -783,7 +783,7 @@ group.createToggle().check();</code></pre>
                                         <div>
                                                 <b>Example :</b>
                                                     <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child = actionFactory.createAction({ title: &amp;#39;Test&amp;#39; });
+                                                        <pre class="line-numbers"><code class="language-html">const child = actionFactory.createButton({ title: &amp;#39;Test&amp;#39; });
             group.appendChild(child);</code></pre>
                                                     </div>
                                         </div>
@@ -813,7 +813,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="272" class="link-to-prism">src/lib/action-group/action-group.ts:272</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="273" class="link-to-prism">src/lib/action-group/action-group.ts:273</a></div>
                                         </td>
                                     </tr>
             
@@ -850,8 +850,8 @@ group.createToggle().check();</code></pre>
                                         <div>
                                                 <b>Example :</b>
                                                     <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createAction({ title: &amp;#39;Test 1&amp;#39; });
-            const child2 = actionFactory.createAction({ title: &amp;#39;Test 2&amp;#39; });
+                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createButton({ title: &amp;#39;Test 1&amp;#39; });
+            const child2 = actionFactory.createButton({ title: &amp;#39;Test 2&amp;#39; });
             group.appendChildren([ child1, child2 ]);</code></pre>
                                                     </div>
                                         </div>
@@ -863,32 +863,32 @@ group.createToggle().check();</code></pre>
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="createAction"></a>
+                                    <a name="createButton"></a>
                                     <span class="name">
                                         <b>
-                                        createAction
+                                        createButton
                                         </b>
-                                        <a href="#createAction"><span class="fa fa-link"></span></a>
+                                        <a href="#createButton"><span class="fa fa-link"></span></a>
                                     </span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>createAction(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
+            <code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="210" class="link-to-prism">src/lib/action-group/action-group.ts:210</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">src/lib/action-group/action-group.ts:211</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-description"><p>Creates a new <code>ActionButton</code> and <strong>appends</strong> it to the children stack</p>
-            </div>
+            <pre class="line-numbers"><code class="language-typescript">const a = 1;</code></pre></div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -928,10 +928,6 @@ group.createToggle().check();</code></pre>
                                                 </table>
                                         </div>
                                         <div>
-                                                <b>Example :</b>
-                                                    <div>
-                                                        <pre class="line-numbers"><code class="language-html">const childButton = group.createAction({ title: &amp;#39;Test&amp;#39; });</code></pre>
-                                                    </div>
                                         </div>
                                         <div class="io-description">
                                             <b>Returns : </b>    <code><a href="../classes/ActionButton.html" target="_self" >ActionButton</a></code>
@@ -966,7 +962,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="225" class="link-to-prism">src/lib/action-group/action-group.ts:225</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="226" class="link-to-prism">src/lib/action-group/action-group.ts:226</a></div>
                                         </td>
                                     </tr>
             
@@ -1051,7 +1047,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="240" class="link-to-prism">src/lib/action-group/action-group.ts:240</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="241" class="link-to-prism">src/lib/action-group/action-group.ts:241</a></div>
                                         </td>
                                     </tr>
             
@@ -1259,7 +1255,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="430" class="link-to-prism">src/lib/action-group/action-group.ts:430</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="431" class="link-to-prism">src/lib/action-group/action-group.ts:431</a></div>
                                         </td>
                                     </tr>
             
@@ -1341,7 +1337,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="419" class="link-to-prism">src/lib/action-group/action-group.ts:419</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="420" class="link-to-prism">src/lib/action-group/action-group.ts:420</a></div>
                                         </td>
                                     </tr>
             
@@ -1382,7 +1378,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="393" class="link-to-prism">src/lib/action-group/action-group.ts:393</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="394" class="link-to-prism">src/lib/action-group/action-group.ts:394</a></div>
                                         </td>
                                     </tr>
             
@@ -1455,7 +1451,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="381" class="link-to-prism">src/lib/action-group/action-group.ts:381</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="382" class="link-to-prism">src/lib/action-group/action-group.ts:382</a></div>
                                         </td>
                                     </tr>
             
@@ -1503,7 +1499,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="409" class="link-to-prism">src/lib/action-group/action-group.ts:409</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="410" class="link-to-prism">src/lib/action-group/action-group.ts:410</a></div>
                                         </td>
                                     </tr>
             
@@ -1551,7 +1547,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="287" class="link-to-prism">src/lib/action-group/action-group.ts:287</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="288" class="link-to-prism">src/lib/action-group/action-group.ts:288</a></div>
                                         </td>
                                     </tr>
             
@@ -1588,7 +1584,7 @@ group.createToggle().check();</code></pre>
                                         <div>
                                                 <b>Example :</b>
                                                     <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child = actionFactory.createAction({ title: &amp;#39;Test&amp;#39; });
+                                                        <pre class="line-numbers"><code class="language-html">const child = actionFactory.createButton({ title: &amp;#39;Test&amp;#39; });
             group.prependChild(child);</code></pre>
                                                     </div>
                                         </div>
@@ -1618,7 +1614,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="303" class="link-to-prism">src/lib/action-group/action-group.ts:303</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="304" class="link-to-prism">src/lib/action-group/action-group.ts:304</a></div>
                                         </td>
                                     </tr>
             
@@ -1655,8 +1651,8 @@ group.createToggle().check();</code></pre>
                                         <div>
                                                 <b>Example :</b>
                                                     <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createAction({ title: &amp;#39;Test 1&amp;#39; });
-            const child2 = actionFactory.createAction({ title: &amp;#39;Test 2&amp;#39; });
+                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createButton({ title: &amp;#39;Test 1&amp;#39; });
+            const child2 = actionFactory.createButton({ title: &amp;#39;Test 2&amp;#39; });
             group.prependChildren([ child1, child2 ]);</code></pre>
                                                     </div>
                                         </div>
@@ -1686,7 +1682,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="317" class="link-to-prism">src/lib/action-group/action-group.ts:317</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="318" class="link-to-prism">src/lib/action-group/action-group.ts:318</a></div>
                                         </td>
                                     </tr>
             
@@ -1752,7 +1748,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="330" class="link-to-prism">src/lib/action-group/action-group.ts:330</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="331" class="link-to-prism">src/lib/action-group/action-group.ts:331</a></div>
                                         </td>
                                     </tr>
             
@@ -1818,7 +1814,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="348" class="link-to-prism">src/lib/action-group/action-group.ts:348</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="349" class="link-to-prism">src/lib/action-group/action-group.ts:349</a></div>
                                         </td>
                                     </tr>
             
@@ -1859,7 +1855,7 @@ group.createToggle().check();</code></pre>
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="366" class="link-to-prism">src/lib/action-group/action-group.ts:366</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="367" class="link-to-prism">src/lib/action-group/action-group.ts:367</a></div>
                                         </td>
                                     </tr>
             
@@ -1900,8 +1896,8 @@ group.createToggle().check();</code></pre>
                                         <div>
                                                 <b>Example :</b>
                                                     <div>
-                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createAction({ title: &amp;#39;Test 1&amp;#39; });
-            const child2 = actionFactory.createAction({ title: &amp;#39;Test 2&amp;#39; });
+                                                        <pre class="line-numbers"><code class="language-html">const child1 = actionFactory.createButton({ title: &amp;#39;Test 1&amp;#39; });
+            const child2 = actionFactory.createButton({ title: &amp;#39;Test 2&amp;#39; });
             group.setChildren([ child1, child2 ]);</code></pre>
                                                     </div>
                                         </div>
@@ -2182,7 +2178,7 @@ const unique &#x3D; (children: AnyAction[]) &#x3D;&gt; Array.from(
  *
  * &#x60;&#x60;&#x60;typescript
  * const group &#x3D; actionFactory.createGroup().appendChildren([
- *     actionFactory.createAction().setTitle(&#x27;Test&#x27;),
+ *     actionFactory.createButton().setTitle(&#x27;Test&#x27;),
  *     actionFactory.createGroup().enableDropdown(),
  *     actionFactory.createToggle().check()
  * ]);
@@ -2192,7 +2188,7 @@ const unique &#x3D; (children: AnyAction[]) &#x3D;&gt; Array.from(
  *
  * &#x60;&#x60;&#x60;typescript
  * const group &#x3D; actionFactory.createGroup();
- * group.createAction().setTitle(&#x27;Test&#x27;);
+ * group.createButton().setTitle(&#x27;Test&#x27;);
  * group.createGroup().enableDropdown();
  * group.createToggle().check();
  * &#x60;&#x60;&#x60;
@@ -2332,13 +2328,14 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
     /**
      * Creates a new &#x60;ActionButton&#x60; and **appends** it to the children stack
      *
-     * @example
-     * const childButton &#x3D; group.createAction({ title: &#x27;Test&#x27; });
+     * &#x60;&#x60;&#x60;typescript
+     * const a &#x3D; 1;
+     * &#x60;&#x60;&#x60;
      *
      * @param options Options for &#x60;ActionButton&#x60;
      * @param component Optional &#x60;Component&#x60;
      */
-    createAction(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton {
+    createButton(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton {
         const action &#x3D; new ActionButton(options, component);
         this.appendChild(action);
         return action;
@@ -2378,7 +2375,7 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided action **at the end** of children stach
      *
      * @example
-     * const child &#x3D; actionFactory.createAction({ title: &#x27;Test&#x27; });
+     * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
      * group.appendChild(child);
      *
      * @param action Action to append
@@ -2393,8 +2390,8 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided actions **at the end** of children stach
      *
      * @example
-     * const child1 &#x3D; actionFactory.createAction({ title: &#x27;Test 1&#x27; });
-     * const child2 &#x3D; actionFactory.createAction({ title: &#x27;Test 2&#x27; });
+     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
      * group.appendChildren([ child1, child2 ]);
      *
      * @param actions Actions to append
@@ -2410,7 +2407,7 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided action **at the beginning** of children stack
      *
      * @example
-     * const child &#x3D; actionFactory.createAction({ title: &#x27;Test&#x27; });
+     * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
      * group.prependChild(child);
      *
      * @param action Action to prepend
@@ -2425,8 +2422,8 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided actions **at the beginning** of children stack
      *
      * @example
-     * const child1 &#x3D; actionFactory.createAction({ title: &#x27;Test 1&#x27; });
-     * const child2 &#x3D; actionFactory.createAction({ title: &#x27;Test 2&#x27; });
+     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
      * group.prependChildren([ child1, child2 ]);
      *
      * @param actions Actions to prepend
@@ -2488,8 +2485,8 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * - **Ignore** actions with different parent
      *
      * @example
-     * const child1 &#x3D; actionFactory.createAction({ title: &#x27;Test 1&#x27; });
-     * const child2 &#x3D; actionFactory.createAction({ title: &#x27;Test 2&#x27; });
+     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
      * group.setChildren([ child1, child2 ]);
      *
      * @param children Actions to become children
