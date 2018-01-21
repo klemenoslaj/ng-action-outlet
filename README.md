@@ -11,15 +11,15 @@ You can use either **npm** or **yarn** command-line tool.
 Choose the tool that is appropriate for your project.
 
 #### NPM
-`npm install ng-action-outlet`
+`npm install @ng-action-outlet/core`
 
 #### YARN
-`yarn add ng-action-outlet`
+`yarn add @ng-action-outlet/core`
 
 ### Step 2: Import `ActionOutletModule`
 Import Action Outlet **NgModule** to your Angular module
 ```typescript
-import { ActionOutletModule } from 'ng-action-outlet';
+import { ActionOutletModule } from '@ng-action-outlet/core';
 
 @NgModule({
   ...
@@ -34,7 +34,7 @@ Use providers to set default components for each action to be used for rendering
 Provide action class and use value pointing to your component class,
 so that action outlet can associate component to provided action.
 ```typescript
-import { ActionOutletModule, ActionButton, ActionGroup, ActionToggle } from 'ng-action-outlet';
+import { ActionOutletModule, ActionButton, ActionGroup, ActionToggle } from '@ng-action-outlet/core';
 
 import { ExampleButtonComponent } from './example-button.component';
 import { ExampleGroupComponent } from './example-group.component';
@@ -62,7 +62,7 @@ export class ExampleModule { }
 In order to override your default settings, do the same as initially in a module,  
 but only for actions that you actually wish to change.
 ```typescript
-import { ActionToggle } from 'ng-action-outlet';
+import { ActionToggle } from '@ng-action-outlet/core';
 
 import { ExampleCheckboxComponent } from './example-checkbox.component';
 
@@ -80,7 +80,7 @@ export class ExampleComponent { }
 ### Step 5: Create action instances
 Create actions in a component class so that they can be accessed from the template.
 ```typescript
-import { ActionOutletFactory } from 'ng-action-outlet';
+import { ActionOutletFactory } from '@ng-action-outlet/core';
 
 @Component(...)
 export class ExampleComponent implements OnInit {
