@@ -83,7 +83,7 @@ Create actions in a component class so that they can be accessed from the templa
 import { ActionOutletFactory } from 'ng-action-outlet';
 
 @Component(...)
-export ExampleComponent implements OnInit {
+export class ExampleComponent implements OnInit {
     ...
     group: ActionGroup;
     
