@@ -1,4 +1,4 @@
-# NgActionOutlet
+# [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
 The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on runtime  
 and have the possibility to get notified for each and every change, that happens to any particular action.  
