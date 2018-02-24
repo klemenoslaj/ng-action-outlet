@@ -1,6 +1,6 @@
 import { ActionAbstractComponentImpl, ActionAbstractEvent, ActionAbstractOptions } from '../action-abstract/action-abstract.model';
 import { AnyAction } from '../action-outlet.model';
-import { ActionGroup } from './action-Group';
+import { ActionGroup } from './action-group';
 
 /**
  * Type that components used by `ActionGroup` should implement
