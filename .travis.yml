@@ -1,0 +1,24 @@
+sudo: required
+addons:
+  chrome: stable
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  - '10'
+  - '9'
+  - '8'
+  - '6'
+before_script:
+  - npm install -g @angular/cli
+script:
+  - ng build --prod
+  - ng test --browsers ChromeHeadless --single-run
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
