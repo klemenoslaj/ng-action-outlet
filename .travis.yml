@@ -16,7 +16,7 @@ script:
   - ng build --prod
   - ng test --browsers ChromeHeadless --single-run
 after_success:
-  - npm run travis-deploy-once "../node_modules/.bin/semantic-release"
+  - npm run travis-deploy-once "npm run semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
