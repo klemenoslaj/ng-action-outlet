@@ -1,9 +1,6 @@
 import { Type } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
+import { BehaviorSubject, Observable, never, merge } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { ActionAbstract } from '../action-abstract/action-abstract';
 import { ActionButton } from '../action-button/action-button';
@@ -14,7 +11,7 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from '../action-toggle
 import { ActionGroupComponentImpl, ActionGroupEvent, ActionGroupOptions } from './action-group.model';
 
 /**
- * Default options for `ActionGroup`  
+ * Default options for `ActionGroup`
  * Extended by provided options in action `constructor`
  */
 const defaultGroupOptions: ActionGroupOptions = {
@@ -32,7 +29,7 @@ const unique = (children: AnyAction[]) => Array.from(
 );
 
 /**
- * `ActionGroup` used to group certain actions in one logical component  
+ * `ActionGroup` used to group certain actions in one logical component
  * Can be used either as **group** either as **dropdown**
  *
  * ## Example
@@ -68,17 +65,17 @@ const unique = (children: AnyAction[]) => Array.from(
  */
 export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupEvent> implements ActionOutlet {
     /**
-     * `Observable` that notifies subscriptions on action triggering  
+     * `Observable` that notifies subscriptions on action triggering
      * Empty observable in case of 'ActionGroup'
      */
     readonly fire$: Observable<ActionGroupEvent>;
     /**
-     * `Observable` that notifies subscriptions on following changes:  
+     * `Observable` that notifies subscriptions on following changes:
      * *title, icon, visibility, disabled, children, dropdown*
      */
     readonly changes$: Observable<ActionGroupOptions>;
     /**
-     * `Observable` that notifies subscriptions to any change to children:  
+     * `Observable` that notifies subscriptions to any change to children:
      * *append, prepend, remove, etc.*
      */
     readonly children$: Observable<AnyAction[]>;
@@ -109,29 +106,29 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
         this.children = new BehaviorSubject(unique(this.options.children.map(action => action._setParent(this))));
         this.dropdown = new BehaviorSubject(this.options.dropdown);
 
-        this.fire$ = this.handleLivecycle(Observable.never(), false);
+        this.fire$ = this.handleLivecycle(never(), false);
         this.children$ = this.handleLivecycle(this.children.asObservable());
         this.dropdown$ = this.handleLivecycleDistinct(this.dropdown.asObservable());
 
-        this.changes$ = this.handleLivecycle(Observable.merge(
-            this.title$.map(title => (<ActionGroupOptions>{ title })),
-            this.icon$.map(icon => (<ActionGroupOptions>{ icon })),
-            this.visible$.map(visible => (<ActionGroupOptions>{ visible })),
-            this.disabled$.map(disabled => (<ActionGroupOptions>{ disabled })),
-            this.children$.map(children => (<ActionGroupOptions>{ children })),
-            this.dropdown$.map(dropdown => (<ActionGroupOptions>{ dropdown }))
+        this.changes$ = this.handleLivecycle(merge(
+            this.title$.pipe(map(title => (<ActionGroupOptions>{ title }))),
+            this.icon$.pipe(map(icon => (<ActionGroupOptions>{ icon }))),
+            this.visible$.pipe(map(visible => (<ActionGroupOptions>{ visible }))),
+            this.disabled$.pipe(map(disabled => (<ActionGroupOptions>{ disabled }))),
+            this.children$.pipe(map(children => (<ActionGroupOptions>{ children }))),
+            this.dropdown$.pipe(map(dropdown => (<ActionGroupOptions>{ dropdown })))
         ));
     }
 
     /**
-     * Trigger for group action.  
-     * In case of `ActionGroup` **Noop**  
-     * 
+     * Trigger for group action.
+     * In case of `ActionGroup` **Noop**
+     *
      * #### Example:
      * ```typescript
      * group.trigger();
      * ```
-     * 
+     *
      * @method trigger
      */
     trigger(): this {
@@ -145,7 +142,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.activate();
      * ```
-     * 
+     *
      * @method activate
      */
     activate(): this {
@@ -164,7 +161,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.deactivate();
      * ```
-     * 
+     *
      * @method deactivate
      */
     deactivate(): this {
@@ -183,7 +180,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.destroy();
      * ```
-     * 
+     *
      * @method destroy
      */
     destroy(): this {
@@ -199,7 +196,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.enable();
      * ```
-     * 
+     *
      * @method enable
      */
     enable(): this {
@@ -214,7 +211,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.disable();
      * ```
-     * 
+     *
      * @method disable
      */
     disable(): this {
@@ -397,7 +394,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.removeChildren();
      * ```
-     * 
+     *
      * @method removeChildren
      */
     removeChildren(): this {
@@ -407,8 +404,8 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
     }
 
     /**
-     * Provided actions will **replace** existing children and will:  
-     * - **Apply** as **unique** array  
+     * Provided actions will **replace** existing children and will:
+     * - **Apply** as **unique** array
      * - **Ignore** actions with different parent
      *
      * #### Example:
@@ -437,7 +434,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * const children = group.getChildren();
      * ```
-     * 
+     *
      * @method getChildren
      */
     getChildren(): AnyAction[] {
@@ -472,7 +469,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * const isDropdown = group.isDropdown();
      * ```
-     * 
+     *
      * @method isDropdown
      */
     isDropdown(): boolean {
@@ -486,7 +483,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.enableDropdown();
      * ```
-     * 
+     *
      * @method enableDropdown
      */
     enableDropdown(): this {
@@ -501,7 +498,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * ```typescript
      * group.disableDropdown();
      * ```
-     * 
+     *
      * @method disableDropdown
      */
     disableDropdown(): this {

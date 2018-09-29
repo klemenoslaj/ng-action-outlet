@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs/Observable';
-import { TestScheduler } from 'rxjs/testing/TestScheduler';
+import { Observable } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
 
 import { ActionButton } from '../action-button/action-button';
 import { ActionToggle } from '../action-toggle/action-toggle';

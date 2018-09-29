@@ -1,14 +1,13 @@
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import { TestScheduler } from 'rxjs/testing/TestScheduler';
+import { BehaviorSubject, never, Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { TestScheduler } from 'rxjs/testing';
 
-import { HotObservable } from 'rxjs/testing/HotObservable';
 import { ActionGroup } from '../action-group/action-group';
 import { ActionAbstract, ActionState } from './action-abstract';
 
 class ActionAbstractTest extends ActionAbstract<any, any> {
-    changes$: any = Observable.never();
-    fire$: any = Observable.never();
+    changes$: any = never();
+    fire$: any = never();
 
     state: BehaviorSubject<ActionState>;
 
@@ -42,10 +41,12 @@ class ActionAbstractTest extends ActionAbstract<any, any> {
      * Replace internal state BehaviorSubject in order to test livecycle of exposed observables
      * @param stateObservable - Hot observable to replace internal state BehaviorSubject
      */
-    testWithCustomState(stateObservable: HotObservable<{}>): this {
+    testWithCustomState(stateObservable: Observable<{}>): this {
         if (stateObservable) {
             this.state = <any>stateObservable;
-            (<any>this).finish = this.state.filter(state => state === ActionState.Destroyed);
+            (<any>this).finish = this.state.pipe(
+              filter(state => state === ActionState.Destroyed)
+            );
         }
 
         return this;

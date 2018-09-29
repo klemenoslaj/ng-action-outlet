@@ -1,21 +1,18 @@
 import { Type } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
+import { Observable, Subject, merge } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { ActionAbstract } from '../action-abstract/action-abstract';
 import { ActionButtonComponentImpl, ActionButtonEvent, ActionButtonOptions } from './action-button.model';
 
 /**
- * Default options for `ActionButton`  
+ * Default options for `ActionButton`
  * Extended by provided options in action `constructor`
  */
 const defaultButtonOptions: ActionButtonOptions = { };
 
 /**
- * `ActionButton` used to create basic button action  
+ * `ActionButton` used to create basic button action
  *
  * ## Example
  *
@@ -41,7 +38,7 @@ export class ActionButton extends ActionAbstract<ActionButtonOptions, ActionButt
      */
     readonly fire$: Observable<ActionButtonEvent>;
     /**
-     * `Observable` notifies subscriptions on following changes:  
+     * `Observable` notifies subscriptions on following changes:
      * *title, icon, visibility, disabled*
      */
     readonly changes$: Observable<ActionButtonOptions>;
@@ -64,11 +61,11 @@ export class ActionButton extends ActionAbstract<ActionButtonOptions, ActionButt
         this.fire = new Subject();
 
         this.fire$ = this.handleLivecycle(this.fire.asObservable(), false);
-        this.changes$ = this.handleLivecycle(Observable.merge(
-            this.title$.map(title => (<ActionButtonOptions>{ title })),
-            this.icon$.map(icon => (<ActionButtonOptions>{ icon })),
-            this.visible$.map(visible => (<ActionButtonOptions>{ visible })),
-            this.disabled$.map(disabled => (<ActionButtonOptions>{ disabled }))
+        this.changes$ = this.handleLivecycle(merge(
+            this.title$.pipe(map(title => (<ActionButtonOptions>{ title }))),
+            this.icon$.pipe(map(icon => (<ActionButtonOptions>{ icon }))),
+            this.visible$.pipe(map(visible => (<ActionButtonOptions>{ visible }))),
+            this.disabled$.pipe(map(disabled => (<ActionButtonOptions>{ disabled })))
         ));
 
         if (this.options.callback) {
@@ -77,14 +74,14 @@ export class ActionButton extends ActionAbstract<ActionButtonOptions, ActionButt
     }
 
     /**
-     * Will trigger `fire$` subscribers  
+     * Will trigger `fire$` subscribers
      * Should be called in view component on click
-     * 
+     *
      * #### Example:
      * ```typescript
      * button.trigger();
      * ```
-     * 
+     *
      * @method trigger
      */
     trigger(): this {
