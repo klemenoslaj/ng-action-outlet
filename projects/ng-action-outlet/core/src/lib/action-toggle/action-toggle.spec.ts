@@ -1,4 +1,4 @@
-import { TestScheduler } from 'rxjs/testing/TestScheduler';
+import { TestScheduler } from 'rxjs/testing';
 
 import { ActionToggle } from './action-toggle';
 

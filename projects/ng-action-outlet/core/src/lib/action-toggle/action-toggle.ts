@@ -1,15 +1,12 @@
 import { Type } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
+import { BehaviorSubject, Observable, merge } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { ActionAbstract } from '../action-abstract/action-abstract';
 import { ActionToggleComponentImpl, ActionToggleEvent, ActionToggleOptions } from './action-toggle.model';
 
 /**
- * Default options for `ActionToggle`  
+ * Default options for `ActionToggle`
  * Extended by provided options in action `constructor`
  */
 const defaultToggleOptions: ActionToggleOptions = {
@@ -17,7 +14,7 @@ const defaultToggleOptions: ActionToggleOptions = {
 };
 
 /**
- * `ActionToggle` used to create action with toggle functionality,  
+ * `ActionToggle` used to create action with toggle functionality,
  * *e.g. checkbox, toggle slider*
  *
  * ## Example
@@ -44,7 +41,7 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
      */
     readonly fire$: Observable<ActionToggleEvent>;
     /**
-     * `Observable` notifies subscriptions on following changes:  
+     * `Observable` notifies subscriptions on following changes:
      * *title, icon, visibility, disabled, checked*
      */
     readonly changes$: Observable<ActionToggleOptions>;
@@ -66,15 +63,16 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
 
         this.fire = new BehaviorSubject(this.options.checked);
 
-        this.fire$ = this.handleLivecycleDistinct(this.fire.asObservable(), false)
-            .map(checked => ({ action: this, checked }));
+        this.fire$ = this.handleLivecycleDistinct(this.fire.asObservable(), false).pipe(
+          map(checked => ({ action: this, checked }))
+        );
 
-        this.changes$ = this.handleLivecycle(Observable.merge(
-            this.title$.map(title => (<ActionToggleOptions>{ title })),
-            this.icon$.map(icon => (<ActionToggleOptions>{ icon })),
-            this.visible$.map(visible => (<ActionToggleOptions>{ visible })),
-            this.disabled$.map(disabled => (<ActionToggleOptions>{ disabled })),
-            this.fire.map(checked => (<ActionToggleOptions>{ checked }))
+        this.changes$ = this.handleLivecycle(merge(
+            this.title$.pipe(map(title => (<ActionToggleOptions>{ title }))),
+            this.icon$.pipe(map(icon => (<ActionToggleOptions>{ icon }))),
+            this.visible$.pipe(map(visible => (<ActionToggleOptions>{ visible }))),
+            this.disabled$.pipe(map(disabled => (<ActionToggleOptions>{ disabled }))),
+            this.fire.pipe(map(checked => (<ActionToggleOptions>{ checked })))
         ));
 
         if (this.options.callback) {
@@ -83,14 +81,14 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
     }
 
     /**
-     * Will toggle current checked state when invoked  
+     * Will toggle current checked state when invoked
      * Should be called in view component on click
-     * 
+     *
      * #### Example:
      * ```typescript
      * toggle.trigger();
      * ```
-     * 
+     *
      * @method trigger
      */
     trigger(): this {
@@ -99,14 +97,14 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
     }
 
     /**
-     * Will set checked status to `true`  
+     * Will set checked status to `true`
      * It will **not** produce second notification if already checked
-     * 
+     *
      * #### Example:
      * ```typescript
      * toggle.check();
      * ```
-     * 
+     *
      * @method check
      */
     check(): this {
@@ -115,14 +113,14 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
     }
 
     /**
-     * Will set checked status to `false`  
+     * Will set checked status to `false`
      * It will **not** produce second notification if already unchecked
-     * 
+     *
      * #### Example:
      * ```typescript
      * toggle.uncheck();
      * ```
-     * 
+     *
      * @method uncheck
      */
     uncheck(): this {
@@ -132,12 +130,12 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
 
     /**
      * Returns boolean defining whether action is checked
-     * 
+     *
      * #### Example:
      * ```typescript
      * const isChecked = toggle.isChecked();
      * ```
-     * 
+     *
      * @method isChecked
      */
     isChecked(): boolean {
@@ -146,12 +144,12 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
 
     /**
      * Returns boolean defining whether action is unchecked
-     * 
+     *
      * #### Example:
      * const isUnchecked = toggle.isUnchecked();
      * ```typescript
      * ```
-     * 
+     *
      * @example isUnchecked
      */
     isUnchecked(): boolean {

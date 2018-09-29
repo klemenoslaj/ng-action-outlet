@@ -1,12 +1,6 @@
 import { Type } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-
-import 'rxjs/add/observable/never';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/takeUntil';
+import { BehaviorSubject, Observable, never } from 'rxjs';
+import { distinctUntilChanged , filter, switchMap, takeUntil } from 'rxjs/operators';
 
 import { ActionAbstractComponentImpl, ActionAbstractEvent, ActionAbstractOptions } from '../action-abstract/action-abstract.model';
 import { ActionGroup } from '../action-group/action-group';
@@ -33,10 +27,10 @@ export const enum ActionState {
 }
 
 /**
- * `ActionAbstract` is extended by **all** action implementations  
- * Provides all the behaviors, shared between **each** action  
+ * `ActionAbstract` is extended by **all** action implementations
+ * Provides all the behaviors, shared between **each** action
  * *e.g. title, icon, visibility, disabled, active state*
- * 
+ *
  * ## Example
  *
  * ```typescript
@@ -104,63 +98,63 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     readonly state$: Observable<ActionState>;
     /**
-     * **Abstract** property, holding `Observable`  
-     * Each derived class **should** implement it's own `fire$` observable,  
+     * **Abstract** property, holding `Observable`
+     * Each derived class **should** implement it's own `fire$` observable,
      * with it's own specific implementation
      */
     abstract readonly fire$: Observable<FireEvent>;
     /**
-     * **Abstract** property, holding `Observable`  
-     * Each derived class **should** implement it's own `changes$` observable,  
+     * **Abstract** property, holding `Observable`
+     * Each derived class **should** implement it's own `changes$` observable,
      * merging all public observables, notifying for every change doen to action
      */
     abstract readonly changes$: Observable<Options>;
 
     /**
-     * Options of action instance  
-     * **Merged** default options from derived class, default options from abstract class,  
+     * Options of action instance
+     * **Merged** default options from derived class, default options from abstract class,
      * and options provided on action creation to `constructor`
      */
     protected readonly options: Options;
     /**
-     * `Component`, provided to action `constructor`  
-     * Should be forced and used instead of component in `Injector`  
+     * `Component`, provided to action `constructor`
+     * Should be forced and used instead of component in `Injector`
      * That is handled by `ActionOutletDirective`
      */
     protected readonly forcedComponent: Type<ActionAbstractComponentImpl>;
     /**
-     * Title `BehaviorSubject`, used **internally** to notify on title change  
+     * Title `BehaviorSubject`, used **internally** to notify on title change
      * Used to leverage reactive world with non reactive
      */
     protected readonly title: BehaviorSubject<string>;
     /**
-     * Icon `BehaviorSubject`, used **internally** to notify on icon change  
+     * Icon `BehaviorSubject`, used **internally** to notify on icon change
      * Used to leverage reactive world with non reactive
      */
     protected readonly icon: BehaviorSubject<string>;
     /**
-     * Visibility `BehaviorSubject`, used **internally** to notify on visibility state change  
+     * Visibility `BehaviorSubject`, used **internally** to notify on visibility state change
      * Used to leverage reactive world with non reactive
      */
     protected readonly visible: BehaviorSubject<boolean>;
     /**
-     * Desabled state `BehaviorSubject`, used **internally** to notify on disabled state change  
+     * Desabled state `BehaviorSubject`, used **internally** to notify on disabled state change
      * Used to leverage reactive world with non reactive
      */
     protected readonly disabled: BehaviorSubject<boolean>;
     /**
-     * Action livecycle state `BehaviorSubject`, used **internally** to notify on action state change  
+     * Action livecycle state `BehaviorSubject`, used **internally** to notify on action state change
      * Used to leverage reactive world with non reactive
      */
     protected readonly state: BehaviorSubject<ActionState>;
     /**
-     * `Observable` that fires, when state matches `ActionState.Destroyed`  
+     * `Observable` that fires, when state matches `ActionState.Destroyed`
      * Used to complete all **internal** subjects
      */
     protected readonly finish: Observable<ActionState>;
 
     /**
-     * Parent of current action. This is a parent action,  
+     * Parent of current action. This is a parent action,
      * to whom current action belongs to, and renders into
      */
     private parent: ActionGroup;
@@ -171,10 +165,10 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
     ['constructor']: typeof ActionAbstract;
 
     /**
-     * Abstract action `constructor`. It will:  
-     * - **Extend** default options with derived default options and custom options  
-     * - **Create** all private subjects that are used to leverage reactive world with non reactive  
-     * - **Create** observable for each private subject  
+     * Abstract action `constructor`. It will:
+     * - **Extend** default options with derived default options and custom options
+     * - **Create** all private subjects that are used to leverage reactive world with non reactive
+     * - **Create** observable for each private subject
      * - **Assign** forced component, that is going to be used by `ActionOutletDirective`
      *
      * @param options Options for `ActionAbstract`
@@ -189,44 +183,52 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
         this.visible = new BehaviorSubject(visible);
         this.disabled = new BehaviorSubject(disabled);
         this.state = new BehaviorSubject(ActionState.Inactive);
-        this.finish = this.state.filter(state => state === ActionState.Destroyed);
+        this.finish = this.state.pipe(
+          filter(state => state === ActionState.Destroyed)
+        );
 
         this.title$ = this.handleLivecycleDistinct(this.title.asObservable());
         this.icon$ = this.handleLivecycleDistinct(this.icon.asObservable());
         this.visible$ = this.handleLivecycleDistinct(this.visible.asObservable());
         this.disabled$ = this.handleLivecycleDistinct(this.disabled.asObservable());
-        this.state$ = this.state.asObservable().distinctUntilChanged();
+        this.state$ = this.state.asObservable().pipe(
+          distinctUntilChanged()
+        );
 
         this.forcedComponent = component;
     }
 
     /**
-     * Abstract method trigger should be implemented by **each** derived class, in  
+     * Abstract method trigger should be implemented by **each** derived class, in
      * combination with `fire` subject and `fire$` observable
      */
     abstract trigger(): this;
 
     /**
-     * Used **internally** to handle livecycle of observables  
-     * It will handle action state(`Active`, `Inactive` - **paused**, `Destroyed`),  
+     * Used **internally** to handle livecycle of observables
+     * It will handle action state(`Active`, `Inactive` - **paused**, `Destroyed`),
      * and will notify **only** when value or reference **changes**
      *
      * @param observable `Observable` to handle live cycle
      * @param shouldPause Defining, whether it should be possible to pause provided observable. True by default
      */
     protected handleLivecycleDistinct<T>(observable: Observable<T>, shouldPause?: boolean): Observable<T> {
-        return this.handleLivecycle(observable, shouldPause).distinctUntilChanged();
+        return this.handleLivecycle(observable, shouldPause).pipe(
+          distinctUntilChanged()
+        );
     }
 
     /**
-     * Used internally to handle livecycle of observables  
+     * Used internally to handle livecycle of observables
      * It will handle action state(`Active`, `Inactive` - **paused**, `Destroyed`)
      *
      * @param observable `Observable` to handle live cycle
      * @param shouldPause Defining, whether it should be possible to pause provided observable. True by default
      */
     protected handleLivecycle<T>(observable: Observable<T>, shouldPause: boolean = true): Observable<T> {
-        const source = observable.takeUntil(this.finish);
+        const source = observable.pipe(
+          takeUntil(this.finish)
+        );
 
         if (!shouldPause) {
             return source;
@@ -237,17 +239,19 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
 
     /**
      * Used **internally** to handle pausing of observables
-     * Will deactivate observable, whenever state of the action changes to `Inactive`,  
+     * Will deactivate observable, whenever state of the action changes to `Inactive`,
      * and will activate observable again, when it switches back to `Active`
      *
      * @param observable `Observable` to handle pausing
      */
     protected handleActivateState<T>(observable: Observable<T>): Observable<T> {
-        return this.state.switchMap(state => state === ActionState.Inactive ? (Observable.never<T>()) : observable);
+        return this.state.pipe(
+          switchMap(state => state === ActionState.Inactive ? (never()) : observable)
+        );
     }
 
     /**
-     * Will **activate** all observables in current action,  
+     * Will **activate** all observables in current action,
      * **unless action is already destroyed**
      */
     activate(): this {
@@ -260,7 +264,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
     }
 
     /**
-     * Will **deactivate** all observables in current action,  
+     * Will **deactivate** all observables in current action,
      * **unless action is already destroyed**
      */
     deactivate(): this {
@@ -273,7 +277,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
     }
 
     /**
-     * Will set action state to `Destroyed`, which will  
+     * Will set action state to `Destroyed`, which will
      * complete all observables
      */
     destroy(): this {
@@ -408,9 +412,9 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
     }
 
     /**
-     * Returns a `Component`, that is provided as forced component via action `constructor`  
-     * This component should be used by `ActionOutletDirective`, to represent  
-     * the action in DOM, instead the component, provided via Angular `Injector`  
+     * Returns a `Component`, that is provided as forced component via action `constructor`
+     * This component should be used by `ActionOutletDirective`, to represent
+     * the action in DOM, instead the component, provided via Angular `Injector`
      */
     getForcedComponent(): Type<ActionAbstractComponentImpl> {
         return this.forcedComponent;
@@ -426,10 +430,10 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
     /**
      * @internal
      *
-     * **Internal** method to set parent of current action. It will:  
-     * - **Set** parent, but only if currently not defined  
-     * - **Disable** current action if parent is disabled  
-     * - **Activate** current action if parent is active  
+     * **Internal** method to set parent of current action. It will:
+     * - **Set** parent, but only if currently not defined
+     * - **Disable** current action if parent is disabled
+     * - **Activate** current action if parent is active
      */
     _setParent(parent: ActionGroup): this {
         if (this.parent === undefined) {
@@ -448,10 +452,10 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
     /**
      * @internal
      *
-     * **Internal** method to unset parent of current action. It will:  
-     * - **Set** parent to undefined  
-     * - **Enable** current action  
-     * - **Deactivate** current action  
+     * **Internal** method to unset parent of current action. It will:
+     * - **Set** parent to undefined
+     * - **Enable** current action
+     * - **Deactivate** current action
      */
     _unsetParent(): this {
         this.parent = undefined;
