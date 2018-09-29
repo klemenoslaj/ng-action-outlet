@@ -71,7 +71,7 @@ describe('Directive: ActionOutletDirective', function (): void {
         this.fixture.detectChanges();
 
         expect(this.component.element.nativeElement.children.length).toBe(1);
-        expect(this.component.element.nativeElement.children[0].tagName.toLowerCase()).toBe('app-dumb');
+        expect(this.component.element.nativeElement.children[0].tagName.toLowerCase()).toBe('lib-dumb');
         expect((<any>this.component.outlet).componentRef.instance).toEqual(jasmine.any(DumbComponent));
     });
 

@@ -8,430 +8,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">NgActionOutlet</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../index.html">NgActionOutlet</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                                <li class="link">
-                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                        <a href="../license.html"
-                                    >
-                                        <span class="fa fa-file-text-o"></span>LICENSE
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../modules.html" >
-                            <div class="menu-toggler linked" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            >
-                                <span class="fa fa-archive"></span>
-                                <span class="link-name">Modules</span>
-                                <span class="fa fa-angle-down"></span>
-                            </div>
-                        </a>
-                        <ul class="links collapse "
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/ActionOutletModule.html" >ActionOutletModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-directives-links"
-                            >
-                            <span class="fa fa-code"></span>
-                            <span>Directives</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-directives-links"
-                            >
-                                <li class="link">
-                                    <a href="../directives/ActionOutletDirective.html" >ActionOutletDirective</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-classes-links"
-                            >
-                            <span class="fa fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="../classes/ActionAbstract.html" >ActionAbstract</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/ActionButton.html" >ActionButton</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/ActionGroup.html" >ActionGroup</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/ActionToggle.html" >ActionToggle</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-injectables-links"
-                            >
-                            <span class="fa fa-long-arrow-down"></span>
-                            <span>Injectables</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-injectables-links"
-                            >
-                                <li class="link">
-                                    <a href="../injectables/ActionOutletFactory.html"  data-type="entity-link" class="active" >ActionOutletFactory</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-interfaces-links"
-                            >
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="../interfaces/ActionAbstractComponentImpl.html" >ActionAbstractComponentImpl</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionAbstractEvent.html" >ActionAbstractEvent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionAbstractOptions.html" >ActionAbstractOptions</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionButtonEvent.html" >ActionButtonEvent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionButtonOptions.html" >ActionButtonOptions</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionGroupEvent.html" >ActionGroupEvent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionGroupOptions.html" >ActionGroupOptions</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionOutlet.html" >ActionOutlet</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionToggleEvent.html" >ActionToggleEvent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/ActionToggleOptions.html" >ActionToggleOptions</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-miscellaneous-links"
-                            >
-                            <span class="fa fa-cubes"></span>
-                            <span>Miscellaneous</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-miscellaneous-links"
-                            >
-                                <li class="link">
-                                  <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
-                                </li>
-                                <li class="link">
-                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
-                                </li>
-                                <li class="link">
-                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../index.html">NgActionOutlet</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                               <a href="../license.html"
-                                           >
-                                               <span class="fa fa-file-text-o"></span>LICENSE
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../modules.html" >
-                                   <div class="menu-toggler linked" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   >
-                                       <span class="fa fa-archive"></span>
-                                       <span class="link-name">Modules</span>
-                                       <span class="fa fa-angle-down"></span>
-                                   </div>
-                               </a>
-                               <ul class="links collapse "
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/ActionOutletModule.html" >ActionOutletModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#directives-links"
-                   >
-                                   <span class="fa fa-code"></span>
-                                   <span>Directives</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="directives-links"
-                   >
-                                       <li class="link">
-                                           <a href="../directives/ActionOutletDirective.html" >ActionOutletDirective</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#classes-links"
-                   >
-                                   <span class="fa fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../classes/ActionAbstract.html" >ActionAbstract</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/ActionButton.html" >ActionButton</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/ActionGroup.html" >ActionGroup</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/ActionToggle.html" >ActionToggle</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#injectables-links"
-                   >
-                                   <span class="fa fa-long-arrow-down"></span>
-                                   <span>Injectables</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="injectables-links"
-                   >
-                                       <li class="link">
-                                           <a href="../injectables/ActionOutletFactory.html"  data-type="entity-link" class="active" >ActionOutletFactory</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#interfaces-links"
-                   >
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="../interfaces/ActionAbstractComponentImpl.html" >ActionAbstractComponentImpl</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionAbstractEvent.html" >ActionAbstractEvent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionAbstractOptions.html" >ActionAbstractOptions</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionButtonEvent.html" >ActionButtonEvent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionButtonOptions.html" >ActionButtonOptions</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionGroupEvent.html" >ActionGroupEvent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionGroupOptions.html" >ActionGroupOptions</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionOutlet.html" >ActionOutlet</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionToggleEvent.html" >ActionToggleEvent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/ActionToggleOptions.html" >ActionToggleOptions</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#miscellaneous-links"
-                   >
-                                   <span class="fa fa-cubes"></span>
-                                   <span>Miscellaneous</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="miscellaneous-links"
-                   >
-                                       <li class="link">
-                                         <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content injectable">
                    <div class="content-data">
+
 
 
 
@@ -444,14 +45,12 @@
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-
-
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
@@ -460,7 +59,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/lib/action-outlet.service.ts</code>
+            <code>projects/core/src/lib/action-outlet.service.ts</code>
         </p>
 
             <p class="comment">
@@ -471,306 +70,350 @@
 In order to keep the code clean, use only one approach.</p>
 <h2 id="example">Example</h2>
 <p><strong>Instead of</strong></p>
-<pre class="line-numbers"><code class="language-typescript">const buttonAction = new ActionButton({
-    title: &#39;Action Title&#39;,
-    icon: &#39;icon&#39;,
-    callback: callbackMethod
-});</code></pre><p><strong>Can do</strong></p>
-<pre class="line-numbers"><code class="language-typescript">const buttonAction = this.actionOutletFactory.createButton()
-    .setTitle(&#39;Action Title&#39;)
-    .setIcon(&#39;icon&#39;)
-    .fire$.subscribe(callbackMethod);</code></pre>
+<div><pre class="line-numbers"><code class="language-typescript"> * const buttonAction = new ActionButton({
+ *    title: &#39;Action Title&#39;,
+ *    icon: &#39;icon&#39;,
+ *    callback: callbackMethod
+ * });
+ *</code></pre></div><p><strong>Can do</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript"> * const buttonAction = this.actionOutletFactory.createButton()
+ *    .setTitle(&#39;Action Title&#39;)
+ *    .setIcon(&#39;icon&#39;)
+ *    .fire$.subscribe(callbackMethod);
+ *</code></pre></div>
             </p>
 
 
             <section>
-                <h3 id="index">Index</h3>
-                <table class="table table-sm table-bordered index-table">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <h6><b>Methods</b></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <ul class="index-list">
-                                    <li>
-                                        <a href="#createButton">createButton</a>
-                                    </li>
-                                    <li>
-                                        <a href="#createGroup">createGroup</a>
-                                    </li>
-                                    <li>
-                                        <a href="#createToggle">createToggle</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createButton">createButton</a>
+                            </li>
+                            <li>
+                                <a href="#createGroup">createGroup</a>
+                            </li>
+                            <li>
+                                <a href="#createToggle">createToggle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
 
             <section>
-                
-                    <h3 id="methods">
-                        Methods
-                    </h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="createButton"></a>
-                                    <span class="name">
-                                        <b>
-                                        createButton
-                                        </b>
-                                        <a href="#createButton"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/action-outlet.service.ts:49</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>Will create and return a new instance of <code>ActionButton</code> with default options and component</p>
-            <h4 id="example-">Example:</h4>
-            <pre class="line-numbers"><code class="language-typescript">const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });</code></pre></div>
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>options</td>
-                                                              <td>
-                                                                      <code><a href="../interfaces/ActionButtonOptions.html" target="_self" >ActionButtonOptions</a></code>
-                                                              </td>
-                                                              <td>
-                                                                  true
-                                                              </td>
-                                                              <td><p>Override the default options for <code>ActionButton</code></p>
-            </td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td>component</td>
-                                                              <td>
-                                                                      <code><a href="../classes/ActionButton.html" target="_self" >Type&lt;ActionButtonComponentImpl&gt;</a></code>
-                                                              </td>
-                                                              <td>
-                                                                  true
-                                                              </td>
-                                                              <td><p>Override the default component for <code>ActionButton</code></p>
-            </td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="../classes/ActionButton.html" target="_self" >ActionButton</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="createGroup"></a>
-                                    <span class="name">
-                                        <b>
-                                        createGroup
-                                        </b>
-                                        <a href="#createGroup"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>createGroup(options?: <a href="../interfaces/ActionGroupOptions.html">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html">Type<ActionGroupComponentImpl></a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/action-outlet.service.ts:65</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>Will create and return a new instance of <code>ActionGroup</code> with default options and component</p>
-            <h4 id="example-">Example:</h4>
-            <pre class="line-numbers"><code class="language-typescript">const group = this.actionOutlet.createGroup({ dropdown: true });</code></pre></div>
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>options</td>
-                                                              <td>
-                                                                      <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
-                                                              </td>
-                                                              <td>
-                                                                  true
-                                                              </td>
-                                                              <td><p>Override the default options for <code>ActionGroup</code></p>
-            </td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td>component</td>
-                                                              <td>
-                                                                      <code><a href="../classes/ActionGroup.html" target="_self" >Type&lt;ActionGroupComponentImpl&gt;</a></code>
-                                                              </td>
-                                                              <td>
-                                                                  true
-                                                              </td>
-                                                              <td><p>Override the default component for <code>ActionGroup</code></p>
-            </td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="createToggle"></a>
-                                    <span class="name">
-                                        <b>
-                                        createToggle
-                                        </b>
-                                        <a href="#createToggle"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>createToggle(options?: <a href="../interfaces/ActionToggleOptions.html">ActionToggleOptions</a>, component?: <a href="../classes/ActionToggle.html">Type<ActionToggleComponentImpl></a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/action-outlet.service.ts:81</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>Will create and return a new instance of <code>ActionToggle</code> with default options and component</p>
-            <h4 id="example-">Example:</h4>
-            <pre class="line-numbers"><code class="language-typescript">const toggle = this.actionOutlet.createToggle({ checked: true });</code></pre></div>
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>options</td>
-                                                              <td>
-                                                                      <code><a href="../interfaces/ActionToggleOptions.html" target="_self" >ActionToggleOptions</a></code>
-                                                              </td>
-                                                              <td>
-                                                                  true
-                                                              </td>
-                                                              <td><p>Override the default options for <code>ActionToggle</code></p>
-            </td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td>component</td>
-                                                              <td>
-                                                                      <code><a href="../classes/ActionToggle.html" target="_self" >Type&lt;ActionToggleComponentImpl&gt;</a></code>
-                                                              </td>
-                                                              <td>
-                                                                  true
-                                                              </td>
-                                                              <td><p>Override the default component for <code>ActionToggle</code></p>
-            </td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="../classes/ActionToggle.html" target="_self" >ActionToggle</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createButton"></a>
+                        <span class="name">
+                            <b>
+                            createButton
+                            </b>
+                            <a href="#createButton"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Will create and return a new instance of <code>ActionButton</code> with default options and component</p>
+<h4 id="example-">Example:</h4>
+<div><pre class="line-numbers"><code class="language-typescript">     * const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });
+     *</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/ActionButtonOptions.html" target="_self" >ActionButtonOptions</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Override the default options for <code>ActionButton</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>component</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ActionButton.html" target="_self" >Type&lt;ActionButtonComponentImpl&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Override the default component for <code>ActionButton</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ActionButton.html" target="_self" >ActionButton</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createGroup"></a>
+                        <span class="name">
+                            <b>
+                            createGroup
+                            </b>
+                            <a href="#createGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createGroup(options?: <a href="../interfaces/ActionGroupOptions.html">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html">Type<ActionGroupComponentImpl></a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Will create and return a new instance of <code>ActionGroup</code> with default options and component</p>
+<h4 id="example-">Example:</h4>
+<div><pre class="line-numbers"><code class="language-typescript">     * const group = this.actionOutlet.createGroup({ dropdown: true });
+     *</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Override the default options for <code>ActionGroup</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>component</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ActionGroup.html" target="_self" >Type&lt;ActionGroupComponentImpl&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Override the default component for <code>ActionGroup</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createToggle"></a>
+                        <span class="name">
+                            <b>
+                            createToggle
+                            </b>
+                            <a href="#createToggle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createToggle(options?: <a href="../interfaces/ActionToggleOptions.html">ActionToggleOptions</a>, component?: <a href="../classes/ActionToggle.html">Type<ActionToggleComponentImpl></a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Will create and return a new instance of <code>ActionToggle</code> with default options and component</p>
+<h4 id="example-">Example:</h4>
+<div><pre class="line-numbers"><code class="language-typescript">     * const toggle = this.actionOutlet.createToggle({ checked: true });
+     *</code></pre></div></div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/ActionToggleOptions.html" target="_self" >ActionToggleOptions</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Override the default options for <code>ActionToggle</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>component</td>
+                                                        <td>
+                                                                    <code><a href="../classes/ActionToggle.html" target="_self" >Type&lt;ActionToggleComponentImpl&gt;</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Override the default component for <code>ActionToggle</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/ActionToggle.html" target="_self" >ActionToggle</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
-        <pre class="line-numbers"><code class="language-typescript">import { Injectable, Type } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Type } from &#x27;@angular/core&#x27;;
 
 import { ActionButton } from &#x27;./action-button/action-button&#x27;;
 import { ActionButtonComponentImpl, ActionButtonOptions } from &#x27;./action-button/action-button.model&#x27;;
@@ -856,7 +499,11 @@ export class ActionOutletFactory implements ActionOutlet {
 }
 </code></pre>
     </div>
+
 </div>
+
+
+
 
 
 
@@ -867,7 +514,7 @@ export class ActionOutletFactory implements ActionOutlet {
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -875,8 +522,19 @@ export class ActionOutletFactory implements ActionOutlet {
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ActionOutletFactory.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -887,17 +545,17 @@ export class ActionOutletFactory implements ActionOutlet {
 
        <script src="../js/compodoc.js"></script>
 
-       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
-
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
        <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
-       <script src="../js/search/search_index.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>

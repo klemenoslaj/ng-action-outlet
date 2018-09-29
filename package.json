@@ -12,7 +12,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:core": "ng build core",
+    "docs:coverage": "compodoc ./projects/core -p ./projects/core/tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 100",
+    "docs:build.prod": "yarn docs:coverage && compodoc ./projects/core -p ./projects/core/tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --name NgActionOutlet --output docs",
+    "docs:build.serve": "compodoc ./projects/core -p ./projects/core/tsconfig.docs.json --disableLifeCycleHooks --disableInternal -s -w"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +39,7 @@
     "@angular/cli": "~6.2.3",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
+    "@compodoc/compodoc": "^1.1.5",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
