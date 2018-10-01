@@ -4,7 +4,7 @@ The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on
 and have the possibility to get notified for each and every change, that happens to any particular action.  
 *e.g. Title change, icon change, disabled state, etc.*
 
-![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet.svg)
+![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)
 
 ## Getting started
 
