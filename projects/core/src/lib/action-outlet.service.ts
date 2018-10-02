@@ -32,16 +32,18 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from './action-toggle/
  * ```
  */
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ActionOutletFactory implements ActionOutlet {
     /**
      * Will create and return a new instance of `ActionButton` with default options and component
-     * 
+     *
      * #### Example:
      * ```typescript
      * const button = this.actionOutlet.createButton({ title: 'Test' });
      * ```
-     * 
+     *
      * @method createButton
      * @param options Override the default options for `ActionButton`
      * @param component Override the default component for `ActionButton`
@@ -52,7 +54,7 @@ export class ActionOutletFactory implements ActionOutlet {
 
     /**
      * Will create and return a new instance of `ActionGroup` with default options and component
-     * 
+     *
      * #### Example:
      * ```typescript
      * const group = this.actionOutlet.createGroup({ dropdown: true });

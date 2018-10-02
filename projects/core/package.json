@@ -1,6 +1,12 @@
 {
   "name": "@ng-action-outlet/core",
   "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://klemenoslaj.github.io/ng-action-outlet/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klemenoslaj/ng-action-outlet.git"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"

@@ -19,7 +19,7 @@
     ],
     "paths": {
       "@ng-action-outlet/core": [
-        "projects/ng-action-outlet/core/public_api.ts"
+        "projects/core/src/public_api.ts"
       ]
     }
   }

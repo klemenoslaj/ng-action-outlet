@@ -7,12 +7,6 @@
     "url": "https://github.com/klemenoslaj/ng-action-outlet.git"
   },
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "build:core": "ng build core",
     "docs:coverage": "compodoc ./projects/core -p ./projects/core/tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 100",
     "docs:build.prod": "yarn docs:coverage && compodoc ./projects/core -p ./projects/core/tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --name NgActionOutlet --output docs",
