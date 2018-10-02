@@ -9,11 +9,15 @@ import { ActionOutletFactory, ActionButton } from '@ng-action-outlet/core';
 export class AppComponent implements OnInit {
   action: ActionButton;
 
+  // Defaults
+  icon = 'fa-search';
+  title = 'Search';
+
   constructor(private actionOutlet: ActionOutletFactory) {}
 
   ngOnInit(): void {
-    this.action = this.actionOutlet.createButton({ title: 'Button' });
+    this.action = this.actionOutlet.createButton({ title: this.title, icon: this.icon });
 
-    console.log('#', this.action);
+    this.action.fire$.subscribe(() => alert('button fired'));
   }
 }
