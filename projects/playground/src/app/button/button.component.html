@@ -1,3 +1,11 @@
-<p>
-  button works!
-</p>
+<button
+  type="button"
+  class="btn btn-info"
+  (click)="action.trigger()"
+  [disabled]="action.disabled$ | async">
+  <span
+    *ngIf="action.icon$ | async"
+    class="fas {{ action.icon$ | async }}">
+  </span>
+  {{ action.title$ | async }}
+</button>

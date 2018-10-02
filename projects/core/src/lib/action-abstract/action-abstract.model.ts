@@ -1,7 +1,7 @@
 import { AnyAction } from '../action-outlet.model';
 
 /**
- * **Abstract** interface that all derived action component implementation types should extend  
+ * **Abstract** interface that all derived action component implementation types should extend
  * All components will shere this interface after implementing derived component implementation types
  */
 export interface ActionAbstractComponentImpl<Action extends AnyAction = AnyAction> {
@@ -10,7 +10,7 @@ export interface ActionAbstractComponentImpl<Action extends AnyAction = AnyActio
      */
     action: Action; // @Input
     /**
-     * Hidden property, that `HostBinding` should be used for, in order to shor or hide action
+     * Hidden property, that `HostBinding` should be used for, in order to show or hide action
      */
     hidden: boolean; // @HostBinding
 }
@@ -38,12 +38,12 @@ export interface ActionAbstractOptions {
 }
 
 /**
- * The event interface, that **every** event of child actions should extend from  
+ * The event interface, that **every** event of child actions should extend from
  * Used as a value provided to `fire$` observable subscribers
  */
 export interface ActionAbstractEvent {
     /**
-     * The action instance, tha this event is comming from  
+     * The action instance, tha this event is comming from
      * Should be overriden by derived interface with more specific action
      */
     readonly action: AnyAction;

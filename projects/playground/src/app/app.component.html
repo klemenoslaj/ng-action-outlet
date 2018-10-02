@@ -1,1 +1,52 @@
+
+<h3>Action outlet</h3>
 <div [actionOutlet]="action"></div>
+
+<hr>
+
+<h3>Toggles</h3>
+<!-- Disabled state -->
+<button
+  class="btn btn-default"
+  (click)="action.disable()"
+  *ngIf="!(action.disabled$ | async)">
+  Disable button
+</button>
+<button
+  class="btn btn-default"
+  (click)="action.enable()"
+  *ngIf="action.disabled$ | async">
+  Enable button
+</button>
+
+&nbsp;
+
+<!-- Visibility state -->
+<button
+  class="btn btn-default"
+  (click)="action.hide()"
+  *ngIf="action.visible$ | async">
+  Hide button
+</button>
+<button
+  class="btn btn-default"
+  (click)="action.show()"
+  *ngIf="!(action.visible$ | async)">
+  Show button
+</button>
+
+&nbsp;
+
+<!-- Icon add/remove -->
+<button
+  class="btn btn-default"
+  (click)="action.setIcon('')"
+  *ngIf="action.icon$ | async">
+  Remove icon
+</button>
+<button
+  class="btn btn-default"
+  (click)="action.setIcon(icon)"
+  *ngIf="!(action.icon$ | async)">
+  Add icon
+</button>
