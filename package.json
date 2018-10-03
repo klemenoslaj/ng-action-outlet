@@ -61,7 +61,7 @@
     "typescript": "~2.9.2"
   },
   "files": [
-    "dist"
+    "dist/core"
   ],
   "config": {
     "commitizen": {
