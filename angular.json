@@ -21,7 +21,8 @@
           "options": {
             "main": "projects/core/src/test.ts",
             "tsConfig": "projects/core/tsconfig.spec.json",
-            "karmaConfig": "projects/core/karma.conf.js"
+            "karmaConfig": "projects/core/karma.conf.js",
+            "sourceMap": true
           }
         },
         "lint": {
@@ -110,6 +111,7 @@
             "styles": [
               "projects/playground/src/styles.css"
             ],
+            "sourceMap": true,
             "scripts": [],
             "assets": [
               "projects/playground/src/favicon.ico",

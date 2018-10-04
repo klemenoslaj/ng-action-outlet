@@ -18,7 +18,7 @@ before_script:
 script:
   - yarn commitlint-travis
   - ng build core
-  - ng test core --browsers ChromeHeadless --watch false
+  - ng test core --browsers ChromeHeadless --watch false --code-coverage
 after_success:
   - yarn travis-deploy-once "yarn semantic-release"
 branches:
