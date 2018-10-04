@@ -60,9 +60,9 @@
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"
   },
-  "files": [
-    "dist/core"
-  ],
+  "release": {
+    "pkgRoot": "dist/core"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
