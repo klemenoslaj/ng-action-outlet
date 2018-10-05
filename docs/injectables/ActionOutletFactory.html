@@ -146,7 +146,7 @@ In order to keep the code clean, use only one approach.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -240,7 +240,7 @@ In order to keep the code clean, use only one approach.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -334,7 +334,7 @@ In order to keep the code clean, use only one approach.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:81</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:83</a></div>
                             </td>
                         </tr>
 
@@ -447,16 +447,18 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from &#x27;./action-to
  * &#x60;&#x60;&#x60;
  */
 
-@Injectable()
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
 export class ActionOutletFactory implements ActionOutlet {
     /**
      * Will create and return a new instance of &#x60;ActionButton&#x60; with default options and component
-     * 
+     *
      * #### Example:
      * &#x60;&#x60;&#x60;typescript
      * const button &#x3D; this.actionOutlet.createButton({ title: &#x27;Test&#x27; });
      * &#x60;&#x60;&#x60;
-     * 
+     *
      * @method createButton
      * @param options Override the default options for &#x60;ActionButton&#x60;
      * @param component Override the default component for &#x60;ActionButton&#x60;
@@ -467,7 +469,7 @@ export class ActionOutletFactory implements ActionOutlet {
 
     /**
      * Will create and return a new instance of &#x60;ActionGroup&#x60; with default options and component
-     * 
+     *
      * #### Example:
      * &#x60;&#x60;&#x60;typescript
      * const group &#x3D; this.actionOutlet.createGroup({ dropdown: true });

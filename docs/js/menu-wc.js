@@ -35,6 +35,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                     </li>
                     <li class="link">
+                            <a href="license.html"
+                        data-type="chapter-link">
+                            <span class="icon ion-ios-paper"></span>LICENSE
+                        </a>
+                    </li>
+                    <li class="link">
                         <a href="dependencies.html"
                             data-type="chapter-link">
                             <span class="icon ion-ios-list"></span>Dependencies
@@ -57,29 +63,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/ActionOutletModule.html" data-type="entity-link">ActionOutletModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#directives-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' : 'data-target="#xs-directives-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' }>
+                                    ${ isNormalMode ? 'data-target="#directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' : 'data-target="#xs-directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' }>
                                     <span class="icon ion-md-code-working"></span>
                                     <span>Directives</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' : 'id="xs-directives-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' }>
+                                    ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' : 'id="xs-directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' }>
                                         <li class="link">
                                             <a href="directives/ActionOutletDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ActionOutletDirective</a>
-                                        </li>
-                                </ul>
-                            </li>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#injectables-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' : 'data-target="#xs-injectables-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' }>
-                                    <span class="icon ion-md-arrow-round-down"></span>
-                                    <span>Injectables</span>
-                                    <span class="icon ion-ios-arrow-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="injectables-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' : 'id="xs-injectables-links-module-ActionOutletModule-232bc3f029c22799f06481471bcbf6c8"' }>
-                                        <li class="link">
-                                            <a href="injectables/ActionOutletFactory.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>ActionOutletFactory</a>
                                         </li>
                                 </ul>
                             </li>
@@ -109,6 +101,20 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     </li>
             </ul>
         </li>
+                <li class="chapter">
+                    <div class="simple menu-toggler" data-toggle="collapse"
+                        ${ isNormalMode ? 'data-target="#injectables-links"' : 'data-target="#xs-injectables-links"' }>
+                        <span class="icon ion-md-arrow-round-down"></span>
+                        <span>Injectables</span>
+                        <span class="icon ion-ios-arrow-down"></span>
+                    </div>
+                    <ul class="links collapse"
+                    ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                            <li class="link">
+                                <a href="injectables/ActionOutletFactory.html" data-type="entity-link">ActionOutletFactory</a>
+                            </li>
+                    </ul>
+                </li>
         <li class="chapter">
             <div class="simple menu-toggler" data-toggle="collapse"
                 ${ isNormalMode ? 'data-target="#interfaces-links"' : 'data-target="#xs-interfaces-links"' }>

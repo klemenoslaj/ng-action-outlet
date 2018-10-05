@@ -71,7 +71,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>The event interface, that <strong>every</strong> event of child actions should extend from<br>Used as a value provided to <code>fire$</code> observable subscribers</p>
+                <p>The event interface, that <strong>every</strong> event of child actions should extend from
+Used as a value provided to <code>fire$</code> observable subscribers</p>
 
             </p>
 
@@ -131,7 +132,8 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>The action instance, tha this event is comming from<br>Should be overriden by derived interface with more specific action</p>
+                                    <div class="io-description"><p>The action instance, tha this event is comming from
+Should be overriden by derived interface with more specific action</p>
 </div>
                                 </td>
                             </tr>
@@ -145,7 +147,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AnyAction } from &#x27;../action-outlet.model&#x27;;
 
 /**
- * **Abstract** interface that all derived action component implementation types should extend  
+ * **Abstract** interface that all derived action component implementation types should extend
  * All components will shere this interface after implementing derived component implementation types
  */
 export interface ActionAbstractComponentImpl&lt;Action extends AnyAction &#x3D; AnyAction&gt; {
@@ -154,7 +156,7 @@ export interface ActionAbstractComponentImpl&lt;Action extends AnyAction &#x3D; 
      */
     action: Action; // @Input
     /**
-     * Hidden property, that &#x60;HostBinding&#x60; should be used for, in order to shor or hide action
+     * Hidden property, that &#x60;HostBinding&#x60; should be used for, in order to show or hide action
      */
     hidden: boolean; // @HostBinding
 }
@@ -182,12 +184,12 @@ export interface ActionAbstractOptions {
 }
 
 /**
- * The event interface, that **every** event of child actions should extend from  
+ * The event interface, that **every** event of child actions should extend from
  * Used as a value provided to &#x60;fire$&#x60; observable subscribers
  */
 export interface ActionAbstractEvent {
     /**
-     * The action instance, tha this event is comming from  
+     * The action instance, tha this event is comming from
      * Should be overriden by derived interface with more specific action
      */
     readonly action: AnyAction;

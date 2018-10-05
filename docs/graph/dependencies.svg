@@ -22,61 +22,45 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_ActionOutletModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="58,-70 58,-268 438,-268 438,-70 58,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="160,-70 160,-268 336,-268 336,-70 160,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_ActionOutletModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="272,-78 272,-130 430,-130 430,-78 272,-78"/>
+<polygon fill="none" stroke="#000000" points="169,-78 169,-130 327,-130 327,-78 169,-78"/>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_ActionOutletModule_exports</title>
-<polygon fill="none" stroke="#000000" points="177,-208 177,-260 337,-260 337,-208 177,-208"/>
-</g>
-<g id="clust7" class="cluster">
-<title>cluster_ActionOutletModule_providers</title>
-<polygon fill="none" stroke="#000000" points="66,-78 66,-130 264,-130 264,-78 66,-78"/>
+<polygon fill="none" stroke="#000000" points="168,-208 168,-260 328,-260 328,-208 168,-208"/>
 </g>
 <!-- ActionOutletDirective -->
 <g id="node1" class="node">
 <title>ActionOutletDirective</title>
-<polygon fill="#ffffb3" stroke="#000000" points="421.6783,-122 280.3217,-122 280.3217,-86 421.6783,-86 421.6783,-122"/>
-<text text-anchor="middle" x="351" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletDirective</text>
+<polygon fill="#ffffb3" stroke="#000000" points="318.6783,-122 177.3217,-122 177.3217,-86 318.6783,-86 318.6783,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletDirective</text>
 </g>
 <!-- ActionOutletModule -->
 <g id="node2" class="node">
 <title>ActionOutletModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="323.1457,-187 320.1457,-191 299.1457,-191 296.1457,-187 190.8543,-187 190.8543,-151 323.1457,-151 323.1457,-187"/>
-<text text-anchor="middle" x="257" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="314.1457,-187 311.1457,-191 290.1457,-191 287.1457,-187 181.8543,-187 181.8543,-151 314.1457,-151 314.1457,-187"/>
+<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletModule</text>
 </g>
 <!-- ActionOutletDirective&#45;&gt;ActionOutletModule -->
 <g id="edge1" class="edge">
 <title>ActionOutletDirective&#45;&gt;ActionOutletModule</title>
-<path fill="none" stroke="#000000" d="M301.8668,-122.1061C301.8668,-122.1061 301.8668,-140.991 301.8668,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="298.3668,-140.9909 301.8668,-150.991 305.3668,-140.991 298.3668,-140.9909"/>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- ActionOutletDirective  -->
 <g id="node3" class="node">
 <title>ActionOutletDirective </title>
-<polygon fill="#fb8072" stroke="#000000" points="329.1786,-252 184.8214,-252 184.8214,-216 329.1786,-216 329.1786,-252"/>
-<text text-anchor="middle" x="257" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletDirective </text>
+<polygon fill="#fb8072" stroke="#000000" points="320.1786,-252 175.8214,-252 175.8214,-216 320.1786,-216 320.1786,-252"/>
+<text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletDirective </text>
 </g>
 <!-- ActionOutletModule&#45;&gt;ActionOutletDirective  -->
 <g id="edge2" class="edge">
 <title>ActionOutletModule&#45;&gt;ActionOutletDirective </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M257,-187.1061C257,-187.1061 257,-205.991 257,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="253.5001,-205.9909 257,-215.991 260.5001,-205.991 253.5001,-205.9909"/>
-</g>
-<!-- ActionOutletFactory -->
-<g id="node4" class="node">
-<title>ActionOutletFactory</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="165" cy="-104" rx="90.9071" ry="18"/>
-<text text-anchor="middle" x="165" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionOutletFactory</text>
-</g>
-<!-- ActionOutletFactory&#45;&gt;ActionOutletModule -->
-<g id="edge3" class="edge">
-<title>ActionOutletFactory&#45;&gt;ActionOutletModule</title>
-<path fill="none" stroke="#000000" d="M223.3155,-118.104C223.3155,-118.104 223.3155,-140.7209 223.3155,-140.7209"/>
-<polygon fill="#000000" stroke="#000000" points="219.8156,-140.7209 223.3155,-150.7209 226.8156,-140.7209 219.8156,-140.7209"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
 </g>
 </g>
 </svg>
