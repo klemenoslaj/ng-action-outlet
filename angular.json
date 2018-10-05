@@ -22,7 +22,8 @@
             "main": "projects/core/src/test.ts",
             "tsConfig": "projects/core/tsconfig.spec.json",
             "karmaConfig": "projects/core/karma.conf.js",
-            "sourceMap": true
+            "sourceMap": true,
+            "codeCoverage": true
           }
         },
         "lint": {

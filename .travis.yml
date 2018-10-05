@@ -1,7 +1,5 @@
 
 sudo: required
-addons:
-  chrome: stable
 language: node_js
 before_install: # if "install" is overridden
   # Repo for Yarn
@@ -18,7 +16,7 @@ before_script:
 script:
   - yarn commitlint-travis
   - ng build core
-  - ng test core --browsers ChromeHeadless --watch false --code-coverage
+  - ng test core --browsers ChromiumHeadless --watch false
 after_success:
   - yarn travis-deploy-once "yarn semantic-release"
 branches:
