@@ -1,10 +1,14 @@
+![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)
+![Coveralls github](https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg)
+![David](https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg)
+![GitHub tag](https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg)
+![License](https://img.shields.io/npm/l/@ng-action-outlet/core.svg)
+
 # [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
 The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on runtime  
 and have the possibility to get notified for each and every change, that happens to any particular action.  
 *e.g. Title change, icon change, disabled state, etc.*
-
-![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)
 
 ## Getting started
 
