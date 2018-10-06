@@ -17,6 +17,7 @@ script:
   - yarn commitlint-travis
   - ng build core
   - ng test core --watch false
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 after_success:
   - yarn travis-deploy-once "yarn semantic-release"
 branches:
