@@ -1,6 +1,14 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+let reports = ['html', 'lcovonly', 'text'];
+let browsers = ['Chromium', 'ChromiumHeadless'];
+
+if (process.env.TRAVIS) {
+  reports = ['lcovonly'];
+  browsers = ['ChromiumHeadless'];
+}
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -17,7 +25,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../../coverage'),
-      reports: ['html', 'lcovonly', 'text'],
+      reports: reports,
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
@@ -25,7 +33,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chromium', 'ChromiumHeadless'],
+    browsers: browsers,
     singleRun: false
   });
 };
