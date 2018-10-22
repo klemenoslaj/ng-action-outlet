@@ -52,11 +52,11 @@ export const enum ActionState {
  *         this.fire$ = this.handleLivecycle(this.fire.asObservable(), false);
  *         this.custom$ = this.handleLivecycle(this.custom.asObservable());
  *         this.changes$ = this.handleLivecycle(Observable.merge(
- *             this.title$.map(title => (<ActionCustomOptions>{ title })),
- *             this.icon$.map(icon => (<ActionCustomOptions>{ icon })),
- *             this.visible$.map(visible => (<ActionCustomOptions>{ visible })),
- *             this.disabled$.map(disabled => (<ActionCustomOptions>{ disabled })),
- *             this.custom$.map(custom => (<ActionCustomOptions>{ custom }))
+ *             this.title$.pipe(map(title => (<ActionCustomOptions>{ title }))),
+ *             this.icon$.pipe(map(icon => (<ActionCustomOptions>{ icon }))),
+ *             this.visible$.pipe(map(visible => (<ActionCustomOptions>{ visible }))),
+ *             this.disabled$.pipe(map(disabled => (<ActionCustomOptions>{ disabled }))),
+ *             this.custom$.pipe(map(custom => (<ActionCustomOptions>{ custom })))
  *         ));
  *     }
  *
