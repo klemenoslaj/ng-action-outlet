@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "playground"
+  "defaultProject": "playground",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }
