@@ -1,8 +1,8 @@
-![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)
-![Coveralls github](https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg)
-![David](https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg)
-![GitHub tag](https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg)
-![License](https://img.shields.io/npm/l/@ng-action-outlet/core.svg)
+[![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)](https://travis-ci.org/klemenoslaj/ng-action-outlet)
+[![Coveralls github](https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg)](https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master)
+[![David](https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg)](https://david-dm.org/klemenoslaj/ng-action-outlet)
+[![License](https://img.shields.io/npm/l/@ng-action-outlet/core.svg)](https://github.com/klemenoslaj/ng-action-outlet/blob/master/LICENSE)
+[![GitHub tag](https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg)](https://github.com/klemenoslaj/ng-action-outlet/releases)
 
 # [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
