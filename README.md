@@ -6,9 +6,9 @@
 
 # [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
-The goal of `ActionOutlet` is to provide an easy API to build dynamic actions on runtime  
-and have the possibility to get notified for each and every change, that happens to any particular action.  
-*e.g. Title change, icon change, disabled state, etc.*
+The goal of `ActionOutlet` is to provide an easy API to build dynamic menus on runtime and have the possibility to get notified for each and every change, that happens to any particular action in the menu (_e.g. Title change, icon change, disabled state, ..._).
+
+The most natural use case is when back-end is in charge over the visibility of actions and menus of the front-end application (_e.g. hide/show actions based on permissions_).
 
 ## Getting started
 

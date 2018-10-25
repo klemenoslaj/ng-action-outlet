@@ -92,11 +92,11 @@ Provides all the behaviors, shared between <strong>each</strong> action
  *         this.fire$ = this.handleLivecycle(this.fire.asObservable(), false);
  *         this.custom$ = this.handleLivecycle(this.custom.asObservable());
  *         this.changes$ = this.handleLivecycle(Observable.merge(
- *             this.title$.map(title =&gt; (&lt;ActionCustomOptions&gt;{ title })),
- *             this.icon$.map(icon =&gt; (&lt;ActionCustomOptions&gt;{ icon })),
- *             this.visible$.map(visible =&gt; (&lt;ActionCustomOptions&gt;{ visible })),
- *             this.disabled$.map(disabled =&gt; (&lt;ActionCustomOptions&gt;{ disabled })),
- *             this.custom$.map(custom =&gt; (&lt;ActionCustomOptions&gt;{ custom }))
+ *             this.title$.pipe(map(title =&gt; (&lt;ActionCustomOptions&gt;{ title }))),
+ *             this.icon$.pipe(map(icon =&gt; (&lt;ActionCustomOptions&gt;{ icon }))),
+ *             this.visible$.pipe(map(visible =&gt; (&lt;ActionCustomOptions&gt;{ visible }))),
+ *             this.disabled$.pipe(map(disabled =&gt; (&lt;ActionCustomOptions&gt;{ disabled }))),
+ *             this.custom$.pipe(map(custom =&gt; (&lt;ActionCustomOptions&gt;{ custom })))
  *         ));
  *     }
  *
@@ -1681,11 +1681,11 @@ export const enum ActionState {
  *         this.fire$ &#x3D; this.handleLivecycle(this.fire.asObservable(), false);
  *         this.custom$ &#x3D; this.handleLivecycle(this.custom.asObservable());
  *         this.changes$ &#x3D; this.handleLivecycle(Observable.merge(
- *             this.title$.map(title &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ title })),
- *             this.icon$.map(icon &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ icon })),
- *             this.visible$.map(visible &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ visible })),
- *             this.disabled$.map(disabled &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ disabled })),
- *             this.custom$.map(custom &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ custom }))
+ *             this.title$.pipe(map(title &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ title }))),
+ *             this.icon$.pipe(map(icon &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ icon }))),
+ *             this.visible$.pipe(map(visible &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ visible }))),
+ *             this.disabled$.pipe(map(disabled &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ disabled }))),
+ *             this.custom$.pipe(map(custom &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ custom })))
  *         ));
  *     }
  *
