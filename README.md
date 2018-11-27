@@ -4,6 +4,7 @@
 [![Compodoc tag](./docs/images/coverage-badge.svg)](https://klemenoslaj.github.io/ng-action-outlet/coverage.html)
 [![License](https://img.shields.io/npm/l/@ng-action-outlet/core.svg)](https://github.com/klemenoslaj/ng-action-outlet/blob/master/LICENSE)
 [![GitHub tag](https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg)](https://github.com/klemenoslaj/ng-action-outlet/releases)
+[![Known Vulnerabilities](https://snyk.io/test/github/klemenoslaj/ng-action-outlet/badge.svg?targetFile=package.json)](https://snyk.io/test/github/klemenoslaj/ng-action-outlet?targetFile=package.json)
 
 # [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
