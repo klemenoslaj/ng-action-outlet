@@ -1,4 +1,3 @@
-
 sudo: required
 language: node_js
 before_install: # if "install" is overridden
@@ -9,8 +8,8 @@ cache:
 notifications:
   email: false
 node_js:
-  - '10'
-  - '8'
+  - "10"
+  - "8"
 before_script:
   - yarn global add @angular/cli
 script:
