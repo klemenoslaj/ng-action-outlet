@@ -60,7 +60,8 @@
               "projects/playground/src/assets"
             ],
             "styles": [
-              "projects/playground/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/playground/src/styles.scss"
             ],
             "scripts": [],
             "aot": true
@@ -110,7 +111,8 @@
             "tsConfig": "projects/playground/tsconfig.spec.json",
             "karmaConfig": "projects/playground/karma.conf.js",
             "styles": [
-              "projects/playground/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/playground/src/styles.scss"
             ],
             "sourceMap": true,
             "scripts": [],
@@ -138,5 +140,10 @@
   "defaultProject": "playground",
   "cli": {
     "packageManager": "yarn"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }
