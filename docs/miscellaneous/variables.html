@@ -18,10 +18,7 @@
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -90,16 +87,9 @@
                         <a name="defaultAbstractOptions"></a>
                         <span class="name">
                             <b>
-                            defaultAbstractOptions
-                            </b>
+                            defaultAbstractOptions</b>
                             <a href="#defaultAbstractOptions"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>defaultAbstractOptions:     <code><a href="../interfaces/ActionAbstractOptions.html" target="_self" >ActionAbstractOptions</a></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -139,16 +129,9 @@ Extended by provided options in action <code>constructor</code></p>
                         <a name="defaultButtonOptions"></a>
                         <span class="name">
                             <b>
-                            defaultButtonOptions
-                            </b>
+                            defaultButtonOptions</b>
                             <a href="#defaultButtonOptions"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>defaultButtonOptions:     <code><a href="../interfaces/ActionButtonOptions.html" target="_self" >ActionButtonOptions</a></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -183,16 +166,9 @@ Extended by provided options in action <code>constructor</code></p>
                         <a name="defaultGroupOptions"></a>
                         <span class="name">
                             <b>
-                            defaultGroupOptions
-                            </b>
+                            defaultGroupOptions</b>
                             <a href="#defaultGroupOptions"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>defaultGroupOptions:     <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -227,16 +203,9 @@ Extended by provided options in action <code>constructor</code></p>
                         <a name="unique"></a>
                         <span class="name">
                             <b>
-                            unique
-                            </b>
+                            unique</b>
                             <a href="#unique"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>unique:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -266,16 +235,9 @@ Extended by provided options in action <code>constructor</code></p>
                         <a name="defaultToggleOptions"></a>
                         <span class="name">
                             <b>
-                            defaultToggleOptions
-                            </b>
+                            defaultToggleOptions</b>
                             <a href="#defaultToggleOptions"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>defaultToggleOptions:     <code><a href="../interfaces/ActionToggleOptions.html" target="_self" >ActionToggleOptions</a></code>
-</code>
                     </td>
                 </tr>
                     <tr>
@@ -328,7 +290,9 @@ Extended by provided options in action <code>constructor</code></p>
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
