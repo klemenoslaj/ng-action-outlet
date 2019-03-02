@@ -1,12 +1,14 @@
-import { Component, OnInit, HostBinding, Input } from '@angular/core';
+import { Component, OnInit, HostBinding, Input, ChangeDetectionStrategy } from '@angular/core';
 import {
   ActionButton,
-  ActionAbstractComponentImpl
+  ActionAbstractComponentImpl,
+  ActionGroup
 } from '@ng-action-outlet/core';
 
 @Component({
+  selector: 'app-button',
   template: `
-    <ng-container *ngIf="action && isButton(); then button else menuItem"></ng-container>
+    <ng-container *ngIf="action && isMenuItem(); then menuItem else button"></ng-container>
 
     <ng-template #button>
       <ng-container *ngIf="action.title$ | async; then titleButton else iconButton"></ng-container>
@@ -47,7 +49,7 @@ import {
       {{ action.title$ | async }}
     </ng-template>
   `,
-  styleUrls: ['./button.component.scss']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent implements OnInit, ActionAbstractComponentImpl<ActionButton> {
   @Input()
@@ -65,6 +67,10 @@ export class ButtonComponent implements OnInit, ActionAbstractComponentImpl<Acti
   }
 
   isMenuItem() {
-    return this.action.getParent() && this.action.getParent().isDropdown();
+    return isMenuItem(this.action);
+
+    function isMenuItem(action: ActionButton | ActionGroup) {
+      return action.getParent() && action.getParent().isDropdown() || action.getParent() && isMenuItem(action.getParent());
+    }
   }
 }
