@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f495c18616434c3ca2fafe26f89a818f)](https://app.codacy.com/app/klemenoslaj/ng-action-outlet?utm_source=github.com&utm_medium=referral&utm_content=klemenoslaj/ng-action-outlet&utm_campaign=Badge_Grade_Settings)
 [![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)](https://travis-ci.org/klemenoslaj/ng-action-outlet)
 [![Coveralls github](https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg)](https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master)
 [![David](https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg)](https://david-dm.org/klemenoslaj/ng-action-outlet)
