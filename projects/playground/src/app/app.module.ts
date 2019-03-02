@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatMenuModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatMenuModule, MatIconModule, MatDividerModule } from '@angular/material';
 import { ActionOutletModule, ActionButton, ActionGroup } from '@ng-action-outlet/core';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { GroupComponent } from './group/group.component';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MatDividerModule,
   ],
   entryComponents: [ButtonComponent, GroupComponent],
   providers: [{
