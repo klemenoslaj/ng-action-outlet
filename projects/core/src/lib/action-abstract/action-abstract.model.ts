@@ -9,10 +9,6 @@ export interface ActionAbstractComponentImpl<Action extends AnyAction = AnyActio
      * The derived action instance, as Input in angular component
      */
     action: Action; // @Input
-    /**
-     * Hidden property, that `HostBinding` should be used for, in order to show or hide action
-     */
-    hidden: boolean; // @HostBinding
 }
 
 /**
