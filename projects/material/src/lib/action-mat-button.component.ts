@@ -1,14 +1,14 @@
-import { Component, OnInit, HostBinding, Input, ChangeDetectionStrategy } from '@angular/core';
-import {
-  ActionButton,
-  ActionAbstractComponentImpl,
-  ActionGroup
-} from '@ng-action-outlet/core';
+import { Component, Input, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { ActionButton, ActionButtonComponentImpl, ActionGroup } from '@ng-action-outlet/core';
+
+import { isMenuItem } from './common';
 
 @Component({
-  selector: 'app-button',
+  selector: 'action-mat-button',
   template: `
-    <ng-container *ngIf="action && isMenuItem(); then menuItem else button"></ng-container>
+    <ng-container *ngIf="action.visible$ | async">
+      <ng-container *ngIf="action && isMenuItem(); then menuItem else button"></ng-container>
+    </ng-container>
 
     <ng-template #button>
       <ng-container *ngIf="action.title$ | async; then titleButton else iconButton"></ng-container>
@@ -49,28 +49,14 @@ import {
       {{ action.title$ | async }}
     </ng-template>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
-export class ButtonComponent implements OnInit, ActionAbstractComponentImpl<ActionButton> {
+export class ActionMatButtonComponent implements ActionButtonComponentImpl {
   @Input()
   readonly action: ActionButton;
 
-  @HostBinding()
-  hidden: boolean;
-
-  ngOnInit() {
-    this.action.visible$.subscribe(visibility => (this.hidden = !visibility));
-  }
-
-  isButton() {
-    return !this.action.getParent() || !this.action.getParent().isDropdown();
-  }
-
   isMenuItem() {
     return isMenuItem(this.action);
-
-    function isMenuItem(action: ActionButton | ActionGroup) {
-      return action.getParent() && action.getParent().isDropdown() || action.getParent() && isMenuItem(action.getParent());
-    }
   }
 }
