@@ -18,10 +18,7 @@
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -261,12 +258,19 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="actionOutlet"></a>
-                        <code>actionOutlet</code>
+                        <b>actionOutlet</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Action setter, providing action, to be rendered in the component&#39;s view container.
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/core/src/lib/action-outlet.directive.ts:58</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Action setter, providing action, to be rendered in the component&#39;s view container.
 <em>e.g. <code>ActionButton</code>, <code>ActionGroup</code>, etc.</em></p>
 <p>On set, it will:</p>
 <ul>
@@ -276,27 +280,19 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
 </div>
                     </td>
                 </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/core/src/lib/action-outlet.directive.ts:58</a></div>
-                            </td>
-                        </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="actionOutletDestroy"></a>
-                        <code>actionOutletDestroy</code>
+                        <b>actionOutletDestroy</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Defines whether underlying child action instance will be destroyed automatically
-If <code>false</code>, destruction of action should be handled <strong>MANUALLY</strong></p>
-</div>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
                         <tr>
@@ -304,6 +300,13 @@ If <code>false</code>, destruction of action should be handled <strong>MANUALLY<
                                     <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">projects/core/src/lib/action-outlet.directive.ts:91</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Defines whether underlying child action instance will be destroyed automatically
+If <code>false</code>, destruction of action should be handled <strong>MANUALLY</strong></p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -373,8 +376,8 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
                                                     
 
                                                         <td>
-                                                                <code><p>Action to get <code>Component</code> for</p>
-</code>
+                                                                <p>Action to get <code>Component</code> for</p>
+
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -389,8 +392,8 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
                                                     
 
                                                         <td>
-                                                                <code><p><code>Injector</code> from current directive instance</p>
-</code>
+                                                                <p><code>Injector</code> from current directive instance</p>
+
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -449,7 +452,7 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>set</b><code>actionOutlet(action: )</code></span>
+                        <span class="accessor"><b>set</b><code>actionOutlet(action)</code></span>
                     </td>
                 </tr>
                             <tr>
@@ -684,7 +687,9 @@ export class ActionOutletDirective implements OnDestroy {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
