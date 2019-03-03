@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { BehaviorSubject, Observable, never, merge } from 'rxjs';
+import { BehaviorSubject, Observable, NEVER, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ActionAbstract } from '../action-abstract/action-abstract';
@@ -106,7 +106,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
         this.children = new BehaviorSubject(unique(this.options.children.map(action => action._setParent(this))));
         this.dropdown = new BehaviorSubject(this.options.dropdown);
 
-        this.fire$ = this.handleLivecycle(never(), false);
+        this.fire$ = this.handleLivecycle(NEVER, false);
         this.children$ = this.handleLivecycle(this.children.asObservable());
         this.dropdown$ = this.handleLivecycleDistinct(this.dropdown.asObservable());
 

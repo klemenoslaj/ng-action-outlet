@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { BehaviorSubject, Observable, never } from 'rxjs';
+import { BehaviorSubject, Observable, NEVER } from 'rxjs';
 import { distinctUntilChanged , filter, switchMap, takeUntil } from 'rxjs/operators';
 
 import { ActionAbstractComponentImpl, ActionAbstractEvent, ActionAbstractOptions } from '../action-abstract/action-abstract.model';
@@ -246,7 +246,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     protected handleActivateState<T>(observable: Observable<T>): Observable<T> {
         return this.state.pipe(
-          switchMap(state => state === ActionState.Inactive ? (never()) : observable)
+          switchMap(state => state === ActionState.Inactive ? (NEVER) : observable)
         );
     }
 

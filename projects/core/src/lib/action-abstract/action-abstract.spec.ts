@@ -1,4 +1,4 @@
-import { BehaviorSubject, never, Observable } from 'rxjs';
+import { BehaviorSubject, NEVER, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { TestScheduler } from 'rxjs/testing';
 
@@ -6,8 +6,8 @@ import { ActionGroup } from '../action-group/action-group';
 import { ActionAbstract, ActionState } from './action-abstract';
 
 class ActionAbstractTest extends ActionAbstract<any, any> {
-    changes$: any = never();
-    fire$: any = never();
+    changes$: any = NEVER;
+    fire$: any = NEVER;
 
     state: BehaviorSubject<ActionState>;
 

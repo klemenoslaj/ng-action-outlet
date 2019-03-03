@@ -1,18 +1,31 @@
-<center>
+<p align="center">
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f495c18616434c3ca2fafe26f89a818f)](https://app.codacy.com/app/klemenoslaj/ng-action-outlet?utm_source=github.com&utm_medium=referral&utm_content=klemenoslaj/ng-action-outlet&utm_campaign=Badge_Grade_Settings)
-[![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)](https://travis-ci.org/klemenoslaj/ng-action-outlet)
-[![Coveralls github](https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg)](https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master)
-[![David](https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg)](https://david-dm.org/klemenoslaj/ng-action-outlet)
+<a href="https://app.codacy.com/app/klemenoslaj/ng-action-outlet?utm_source=github.com&utm_medium=referral&utm_content=klemenoslaj/ng-action-outlet&utm_campaign=Badge_Grade_Settings">
+    <img src="https://api.codacy.com/project/badge/Grade/f495c18616434c3ca2fafe26f89a818f" /></a>
+<a href="https://travis-ci.org/klemenoslaj/ng-action-outlet">
+    <img src="https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg" /></a>
+<a href="https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master">
+    <img src="https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg" /></a>
+<a href="https://david-dm.org/klemenoslaj/ng-action-outlet">
+    <img src="https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg" /></a>
 
-[![Compodoc tag](./docs/images/coverage-badge.svg)](https://klemenoslaj.github.io/ng-action-outlet/coverage.html)
-[![License](https://img.shields.io/npm/l/@ng-action-outlet/core.svg)](https://github.com/klemenoslaj/ng-action-outlet/blob/master/LICENSE)
-[![GitHub tag](https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg)](https://github.com/klemenoslaj/ng-action-outlet/releases)
-[![Known Vulnerabilities](https://snyk.io/test/github/klemenoslaj/ng-action-outlet/badge.svg?targetFile=package.json)](https://snyk.io/test/github/klemenoslaj/ng-action-outlet?targetFile=package.json)
+<br />
 
-[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
+<a href="https://img.shields.io/npm/l/@ng-action-outlet/core.svg">
+    <img src="https://img.shields.io/npm/l/@ng-action-outlet/core.svg" /></a>
+<a href="https://github.com/klemenoslaj/ng-action-outlet/releases">
+    <img src="https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg" /></a>
+<a href="https://snyk.io/test/github/klemenoslaj/ng-action-outlet?targetFile=package.json">
+    <img src="https://snyk.io/test/github/klemenoslaj/ng-action-outlet/badge.svg?targetFile=package.json" /></a>
+<a href="https://klemenoslaj.github.io/ng-action-outlet/coverage.html">
+    <img src="./docs/images/coverage-badge.svg" /></a>
 
-</center>
+<br />
+
+<a href="https://angular.io/styleguide">
+    <img src="https://mgechev.github.io/angular2-style-guide/images/badge.svg" /></a>
+
+</p>
 
 # [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
