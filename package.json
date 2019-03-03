@@ -10,7 +10,8 @@
     "build:core": "ng build core",
     "docs:coverage": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 100",
     "docs:build.prod": "yarn docs:coverage && compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --name NgActionOutlet --output docs",
-    "docs:build.serve": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal -s -w"
+    "docs:build.serve": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal -s -w",
+    "lint:md": "remark ."
   },
   "private": true,
   "dependencies": {
@@ -54,6 +55,8 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.4.0",
     "protractor": "~5.4.0",
+    "remark-cli": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.2",
     "semantic-release": "^15.10.5",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
