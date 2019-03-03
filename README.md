@@ -1,11 +1,18 @@
+<center>
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f495c18616434c3ca2fafe26f89a818f)](https://app.codacy.com/app/klemenoslaj/ng-action-outlet?utm_source=github.com&utm_medium=referral&utm_content=klemenoslaj/ng-action-outlet&utm_campaign=Badge_Grade_Settings)
 [![Travis build](https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg)](https://travis-ci.org/klemenoslaj/ng-action-outlet)
 [![Coveralls github](https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg)](https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master)
 [![David](https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg)](https://david-dm.org/klemenoslaj/ng-action-outlet)
+
 [![Compodoc tag](./docs/images/coverage-badge.svg)](https://klemenoslaj.github.io/ng-action-outlet/coverage.html)
 [![License](https://img.shields.io/npm/l/@ng-action-outlet/core.svg)](https://github.com/klemenoslaj/ng-action-outlet/blob/master/LICENSE)
 [![GitHub tag](https://img.shields.io/github/tag/klemenoslaj/ng-action-outlet.svg)](https://github.com/klemenoslaj/ng-action-outlet/releases)
 [![Known Vulnerabilities](https://snyk.io/test/github/klemenoslaj/ng-action-outlet/badge.svg?targetFile=package.json)](https://snyk.io/test/github/klemenoslaj/ng-action-outlet?targetFile=package.json)
+
+[![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
+
+</center>
 
 # [NgActionOutlet](https://klemenoslaj.github.io/ng-action-outlet/)
 
@@ -16,17 +23,22 @@ The most natural use case is when back-end is in charge over the visibility of a
 ## Getting started
 
 ### Step 1: Install `ng-action-outlet`
+
 You can use either **npm** or **yarn** command-line tool.  
 Choose the tool that is appropriate for your project.
 
 #### NPM
+
 `npm install @ng-action-outlet/core`
 
 #### YARN
+
 `yarn add @ng-action-outlet/core`
 
 ### Step 2: Import `ActionOutletModule`
+
 Import Action Outlet **NgModule** to your Angular module
+
 ```typescript
 import { ActionOutletModule } from '@ng-action-outlet/core';
 
@@ -39,9 +51,11 @@ export class ExampleModule { }
 ```
 
 ### Step 3: Define what component to use with what action
+
 Use providers to set default components for each action to be used for rendering.  
 Provide action class and use value pointing to your component class,
 so that action outlet can associate component to provided action.
+
 ```typescript
 import { ActionOutletModule, ActionButton, ActionGroup, ActionToggle } from '@ng-action-outlet/core';
 
@@ -68,8 +82,10 @@ export class ExampleModule { }
 ```
 
 ### Step 4: Override default's in your component
+
 In order to override your default settings, do the same as initially in a module,  
 but only for actions that you actually wish to change.
+
 ```typescript
 import { ActionToggle } from '@ng-action-outlet/core';
 
@@ -87,7 +103,9 @@ export class ExampleComponent { }
 ```
 
 ### Step 5: Create action instances
+
 Create actions in a component class so that they can be accessed from the template.
+
 ```typescript
 import { ActionOutletFactory } from '@ng-action-outlet/core';
 
@@ -95,7 +113,7 @@ import { ActionOutletFactory } from '@ng-action-outlet/core';
 export class ExampleComponent implements OnInit {
     ...
     group: ActionGroup;
-    
+
     constructor(private actionOutlet: ActionOutletFactory) { }
 
     ngOnInit() {
@@ -109,15 +127,17 @@ export class ExampleComponent implements OnInit {
 ```
 
 ### Step 6: Render the actions
+
 Bind created actions to `actionOutlet` renderer directive.
+
 ```html
 <ng-container *actionOutlet="group"></ng-container>
 ```
 
 ## Available actions
 
-* [ActionButton](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionButton.html)
-* [ActionGroup](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionGroup.html)
-* [ActionToggle](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionToggle.html)
+-   [ActionButton](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionButton.html)
+-   [ActionGroup](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionGroup.html)
+-   [ActionToggle](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionToggle.html)
 
 In order to create custom action class, refer to [ActionAbstract](./classes/ActionAbstract.html) class.
