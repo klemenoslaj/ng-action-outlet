@@ -4,8 +4,8 @@ import { ActionButton, ActionButtonComponentImpl, ActionGroup } from '@ng-action
 import { isMenuItem } from './common';
 
 @Component({
-  selector: 'action-mat-button',
-  template: `
+    selector: 'action-mat-button',
+    template: `
     <ng-container *ngIf="action.visible$ | async">
       <ng-container *ngIf="action && isMenuItem(); then menuItem else button"></ng-container>
     </ng-container>
@@ -49,14 +49,14 @@ import { isMenuItem } from './common';
       {{ action.title$ | async }}
     </ng-template>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
 export class ActionMatButtonComponent implements ActionButtonComponentImpl {
-  @Input()
-  readonly action: ActionButton;
+    @Input()
+    readonly action: ActionButton;
 
-  isMenuItem() {
-    return isMenuItem(this.action);
-  }
+    isMenuItem() {
+        return isMenuItem(this.action.getParent());
+    }
 }
