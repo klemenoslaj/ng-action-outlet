@@ -7,7 +7,7 @@
 <a href="https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master">
     <img src="https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg" /></a>
 <a href="https://david-dm.org/klemenoslaj/ng-action-outlet">
-    <img src="https://img.shields.io/david/klemenoslaj/ng-action-outlet/master.svg" /></a>
+    <img src="https://img.shields.io/david/klemenoslaj/ng-action-outlet.svg" /></a>
 
 <br />
 
