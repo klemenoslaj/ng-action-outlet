@@ -646,7 +646,7 @@ export class ActionOutletDirective implements OnDestroy {
      * @param injector &#x60;Injector&#x60; from current directive instance
      */
     getComponentType(action: AnyAction, injector: Injector): Type&lt;ActionAbstractComponentImpl&gt; {
-        return action.getForcedComponent() || &lt;Type&lt;ActionAbstractComponentImpl&gt;&gt;injector.get(action.constructor);
+        return action.getForcedComponent() || &lt;Type&lt;ActionAbstractComponentImpl&gt;&gt;injector.get&lt;any&gt;(&lt;any&gt;action.constructor);
     }
 }
 </code></pre>

@@ -1569,7 +1569,7 @@ combination with <code>fire</code> subject and <code>fire$</code> observable</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Type } from &#x27;@angular/core&#x27;;
-import { BehaviorSubject, Observable, never } from &#x27;rxjs&#x27;;
+import { BehaviorSubject, Observable, NEVER } from &#x27;rxjs&#x27;;
 import { distinctUntilChanged , filter, switchMap, takeUntil } from &#x27;rxjs/operators&#x27;;
 
 import { ActionAbstractComponentImpl, ActionAbstractEvent, ActionAbstractOptions } from &#x27;../action-abstract/action-abstract.model&#x27;;
@@ -1816,7 +1816,7 @@ export abstract class ActionAbstract&lt;Options extends ActionAbstractOptions, F
      */
     protected handleActivateState&lt;T&gt;(observable: Observable&lt;T&gt;): Observable&lt;T&gt; {
         return this.state.pipe(
-          switchMap(state &#x3D;&gt; state &#x3D;&#x3D;&#x3D; ActionState.Inactive ? (never()) : observable)
+          switchMap(state &#x3D;&gt; state &#x3D;&#x3D;&#x3D; ActionState.Inactive ? (NEVER) : observable)
         );
     }
 

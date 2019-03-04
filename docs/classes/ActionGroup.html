@@ -3251,7 +3251,7 @@ combination with <code>fire</code> subject and <code>fire$</code> observable</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Type } from &#x27;@angular/core&#x27;;
-import { BehaviorSubject, Observable, never, merge } from &#x27;rxjs&#x27;;
+import { BehaviorSubject, Observable, NEVER, merge } from &#x27;rxjs&#x27;;
 import { map } from &#x27;rxjs/operators&#x27;;
 
 import { ActionAbstract } from &#x27;../action-abstract/action-abstract&#x27;;
@@ -3358,7 +3358,7 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
         this.children &#x3D; new BehaviorSubject(unique(this.options.children.map(action &#x3D;&gt; action._setParent(this))));
         this.dropdown &#x3D; new BehaviorSubject(this.options.dropdown);
 
-        this.fire$ &#x3D; this.handleLivecycle(never(), false);
+        this.fire$ &#x3D; this.handleLivecycle(NEVER, false);
         this.children$ &#x3D; this.handleLivecycle(this.children.asObservable());
         this.dropdown$ &#x3D; this.handleLivecycleDistinct(this.dropdown.asObservable());
 
