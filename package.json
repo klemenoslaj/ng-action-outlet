@@ -7,7 +7,9 @@
     "url": "https://github.com/klemenoslaj/ng-action-outlet.git"
   },
   "scripts": {
+    "build": "yarn build:core",
     "build:core": "ng build core",
+    "test:once": "ng test core --watch false --browsers ChromiumHeadless --code-coverage",
     "docs:coverage": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 100",
     "docs:build.prod": "yarn docs:coverage && compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --name NgActionOutlet --output docs",
     "docs:build.serve": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal -s -w",
@@ -58,6 +60,7 @@
     "remark-cli": "^6.0.1",
     "remark-preset-lint-recommended": "^3.0.2",
     "semantic-release": "^15.10.5",
+    "shelljs": "^0.8.3",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
@@ -65,7 +68,13 @@
     "typescript": "~3.2.0"
   },
   "release": {
-    "pkgRoot": "dist/core"
+    "packages": "dist",
+    "plugins": [
+        "./scripts/release.js",
+        "@semantic-release/github",
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator"
+    ]
   },
   "config": {
     "commitizen": {

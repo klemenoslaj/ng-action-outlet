@@ -10,13 +10,11 @@ notifications:
 node_js:
   - "10"
   - "8"
-before_script:
-  - yarn global add @angular/cli
 script:
   - yarn commitlint-travis
-  - ng build core
-  - ng test core --watch false
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - yarn build
+  - yarn test:once
+  - cat ./coverage/core/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 after_success:
   - yarn travis-deploy-once "yarn semantic-release"
 branches:
