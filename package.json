@@ -8,8 +8,6 @@
   },
   "scripts": {
     "build": "ng build core && ng build material",
-    "build:core": "ng build core",
-    "build:material": "ng build material",
     "test:once": "ng test core --watch false --browsers ChromiumHeadless --code-coverage",
     "docs:coverage": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 100",
     "docs:build.prod": "yarn docs:coverage && compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --name NgActionOutlet --output docs",
