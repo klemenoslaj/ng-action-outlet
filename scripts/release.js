@@ -5,11 +5,10 @@ async function prepare({ packages }, context) {
     const PLACEHOLDER_VERSION = '0.0.0-development';
     const { nextRelease: { version }, logger } = context;
 
-    shell.exec(`npm version ${version} --no-git-tag-version`, { cwd: dirname(file) });
-
     shell
         .ls(`${packages}/*/package.json`)
         .forEach(file => {
+            shell.exec(`npm version ${version} --no-git-tag-version`, { cwd: dirname(file) });
             shell.sed('-i', PLACEHOLDER_VERSION, version, file);
             logger.log(`Write version ${version} to package.json in ${file}`);
         });
