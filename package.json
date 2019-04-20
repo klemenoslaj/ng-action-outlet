@@ -73,7 +73,9 @@
     "packages": "dist",
     "plugins": [
         "./scripts/release.js",
-        "@semantic-release/commit-analyzer"
+        "@semantic-release/github",
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator"
     ]
   },
   "config": {

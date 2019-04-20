@@ -8,7 +8,7 @@ async function prepare({ packages }, context) {
     shell
         .ls(`${packages}/*/package.json`)
         .forEach(file => {
-            shell.exec(`npm version ${version} --no-git-tag-version`, { cwd: dirname(file), env });
+            shell.exec(`yarn version ${version} --no-git-tag-version`, { cwd: dirname(file), env });
             shell.sed('-i', PLACEHOLDER_VERSION, version, file);
             logger.log(`Write version ${version} to package.json in ${file}`);
         });
@@ -21,7 +21,7 @@ async function publish({ packages }, context) {
         throw new Error('NPM_TOKEN environment');
     }
 
-    shell.ShellString(`//registry.npmjs.org/:_authToken=${env.NPM_TOKEN}`).to('~/.npmrc');
+    // shell.ShellString(`//registry.npmjs.org/:_authToken=${env.NPM_TOKEN}`).to('~/.npmrc');
 
     shell
         .ls(`${packages}/*/package.json`)
@@ -32,8 +32,7 @@ async function publish({ packages }, context) {
             shell.ShellString(`//registry.npmjs.org/:_authToken=${env.NPM_TOKEN}`).to(config);
             logger.log(`Wrote NPM_TOKEN to ${config}`);
 
-
-            if (shell.exec(`npm publish --access public`, { cwd, env }).code === 0) {
+            if (shell.exec(`yarn publish --access public`, { cwd, env }).code === 0) {
                 logger.log(`Published ${package.name}@${package.version}.`);
             } else {
                 throw new Error(`The release of ${package.name} failed.`);
