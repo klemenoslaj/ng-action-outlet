@@ -30,8 +30,8 @@ import { isMenuItem } from './common';
           mat-menu-item
           [matMenuTriggerFor]="menu"
           [disabled]="action.disabled$ | async">
-          <mat-icon *ngIf="action.icon$ | async; let icon">{{ icon }}</mat-icon>
-          {{ action.title$ | async }}
+          <action-mat-icon *ngIf="action.icon$ | async; let icon" [icon]="icon"></action-mat-icon>
+          <span>{{ action.title$ | async }}</span>
         </button>
       </ng-template>
 

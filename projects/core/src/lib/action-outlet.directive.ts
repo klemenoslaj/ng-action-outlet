@@ -107,9 +107,11 @@ export class ActionOutletDirective implements OnDestroy {
      * @param viewContainerRef Used for Component creation via `.createComponent()`
      * @param componentFactoryResolver Used to resolve component factory via `.resolveComponentFactory()`
      */
-    constructor(private viewContainerRef: ViewContainerRef,
+    constructor(
+        private viewContainerRef: ViewContainerRef,
         private componentFactoryResolver: ComponentFactoryResolver,
-        private injector: Injector) { }
+        private injector: Injector
+    ) { }
 
     /**
      * Angular `ngOnDestroy` hook will:

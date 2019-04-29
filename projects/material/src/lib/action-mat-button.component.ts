@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import { ActionButton, ActionButtonComponentImpl, ActionGroup } from '@ng-action-outlet/core';
+import { ActionButton, ActionButtonComponentImpl } from '@ng-action-outlet/core';
 
 import { isMenuItem } from './common';
 
@@ -45,8 +45,8 @@ import { isMenuItem } from './common';
     </ng-template>
 
     <ng-template #content>
-      <mat-icon *ngIf="action.icon$ | async; let icon">{{ icon }}</mat-icon>
-      {{ action.title$ | async }}
+      <action-mat-icon *ngIf="action.icon$ | async; let icon" [icon]="icon"></action-mat-icon>
+      <span>{{ action.title$ | async }}</span>
     </ng-template>
   `,
     changeDetection: ChangeDetectionStrategy.OnPush,
