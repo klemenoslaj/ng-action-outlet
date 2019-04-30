@@ -93,27 +93,127 @@ describe('Class: ActionGroup', function (): void {
             expect(action.isDropdown()).toBe(true);
         });
 
-        it('should set children correctly', function (this: TestContext): void {
+        it('should set provided actions as children', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+            const child3 = new ActionButton();
+
+            this.action.setChildren([child1, child2, child3]);
+            expect(this.action.getChildren()).toEqual([child1, child2, child3]);
+            expect(child1.getParent()).toBe(this.action);
+            expect(child2.getParent()).toBe(this.action);
+            expect(child3.getParent()).toBe(this.action);
+        });
+
+        it('should overwrite actions with provided children', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+            const child3 = new ActionButton();
+
+            this.action.setChildren([child1, child2, child3]);
+            expect(this.action.getChildren()).toEqual([child1, child2, child3]);
+            expect(child1.getParent()).toBe(this.action);
+            expect(child2.getParent()).toBe(this.action);
+            expect(child3.getParent()).toBe(this.action);
+
+            const child4 = new ActionButton();
+            const child5 = new ActionToggle();
+            const child6 = new ActionButton();
+
+            this.action.setChildren([child4, child5, child6]);
+            expect(this.action.getChildren()).toEqual([child4, child5, child6]);
+            expect(child1.getParent()).not.toBeDefined();
+            expect(child2.getParent()).not.toBeDefined();
+            expect(child3.getParent()).not.toBeDefined();
+            expect(child4.getParent()).toBe(this.action);
+            expect(child5.getParent()).toBe(this.action);
+            expect(child6.getParent()).toBe(this.action);
+        });
+
+        it('should append child action', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+
+            this.action.appendChild(child1);
+            expect(this.action.getChildren()).toEqual([child1]);
+            expect(child1.getParent()).toBe(this.action);
+
+            this.action.appendChild(child2);
+            expect(this.action.getChildren()).toEqual([child1, child2]);
+            expect(child2.getParent()).toBe(this.action);
+        });
+
+        it('should prepend child action', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+
+            this.action.prependChild(child1);
+            expect(this.action.getChildren()).toEqual([child1]);
+            expect(child1.getParent()).toBe(this.action);
+
+            this.action.prependChild(child2);
+            expect(this.action.getChildren()).toEqual([child2, child1]);
+            expect(child2.getParent()).toBe(this.action);
+        });
+
+        it('should append child actions', function (this: TestContext): void {
             const child1 = new ActionButton();
             const child2 = new ActionToggle();
             const child3 = new ActionGroup();
 
-            this.action.appendChild(child1);
-            expect(this.action.getChildren()).toEqual([child1]);
-            this.action.appendChild(child2);
-            expect(this.action.getChildren()).toEqual([child1, child2]);
-            this.action.prependChild(child3);
-            expect(this.action.getChildren()).toEqual([child3, child1, child2]);
+            this.action.setChildren([child1]);
 
-            this.action.removeChildren();
+            this.action.appendChildren([child2, child3]);
+            expect(this.action.getChildren()).toEqual([child1, child2, child3]);
+            expect(child1.getParent()).toBe(this.action);
+            expect(child2.getParent()).toBe(this.action);
+        });
 
-            this.action.appendChildren([child1]);
-            expect(this.action.getChildren()).toEqual([child1]);
+        it('should prepend child actions', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+            const child3 = new ActionGroup();
+
+            this.action.setChildren([child1]);
+
             this.action.prependChildren([child2, child3]);
             expect(this.action.getChildren()).toEqual([child2, child3, child1]);
+            expect(child1.getParent()).toBe(this.action);
+            expect(child2.getParent()).toBe(this.action);
+        });
 
-            this.action.setChildren([child1, child2, child3]);
-            expect(this.action.getChildren()).toEqual([child1, child2, child3]);
+        it('should remove children', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+
+            this.action.appendChildren([child1, child2]);
+            this.action.removeChildren();
+
+            expect(this.action.getChildren()).toEqual([]);
+            expect(child1.getParent()).not.toBeDefined();
+            expect(child2.getParent()).not.toBeDefined();
+        });
+
+        it('should remove provided child', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+
+            this.action.appendChildren([child1, child2]);
+            this.action.removeChild(child1);
+
+            expect(this.action.getChildren()).toEqual([child2]);
+            expect(child1.getParent()).not.toBeDefined();
+        });
+
+        it('should remove child at provided index', function (this: TestContext): void {
+            const child1 = new ActionButton();
+            const child2 = new ActionToggle();
+
+            this.action.appendChildren([child1, child2]);
+            this.action.removeChildByIndex(1);
+
+            expect(this.action.getChildren()).toEqual([child1]);
+            expect(child2.getParent()).not.toBeDefined();
         });
 
         it('should get children correctly', function (this: TestContext): void {

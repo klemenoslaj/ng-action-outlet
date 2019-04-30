@@ -287,7 +287,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      */
     appendChild(action: AnyAction): this {
         const children = this.getChildren();
-        this.setChildren([...children, action._setParent(this)]);
+        this.setChildrenInternal([...children, action._setParent(this)]);
         return this;
     }
 
@@ -307,7 +307,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      */
     appendChildren(actions: AnyAction[]): this {
         const children = this.getChildren();
-        this.setChildren([...children, ...actions.map(action => action._setParent(this))]);
+        this.setChildrenInternal([...children, ...actions.map(action => action._setParent(this))]);
         return this;
     }
 
@@ -325,7 +325,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      */
     prependChild(action: AnyAction): this {
         const children = this.getChildren();
-        this.setChildren([action._setParent(this), ...children]);
+        this.setChildrenInternal([action._setParent(this), ...children]);
         return this;
     }
 
@@ -344,7 +344,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      */
     prependChildren(actions: AnyAction[]): this {
         const children = this.getChildren();
-        this.setChildren([...actions.map(action => action._setParent(this)), ...children]);
+        this.setChildrenInternal([...actions.map(action => action._setParent(this)), ...children]);
         return this;
     }
 
@@ -381,7 +381,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
 
         if (action) {
             action._unsetParent();
-            this.setChildren(children.filter((_child, childIndex) => index !== childIndex));
+            this.setChildrenInternal(children.filter((_child, childIndex) => index !== childIndex));
         }
 
         return this;
@@ -399,7 +399,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      */
     removeChildren(): this {
         this.getChildren().forEach(child => child._unsetParent());
-        this.setChildren([]);
+        this.setChildrenInternal([]);
         return this;
     }
 
@@ -419,10 +419,11 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * @param children Actions to become children
      */
     setChildren(children: AnyAction[]): this {
-        this.children.next(unique(children).filter(child => {
-            const parent = child.getParent();
-            return parent === this || parent === undefined;
-        }));
+        this.children.getValue().map(child => child._unsetParent());
+        this.children.next(
+            this.normalizeChildren(children)
+                .map(child => child._setParent(this))
+        );
 
         return this;
     }
@@ -503,6 +504,32 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      */
     disableDropdown(): this {
         this.dropdown.next(false);
+        return this;
+    }
+
+    /**
+     * Normalizes the provided array of children by filtering out actions
+     * that already belong to certain parent group.
+     *
+     * @method normalizeChildren
+     */
+    private normalizeChildren(children: AnyAction[]) {
+        return unique(children)
+            .filter(child => {
+                const parent = child.getParent();
+                return parent === this || parent === undefined;
+            });
+    }
+
+    /**
+     * Does the same thing as `setChildren` but ignores `_setParent` call,
+     * because parent is expceted to be correct already
+     *
+     * @method setChildrenInternal
+     */
+    private setChildrenInternal(children: AnyAction[]): this {
+        this.children.next(this.normalizeChildren(children));
+
         return this;
     }
 }
