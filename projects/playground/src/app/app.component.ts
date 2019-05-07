@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
     this.createGroupWithChildren(dropdowns, 4, 'Dropdown 2').enableDropdown();
     this.createGroupWithChildren(dropdowns, 7, 'Dropdown 3').enableDropdown();
 
+    childGroup.createGroup().enableDropdown().setTitle('EMPTY');
+
     this.createGroupWithChildren(childGroup, 2);
   }
 

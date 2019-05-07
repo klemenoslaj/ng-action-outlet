@@ -6,7 +6,7 @@ import { isMenuItem } from './common';
 @Component({
   selector: 'action-mat-group',
   template: `
-    <ng-container *ngIf="action.visible$ | async">
+    <ng-container *ngIf="(action.visible$ | async) && (action.children$ | async).length">
       <ng-container *ngIf="action.dropdown$ | async; then dropdown else group"></ng-container>
     </ng-container>
 
