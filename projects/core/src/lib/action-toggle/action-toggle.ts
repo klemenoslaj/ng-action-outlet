@@ -61,7 +61,7 @@ export class ActionToggle extends ActionAbstract<ActionToggleOptions, ActionTogg
                 component?: Type<ActionToggleComponentImpl>) {
         super({ ...defaultToggleOptions, ...options }, component);
 
-        this.fire = new BehaviorSubject(this.options.checked);
+        this.fire = new BehaviorSubject(!!this.options.checked);
 
         this.fire$ = this.handleLivecycleDistinct(this.fire.asObservable(), false).pipe(
           map(checked => ({ action: this, checked }))

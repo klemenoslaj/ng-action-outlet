@@ -104,7 +104,7 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
         super({ ...defaultGroupOptions, ...options }, component);
 
         this.children = new BehaviorSubject(unique(this.options.children.map(action => action._setParent(this))));
-        this.dropdown = new BehaviorSubject(this.options.dropdown);
+        this.dropdown = new BehaviorSubject(!!this.options.dropdown);
 
         this.fire$ = this.handleLivecycle(NEVER, false);
         this.children$ = this.handleLivecycle(this.children.asObservable());
