@@ -9,7 +9,7 @@ import { ActionGroup } from '../action-group/action-group';
  * Default options for `ActionAbstract` - shared between **all** actions
  * Extended by provided options in action `constructor`
  */
-const defaultAbstractOptions: ActionAbstractOptions = {
+const defaultAbstractOptions: Required<ActionAbstractOptions> = {
     title: '',
     icon: '',
     visible: true,
@@ -121,7 +121,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      * Should be forced and used instead of component in `Injector`
      * That is handled by `ActionOutletDirective`
      */
-    protected readonly forcedComponent: Type<ActionAbstractComponentImpl>;
+    protected readonly forcedComponent?: Type<ActionAbstractComponentImpl>;
     /**
      * Title `BehaviorSubject`, used **internally** to notify on title change
      * Used to leverage reactive world with non reactive
@@ -157,7 +157,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      * Parent of current action. This is a parent action,
      * to whom current action belongs to, and renders into
      */
-    private parent: ActionGroup;
+    private parent?: ActionGroup;
 
     /**
      * `constructor` should be `ActionAbstract`
@@ -176,13 +176,13 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     constructor(options: Options,
                 component?: Type<ActionAbstractComponentImpl>) {
-        const { title, icon, visible, disabled } = this.options = Object.assign({}, defaultAbstractOptions, options);
+        const { title, icon, visible, disabled } = this.options = { ...defaultAbstractOptions, ...options };
 
         this.title = new BehaviorSubject(title);
         this.icon = new BehaviorSubject(icon);
         this.visible = new BehaviorSubject(visible);
         this.disabled = new BehaviorSubject(disabled);
-        this.state = new BehaviorSubject(ActionState.Inactive);
+        this.state = new BehaviorSubject(<ActionState>ActionState.Inactive);
         this.finish = this.state.pipe(
           filter(state => state === ActionState.Destroyed)
         );
@@ -416,14 +416,14 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      * This component should be used by `ActionOutletDirective`, to represent
      * the action in DOM, instead the component, provided via Angular `Injector`
      */
-    getForcedComponent(): Type<ActionAbstractComponentImpl> {
+    getForcedComponent(): Type<ActionAbstractComponentImpl> | undefined {
         return this.forcedComponent;
     }
 
     /**
      * Returns current parent of the action
      */
-    getParent(): ActionGroup {
+    getParent(): ActionGroup | undefined {
         return this.parent;
     }
 

@@ -55,7 +55,7 @@ export class ActionOutletDirective implements OnDestroy {
      * - **Compile** and render a `Component` **dinamically** for provided `@Input` action
      * - **Change/Update** the `Component` accordingly to the change detection
      */
-    @Input() set actionOutlet(action: AnyAction) {
+    @Input() set actionOutlet(action: AnyAction | undefined) {
         this.action = action;
 
         if (this.componentRef) {
@@ -80,7 +80,7 @@ export class ActionOutletDirective implements OnDestroy {
     /**
      * Getter for **internally** used action
      */
-    get actionOutlet(): AnyAction {
+    get actionOutlet(): AnyAction | undefined {
         return this.action;
     }
 
@@ -93,13 +93,13 @@ export class ActionOutletDirective implements OnDestroy {
     /**
      * `Component` reference to the component, used by rendered action
      */
-    private componentRef: ComponentRef<ActionAbstractComponentImpl>;
+    private componentRef?: ComponentRef<ActionAbstractComponentImpl>;
 
     /**
      * Action instance, used **internally** by the directive
      * Should **never** be directly exposed
      */
-    private action: AnyAction;
+    private action?: AnyAction;
 
     /**
      * Invoked by Angular with dependency injection
