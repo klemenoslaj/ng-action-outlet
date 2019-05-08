@@ -13,7 +13,7 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 })
 
 export class ActionMatIconComponent {
-    @Input() icon: string;
+    @Input() icon!: string;
     @HostBinding('class') classname = 'mat-icon';
 
     constructor(@Inject(ACTION_ICON_TYPE_TOKEN) public iconType: ICON_TYPE) {}

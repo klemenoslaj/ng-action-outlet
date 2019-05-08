@@ -6,7 +6,7 @@ import { isMenuItem } from './common';
 @Component({
   selector: 'action-mat-group',
   template: `
-    <ng-container *ngIf="(action.visible$ | async) && (action.children$ | async).length">
+    <ng-container *ngIf="(action.visible$ | async) && (action.children$ | async)!.length">
       <ng-container *ngIf="action.dropdown$ | async; then dropdown else group"></ng-container>
     </ng-container>
 
@@ -45,7 +45,7 @@ import { isMenuItem } from './common';
   encapsulation: ViewEncapsulation.None
 })
 export class ActionMatGroupComponent implements ActionGroupComponentImpl {
-  readonly action: ActionGroup;
+  readonly action!: ActionGroup;
 
   isMenuItem() {
     return isMenuItem(this.action.getParent());

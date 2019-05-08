@@ -8,7 +8,7 @@ import { ActionOutletFactory, ActionGroup, ActionButtonEvent } from '@ng-action-
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  group: ActionGroup;
+  group!: ActionGroup;
 
   private index = 1;
 

@@ -54,7 +54,7 @@ import { isMenuItem } from './common';
 })
 export class ActionMatButtonComponent implements ActionButtonComponentImpl {
     @Input()
-    readonly action: ActionButton;
+    readonly action!: ActionButton;
 
     isMenuItem() {
         return isMenuItem(this.action.getParent());
