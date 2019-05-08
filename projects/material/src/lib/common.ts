@@ -1,5 +1,5 @@
-import { AnyAction, ActionGroup } from '@ng-action-outlet/core';
+import { AnyAction, ActionGroup, ActionAbstract } from '@ng-action-outlet/core';
 
-export const isMenuItem = (action: AnyAction) => {
-    return action && (action instanceof ActionGroup && action.isDropdown() || isMenuItem(action.getParent()));
-};
+export function isMenuItem(action?: AnyAction): boolean {
+    return action instanceof ActionAbstract && (action instanceof ActionGroup && action.isDropdown() || isMenuItem(action.getParent()));
+}
