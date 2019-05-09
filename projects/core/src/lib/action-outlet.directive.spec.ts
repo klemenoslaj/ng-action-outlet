@@ -151,4 +151,22 @@ describe('Directive: ActionOutletDirective', function (): void {
         expect(group.isDestroyed()).toBe(false);
         expect(this.component.outlet.actionOutlet).toBeUndefined();
     }));
+
+    it('should destroy action if new action was provided', fakeAsync(function (this: TestContext): void {
+        const group = new ActionGroup();
+        const group2 = new ActionGroup();
+
+        this.component.group = group;
+        this.fixture.detectChanges();
+        tick();
+
+        expect(group.isDestroyed()).toBe(false);
+        expect(this.component.outlet.actionOutlet).toBeDefined();
+
+        this.component.group = group2;
+        this.fixture.detectChanges();
+        tick();
+
+        expect(group.isDestroyed()).toBe(true);
+    }));
 });

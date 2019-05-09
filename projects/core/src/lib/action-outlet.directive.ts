@@ -56,12 +56,16 @@ export class ActionOutletDirective implements OnDestroy {
      * - **Change/Update** the `Component` accordingly to the change detection
      */
     @Input() set actionOutlet(action: AnyAction | undefined) {
-        this.action = action;
-
         if (this.componentRef) {
             this.viewContainerRef.clear();
             this.componentRef = undefined;
         }
+
+        if (this.action) {
+            this.action.destroy();
+        }
+
+        this.action = action;
 
         if (this.action === undefined) {
             return;
