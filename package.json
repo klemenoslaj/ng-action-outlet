@@ -72,10 +72,10 @@
   "release": {
     "packages": "dist",
     "plugins": [
-        "./scripts/release.js",
-        "@semantic-release/github",
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator"
+      "./scripts/release.js",
+      "@semantic-release/github",
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator"
     ]
   },
   "config": {
