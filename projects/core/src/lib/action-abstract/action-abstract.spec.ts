@@ -9,7 +9,7 @@ class ActionAbstractTest extends ActionAbstract<any, any> {
     changes$: any = NEVER;
     fire$: any = NEVER;
 
-    state: BehaviorSubject<ActionState>;
+    state!: BehaviorSubject<ActionState>;
 
     constructor() {
         super({});

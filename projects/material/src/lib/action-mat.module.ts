@@ -1,7 +1,10 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActionOutletModule, ActionButton, ActionGroup } from '@ng-action-outlet/core';
-import { MatButtonModule, MatMenuModule, MatIconModule, MatDividerModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { ActionMatButtonComponent } from './action-mat-button.component';
 import { ActionMatGroupComponent } from './action-mat-group.component';
