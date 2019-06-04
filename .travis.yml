@@ -9,7 +9,7 @@ notifications:
   email: false
 node_js:
   - "10"
-  - "8"
+  - "12"
 script:
   - yarn commitlint-travis
   - yarn build

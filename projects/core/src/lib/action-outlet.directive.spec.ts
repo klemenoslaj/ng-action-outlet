@@ -6,6 +6,7 @@ import { ActionGroup } from './action-group/action-group';
 import { ActionOutletDirective } from './action-outlet.directive';
 import { ActionOutletFactory } from './action-outlet.service';
 import { ActionToggle } from './action-toggle/action-toggle';
+import { AnyAction } from './action-outlet.model';
 
 interface TestContext {
     fixture: ComponentFixture<TestComponent>;
@@ -16,9 +17,9 @@ interface TestContext {
     template: `<div #el><div *actionOutlet="group; destroy: destroy"></div></div>`,
 })
 class TestComponent {
-    @ViewChild(ActionOutletDirective) outlet: ActionOutletDirective;
-    @ViewChild('el') element: ElementRef;
-    @Input() group: ActionGroup;
+    @ViewChild(ActionOutletDirective, { static: true }) outlet!: ActionOutletDirective;
+    @ViewChild('el', { static: false }) element!: ElementRef;
+    @Input() group?: ActionGroup | null;
     @Input() destroy = true;
 
     /**
@@ -32,8 +33,8 @@ class TestComponent {
     template: '',
 })
 class DumbComponent {
-    action;
-    hidden;
+    action?: AnyAction;
+    hidden!: boolean;
 }
 
 @Component({
@@ -41,8 +42,8 @@ class DumbComponent {
     template: '',
 })
 class Dumb2Component {
-    action;
-    hidden;
+    action?: AnyAction;
+    hidden!: boolean;
 }
 
 describe('Directive: ActionOutletDirective', function (): void {
@@ -76,7 +77,7 @@ describe('Directive: ActionOutletDirective', function (): void {
     });
 
     it('should use forced component from Action if defined', function (this: TestContext): void {
-        const forcedComponentGroup = new ActionGroup(null, Dumb2Component);
+        const forcedComponentGroup = new ActionGroup(undefined, <any>Dumb2Component);
         const defaultComponentGroup = new ActionGroup();
 
         const usedDefaultComponent = this.component.outlet.getComponentType(defaultComponentGroup, (<any>this.component.outlet).injector);
