@@ -33,6 +33,8 @@ The goal of `ActionOutlet` is to provide an easy API to build dynamic menus on r
 
 The most natural use case is when back-end is in charge over the visibility of actions and menus of the front-end application (_e.g. hide/show actions based on permissions_).
 
+[**DEMO**](https://stackblitz.com/edit/ng-action-outlet-demo?file=src/app/app.component.ts)
+
 ## Getting started
 
 ### Step 1: Install `ng-action-outlet`
