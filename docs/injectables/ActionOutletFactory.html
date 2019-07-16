@@ -67,18 +67,27 @@
 In order to keep the code clean, use only one approach.</p>
 <h2 id="example">Example</h2>
 <p><strong>Instead of</strong></p>
-<div><pre class="line-numbers"><code class="language-typescript"> * const buttonAction = new ActionButton({
- *    title: &#39;Action Title&#39;,
- *    icon: &#39;icon&#39;,
- *    callback: callbackMethod
- * });
- *</code></pre></div><p><strong>Can do</strong></p>
-<div><pre class="line-numbers"><code class="language-typescript"> * const buttonAction = this.actionOutletFactory.createButton()
- *    .setTitle(&#39;Action Title&#39;)
- *    .setIcon(&#39;icon&#39;)
- *    .fire$.subscribe(callbackMethod);
- *</code></pre></div>
+<p>```typescript</p>
+<ul>
+<li>const buttonAction = new ActionButton({</li>
+<li>title: &#39;Action Title&#39;,</li>
+<li>icon: &#39;icon&#39;,</li>
+<li>callback: callbackMethod</li>
+<li>});</li>
+<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
+</ul>
+<p><strong>Can do</strong></p>
+<p>```typescript</p>
+<ul>
+<li>const buttonAction = this.actionOutletFactory.createButton()</li>
+<li>.setTitle(&#39;Action Title&#39;)</li>
+<li>.setIcon(&#39;icon&#39;)</li>
+<li>.fire$.subscribe(callbackMethod);</li>
+<li>```</li>
+</ul>
+
             </p>
+
 
 
             <section>
@@ -118,293 +127,301 @@ In order to keep the code clean, use only one approach.</p>
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="createButton"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createButton"></a>
+                    <span class="name">
+                        <b>
                             createButton
-                            </b>
-                            <a href="#createButton"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#createButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:51</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:51</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Will create and return a new instance of <code>ActionButton</code> with default options and component</p>
-<h4 id="example-">Example:</h4>
-<div><pre class="line-numbers"><code class="language-typescript">     * const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });
-     *</code></pre></div></div>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will create and return a new instance of <code>ActionButton</code> with default options and component</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });
+     *</code></p>
+</div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>options</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/ActionButtonOptions.html" target="_self" >ActionButtonOptions</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ActionButtonOptions.html" target="_self" >ActionButtonOptions</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <p>Override the default options for <code>ActionButton</code></p>
+                                    <td>
+                                        Yes
+                                    </td>
 
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>component</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ActionButton.html" target="_self" >Type&lt;ActionButtonComponentImpl&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <p>Override the default component for <code>ActionButton</code></p>
+                                    <td>
+                                        <p>Override the default options for <code>ActionButton</code></p>
 
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ActionButton.html" target="_self" >ActionButton</a></code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../classes/ActionButton.html" target="_self" >Type&lt;ActionButtonComponentImpl&gt;</a></code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="createGroup"></a>
-                        <span class="name">
-                            <b>
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Override the default component for <code>ActionButton</code></p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionButton.html" target="_self" >ActionButton</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGroup"></a>
+                    <span class="name">
+                        <b>
                             createGroup
-                            </b>
-                            <a href="#createGroup"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#createGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>createGroup(options?: <a href="../interfaces/ActionGroupOptions.html">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html">Type<ActionGroupComponentImpl></a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:67</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:67</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Will create and return a new instance of <code>ActionGroup</code> with default options and component</p>
-<h4 id="example-">Example:</h4>
-<div><pre class="line-numbers"><code class="language-typescript">     * const group = this.actionOutlet.createGroup({ dropdown: true });
-     *</code></pre></div></div>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will create and return a new instance of <code>ActionGroup</code> with default options and component</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const group = this.actionOutlet.createGroup({ dropdown: true });
+     *</code></p>
+</div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>options</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <p>Override the default options for <code>ActionGroup</code></p>
+                                    <td>
+                                        Yes
+                                    </td>
 
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>component</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ActionGroup.html" target="_self" >Type&lt;ActionGroupComponentImpl&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <p>Override the default component for <code>ActionGroup</code></p>
+                                    <td>
+                                        <p>Override the default options for <code>ActionGroup</code></p>
 
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../classes/ActionGroup.html" target="_self" >Type&lt;ActionGroupComponentImpl&gt;</a></code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="createToggle"></a>
-                        <span class="name">
-                            <b>
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Override the default component for <code>ActionGroup</code></p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createToggle"></a>
+                    <span class="name">
+                        <b>
                             createToggle
-                            </b>
-                            <a href="#createToggle"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#createToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>createToggle(options?: <a href="../interfaces/ActionToggleOptions.html">ActionToggleOptions</a>, component?: <a href="../classes/ActionToggle.html">Type<ActionToggleComponentImpl></a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:83</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">projects/core/src/lib/action-outlet.service.ts:83</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Will create and return a new instance of <code>ActionToggle</code> with default options and component</p>
-<h4 id="example-">Example:</h4>
-<div><pre class="line-numbers"><code class="language-typescript">     * const toggle = this.actionOutlet.createToggle({ checked: true });
-     *</code></pre></div></div>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will create and return a new instance of <code>ActionToggle</code> with default options and component</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const toggle = this.actionOutlet.createToggle({ checked: true });
+     *</code></p>
+</div>
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>options</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/ActionToggleOptions.html" target="_self" >ActionToggleOptions</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ActionToggleOptions.html" target="_self" >ActionToggleOptions</a></code>
+                                    </td>
 
-                                                        <td>
-                                                                <p>Override the default options for <code>ActionToggle</code></p>
+                                    <td>
+                                        Yes
+                                    </td>
 
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>component</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ActionToggle.html" target="_self" >Type&lt;ActionToggleComponentImpl&gt;</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            Yes
-                                                    </td>
-                                                    
 
-                                                        <td>
-                                                                <p>Override the default component for <code>ActionToggle</code></p>
+                                    <td>
+                                        <p>Override the default options for <code>ActionToggle</code></p>
 
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/ActionToggle.html" target="_self" >ActionToggle</a></code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../classes/ActionToggle.html" target="_self" >Type&lt;ActionToggleComponentImpl&gt;</a></code>
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Override the default component for <code>ActionToggle</code></p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionToggle.html" target="_self" >ActionToggle</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 
@@ -507,6 +524,7 @@ export class ActionOutletFactory implements ActionOutlet {
 
 
 
+                   
 
 
 

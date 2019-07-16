@@ -39,11 +39,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-paper"></span>LICENSE
                             </a>
                         </li>
-                        <li class="link">
-                            <a href="dependencies.html" data-type="chapter-link">
-                                <span class="icon ion-ios-list"></span>Dependencies
-                            </a>
-                        </li>
+                                <li class="link">
+                                    <a href="dependencies.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-list"></span>Dependencies
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter modules">
@@ -55,18 +55,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                         </a>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
                                 <a href="modules/ActionOutletModule.html" data-type="entity-link">ActionOutletModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' : 'data-target="#xs-directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' }>
+                                        'data-target="#directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' : 'data-target="#xs-directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' :
-                                        'id="xs-directives-links-module-ActionOutletModule-87ef1956611068224b320ee9162f6626"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' :
+                                        'id="xs-directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' }>
                                         <li class="link">
                                             <a href="directives/ActionOutletDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">ActionOutletDirective</a>
@@ -83,7 +83,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span>Classes</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
                                 <a href="classes/ActionAbstract.html" data-type="entity-link">ActionAbstract</a>
                             </li>
@@ -105,7 +105,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span>Injectables</span>
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
-                            <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                            <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
                                     <a href="injectables/ActionOutletFactory.html" data-type="entity-link">ActionOutletFactory</a>
                                 </li>
@@ -118,7 +118,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span>Interfaces</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
+                        <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
                                 <a href="interfaces/ActionAbstractComponentImpl.html" data-type="entity-link">ActionAbstractComponentImpl</a>
                             </li>
@@ -158,7 +158,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span>Miscellaneous</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
                             <li class="link">
                                 <a href="miscellaneous/enumerations.html" data-type="entity-link">Enums</a>
                             </li>
