@@ -89,9 +89,6 @@ All components will shere this interface after implementing derived component im
                                 <li>
                                         <a href="#action">action</a>
                                 </li>
-                                <li>
-                                        <a href="#hidden">hidden</a>
-                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -138,41 +135,6 @@ All components will shere this interface after implementing derived component im
                             </tr>
                         </tbody>
                     </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="hidden"></a>
-                                        <span class="name"><b>hidden</b><a href="#hidden"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>hidden:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>Hidden property, that <code>HostBinding</code> should be used for, in order to show or hide action</p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
             </section>
     </div>
 
@@ -189,10 +151,6 @@ export interface ActionAbstractComponentImpl&lt;Action extends AnyAction &#x3D; 
      * The derived action instance, as Input in angular component
      */
     action: Action; // @Input
-    /**
-     * Hidden property, that &#x60;HostBinding&#x60; should be used for, in order to show or hide action
-     */
-    hidden: boolean; // @HostBinding
 }
 
 /**
@@ -233,6 +191,7 @@ export interface ActionAbstractEvent {
 </div>
 
 
+                   
 
 
 
