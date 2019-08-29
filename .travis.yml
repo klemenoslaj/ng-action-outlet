@@ -1,5 +1,7 @@
 sudo: required
 language: node_js
+addons:
+  chrome: stable
 before_install: # if "install" is overridden
   # Repo for Yarn
   - npm install yarn -g

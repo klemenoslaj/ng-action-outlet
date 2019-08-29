@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "ng build core && ng build material",
-    "test:once": "ng test core --watch false --browsers ChromiumHeadless --code-coverage",
+    "test:once": "ng test core --watch false --browsers ChromeHeadless --code-coverage",
     "docs:coverage": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --coverageMinimumPerFile 100",
     "docs:build.prod": "yarn docs:coverage && compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal --disablePrivate --disableProtected --name NgActionOutlet --output docs",
     "docs:build.serve": "compodoc -p ./tsconfig.docs.json --disableLifeCycleHooks --disableInternal -s -w",
@@ -16,28 +16,27 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^8.1.1",
-    "@angular/cdk": "~8.1.0",
-    "@angular/common": "^8.1.1",
-    "@angular/compiler": "^8.1.1",
-    "@angular/core": "^8.1.1",
-    "@angular/forms": "^8.1.1",
-    "@angular/material": "~8.1.0",
-    "@angular/platform-browser": "^8.1.1",
-    "@angular/platform-browser-dynamic": "^8.1.1",
-    "@angular/router": "^8.1.1",
-    "core-js": "^2.5.4",
+    "@angular/animations": "^8.2.4",
+    "@angular/cdk": "^8.1.4",
+    "@angular/common": "^8.2.4",
+    "@angular/compiler": "^8.2.4",
+    "@angular/core": "^8.2.4",
+    "@angular/forms": "^8.2.4",
+    "@angular/material": "^8.1.4",
+    "@angular/platform-browser": "^8.2.4",
+    "@angular/platform-browser-dynamic": "^8.2.4",
+    "@angular/router": "^8.2.4",
     "hammerjs": "^2.0.8",
     "rxjs": "^6.4.0",
     "travis-deploy-once": "^5.0.11",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.801.1",
-    "@angular-devkit/build-ng-packagr": "~0.801.1",
-    "@angular/cli": "^8.1.1",
-    "@angular/compiler-cli": "^8.1.1",
-    "@angular/language-service": "^8.1.1",
+    "@angular-devkit/build-angular": "~0.803.1",
+    "@angular-devkit/build-ng-packagr": "~0.803.1",
+    "@angular/cli": "^8.3.1",
+    "@angular/compiler-cli": "^8.2.4",
+    "@angular/language-service": "^8.2.4",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/travis-cli": "^8.1.0",
@@ -47,7 +46,7 @@
     "@types/node": "^10.12.0",
     "codelyzer": "^5.0.1",
     "coveralls": "^3.0.2",
-    "cz-conventional-changelog": "^2.1.0",
+    "cz-conventional-changelog": "^3.0.2",
     "husky": "^3.0.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -56,9 +55,9 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^5.3.0",
+    "ng-packagr": "^5.5.0",
     "protractor": "~5.4.0",
-    "remark-cli": "^6.0.1",
+    "remark-cli": "^7.0.0",
     "remark-preset-lint-recommended": "^3.0.2",
     "semantic-release": "^15.10.5",
     "shelljs": "^0.8.3",
@@ -66,7 +65,7 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.10.0",
     "tslint": "^5.13.0",
-    "typescript": "~3.4.5"
+    "typescript": "~3.5.3"
   },
   "release": {
     "packages": "dist",
@@ -88,10 +87,7 @@
     }
   },
   "engines": {
-    "node": ">= 8.12.0",
-    "yarn": ">= 1.10.1"
-  },
-  "resolutions": {
-    "lodash": "4.17.14"
+    "node": ">= v10.16.0",
+    "yarn": ">= 1.17.3"
   }
 }
