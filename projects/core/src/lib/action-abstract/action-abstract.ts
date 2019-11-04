@@ -184,7 +184,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
         this.disabled = new BehaviorSubject(disabled);
         this.state = new BehaviorSubject(<ActionState>ActionState.Inactive);
         this.finish = this.state.pipe(
-          filter(state => state === ActionState.Destroyed)
+            filter(state => state === ActionState.Destroyed)
         );
 
         this.title$ = this.handleLivecycleDistinct(this.title.asObservable());
@@ -192,7 +192,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
         this.visible$ = this.handleLivecycleDistinct(this.visible.asObservable());
         this.disabled$ = this.handleLivecycleDistinct(this.disabled.asObservable());
         this.state$ = this.state.asObservable().pipe(
-          distinctUntilChanged()
+            distinctUntilChanged()
         );
 
         this.forcedComponent = component;
@@ -214,7 +214,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     protected handleLivecycleDistinct<T>(observable: Observable<T>, shouldPause?: boolean): Observable<T> {
         return this.handleLivecycle(observable, shouldPause).pipe(
-          distinctUntilChanged()
+            distinctUntilChanged()
         );
     }
 
@@ -227,7 +227,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     protected handleLivecycle<T>(observable: Observable<T>, shouldPause: boolean = true): Observable<T> {
         const source = observable.pipe(
-          takeUntil(this.finish)
+            takeUntil(this.finish)
         );
 
         if (!shouldPause) {
@@ -246,7 +246,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     protected handleActivateState<T>(observable: Observable<T>): Observable<T> {
         return this.state.pipe(
-          switchMap(state => state === ActionState.Inactive ? (NEVER) : observable)
+            switchMap(state => state === ActionState.Inactive ? (NEVER) : observable)
         );
     }
 
