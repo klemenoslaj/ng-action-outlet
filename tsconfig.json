@@ -23,10 +23,12 @@
     ],
     "paths": {
       "@ng-action-outlet/core": [
-        "dist/core"
+        "dist/core",
+        "projects/core/src/public_api.ts"
       ],
       "@ng-action-outlet/material": [
-        "dist/material"
+        "dist/material",
+        "projects/material/src/public_api.ts"
       ]
     }
   }
