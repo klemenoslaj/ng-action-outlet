@@ -8,7 +8,7 @@ export interface ActionAbstractComponentImpl<Action extends AnyAction = AnyActio
     /**
      * The derived action instance, as Input in angular component
      */
-    action: Action; // @Input
+    _action?: Action | null; // @Input
 }
 
 /**

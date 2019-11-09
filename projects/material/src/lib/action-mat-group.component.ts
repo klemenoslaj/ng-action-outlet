@@ -1,58 +1,49 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation, Input, HostBinding, Inject } from '@angular/core';
 import { ActionGroup, ActionGroupComponentImpl } from '@ng-action-outlet/core';
 
-import { isMenuItem } from './common';
+import { trackByAction } from './common';
+import { actionMatButtonTemplate } from './action-mat-button.template';
+import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
 @Component({
   selector: 'action-mat-group',
+  exportAs: 'actionMatGroup',
   template: `
-    <ng-container *ngIf="(action.visible$ | async) && (action.children$ | async)!.length">
-      <ng-container *ngIf="action.dropdown$ | async; then dropdown else group"></ng-container>
+    <ng-container *ngIf="_action && (_action.visible$ | async) && (_action.children$ | async)!.length">
+      <ng-container *ngIf="_action.dropdown$ | async; then dropdown else group"></ng-container>
     </ng-container>
 
     <ng-template #group>
-      <mat-divider *ngIf="showDivider()"></mat-divider>
-      <ng-container *ngFor="let child of action.children$ | async" [actionOutlet]="child"></ng-container>
+      <ng-container *ngFor="let child of _action!.children$ | async; trackBy: _trackByAction" [actionOutlet]="child"></ng-container>
     </ng-template>
 
     <ng-template #dropdown>
-      <mat-menu #menu="matMenu">
-        <ng-template matMenuContent>
-          <ng-container *ngFor="let child of action.children$ | async" [actionOutlet]="child"></ng-container>
-        </ng-template>
-      </mat-menu>
-
-      <ng-container *ngIf="isMenuItem(); then menuItem else menuButton"></ng-container>
-
-      <ng-template #menuItem>
-        <button
-          type="button"
-          mat-menu-item
-          [matMenuTriggerFor]="menu"
-          [disabled]="action.disabled$ | async">
-          <action-mat-icon *ngIf="action.icon$ | async; let icon" [icon]="icon"></action-mat-icon>
-          <span>{{ action.title$ | async }}</span>
-        </button>
-      </ng-template>
-
-      <ng-template #menuButton>
-        <action-mat-button *ngIf="action.disabled$ | async" [action]="action"></action-mat-button>
-        <action-mat-button *ngIf="!(action.disabled$ | async)" [matMenuTriggerFor]="menu" [action]="action"></action-mat-button>
-      </ng-template>
+      <action-mat-menu [action]="_action" #actionMenu="actionMatMenu"></action-mat-menu>
+      <button mat-button [actionMatButton]="_action" [matMenuTriggerFor]="actionMenu._menu">
+        <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
+      </button>
     </ng-template>
+
+    ${actionMatButtonTemplate}
   `,
+  styles: [`
+    .action-mat-group {
+      display: contents;
+    }
+  `],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
 export class ActionMatGroupComponent implements ActionGroupComponentImpl {
-  readonly action!: ActionGroup;
+  @HostBinding('class')
+  readonly _classname = 'action-mat-group';
+  readonly _trackByAction = trackByAction;
 
-  isMenuItem() {
-    return isMenuItem(this.action.getParent());
-  }
+  constructor(
+    @Inject(ACTION_ICON_TYPE_TOKEN)
+    readonly _iconType: ICON_TYPE
+  ) { }
 
-  showDivider() {
-    const parent = this.action.getParent();
-    return parent && parent.isDropdown() && parent.getChild(0) !== this.action;
-  }
+  @Input('action')
+  _action?: ActionGroup | null;
 }

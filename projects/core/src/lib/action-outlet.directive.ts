@@ -78,7 +78,7 @@ export class ActionOutletDirective implements OnDestroy {
         const component = this.getComponentType(this.action, this.injector);
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
         this.componentRef = this.viewContainerRef.createComponent(componentFactory);
-        this.componentRef.instance.action = this.action.activate();
+        this.componentRef.instance._action = this.action.activate();
     }
 
     /**

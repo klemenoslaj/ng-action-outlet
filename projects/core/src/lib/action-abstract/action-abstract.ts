@@ -27,6 +27,13 @@ export const enum ActionState {
 }
 
 /**
+ * @internal
+ *
+ * Used to uniquelly identify the action
+ */
+let increment = 0;
+
+/**
  * `ActionAbstract` is extended by **all** action implementations
  * Provides all the behaviors, shared between **each** action
  * *e.g. title, icon, visibility, disabled, active state*
@@ -75,6 +82,12 @@ export const enum ActionState {
  * ```
  */
 export abstract class ActionAbstract<Options extends ActionAbstractOptions, FireEvent extends ActionAbstractEvent> {
+    /**
+     * @internal
+     *
+     * Used to uniquelly identify the action
+     */
+    readonly _actionId = increment++;
     /**
      * `Observable` that notifies subscriptions when title changes
      */
