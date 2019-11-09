@@ -1,1 +1,32 @@
-<ng-container *actionOutlet="group"></ng-container>
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: group1, title: 'Main group' }"></ng-container>
+
+<br>
+
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: button1  }"></ng-container>
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: button2  }"></ng-container>
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: dropdown1  }"></ng-container>
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: menuItem1  }"></ng-container>
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: dropdown2  }"></ng-container>
+
+<ng-template #singleAction let-action let-title="title">
+  <mat-card class="interactive-card">
+    <mat-card-header>
+      <mat-card-title [innerHTML]="title || (action.title$ | async) || (action.icon$ | async) || 'No title'"></mat-card-title>
+      <mat-card-subtitle>{{ getActionType(action) }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="interactive-card--form-field">
+        <input #titleInput matInput placeholder="Button title" [value]="action.title$ | async" (keyup)="setTitle(action, titleInput.value)">
+      </mat-form-field>
+      <mat-form-field class="interactive-card--form-field">
+        <input #iconInput matInput placeholder="Button icon" [value]="action.icon$ | async" (keyup)="setIcon(action, iconInput.value)">
+      </mat-form-field>
+      <mat-checkbox [checked]="action.disabled$ | async" (change)="toggleDisabled(action)">Disabled</mat-checkbox>
+      <br>
+      <mat-checkbox [checked]="action.visible$ | async" (change)="toggleVisible(action)">Visible</mat-checkbox>
+    </mat-card-content>
+    <mat-card-actions>
+      <ng-container *actionOutlet="action"></ng-container>
+    </mat-card-actions>
+  </mat-card>
+</ng-template>

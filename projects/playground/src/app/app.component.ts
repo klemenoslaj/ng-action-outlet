@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ActionOutletFactory, ActionGroup, ActionButtonEvent } from '@ng-action-outlet/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ActionGroup, ActionButtonEvent, ActionButton, AnyAction } from '@ng-action-outlet/core';
 
 @Component({
   selector: 'app-root',
@@ -7,47 +7,96 @@ import { ActionOutletFactory, ActionGroup, ActionButtonEvent } from '@ng-action-
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
-  group!: ActionGroup;
+export class AppComponent {
+  button1 = new ActionButton({
+    title: 'Button 1',
+    callback: this.callback,
+    disabled: true
+  });
+  button2 = new ActionButton({
+    title: 'Button 2',
+    callback: this.callback
+  });
+  menuItem1 = new ActionButton({
+    title: 'Menu item 1',
+    callback: this.callback
+  });
+  dropdown2 = new ActionGroup({
+    dropdown: true,
+    title: 'Show More &#8230;',
+    children: [
+      new ActionGroup({
+        children: [
+          new ActionButton({
+            title: 'Menu Item 2'
+          }),
+          new ActionButton({
+            title: 'Menu Item 3'
+          })
+        ]
+      }),
+      new ActionGroup({
+        children: [
+          new ActionButton({
+            title: 'Menu Item 4'
+          }),
+          new ActionButton({
+            title: 'Menu Item 5'
+          })
+        ]
+      })
+    ]
+  });
+  dropdown1 = new ActionGroup({
+    dropdown: true,
+    icon: 'more_vert',
+    children: [
+      this.menuItem1,
+      this.dropdown2,
+    ]
+  });
+  group1 = new ActionGroup({
+    children: [
+      this.button1,
+      this.button2,
+      this.dropdown1
+    ]
+  });
 
-  private index = 1;
-
-  constructor(private actionOutlet: ActionOutletFactory) {}
-
-  ngOnInit(): void {
-    this.group = this.actionOutlet.createGroup();
-
-    this.group.createButton().setIcon('home').fire$.subscribe(this.callback);
-    this.group.createButton().setIcon('person').fire$.subscribe(this.callback);
-    this.group.createButton().setIcon('settings').fire$.subscribe(this.callback);
-
-    const childGroup = this.group.createGroup().enableDropdown().setIcon('more_vert');
-    this.createGroupWithChildren(childGroup, 3);
-    this.createGroupWithChildren(childGroup, 2);
-    this.createGroupWithChildren(childGroup, 5);
-
-    const dropdowns = childGroup.createGroup();
-    this.createGroupWithChildren(dropdowns, 5, 'Dropdown 1').enableDropdown();
-    this.createGroupWithChildren(dropdowns, 4, 'Dropdown 2').enableDropdown();
-    this.createGroupWithChildren(dropdowns, 7, 'Dropdown 3').enableDropdown();
-
-    childGroup.createGroup().enableDropdown().setTitle('EMPTY');
-
-    this.createGroupWithChildren(childGroup, 2);
+  callback({ action }: ActionButtonEvent) {
+    alert('Clicked: ' + action.getTitle() || action.getIcon())
   }
 
-  callback = ({ action }: ActionButtonEvent) => console.log('Clicked:', action.getTitle() || action.getIcon());
-
-  createGroupWithChildren(parent: ActionGroup, childAmount: number, title: string = '') {
-    const group = parent.createGroup().setTitle(title);
-    const index = this.index;
-
-    this.index += childAmount;
-
-    for (let i = 0; i < childAmount; i++) {
-      group.createButton().setTitle(`Action Button ${index + i}`).fire$.subscribe(this.callback);
+  toggleDisabled(action: AnyAction) {
+    if (action.isDisabled()) {
+      action.enable();
+    } else {
+      action.disable();
     }
+  }
 
-    return group;
+  toggleVisible(action: AnyAction) {
+    action.setVisibility(!action.isVisible());
+  }
+
+  setTitle(action: AnyAction, value: string) {
+    action.setTitle(value);
+  }
+
+  setIcon(action: AnyAction, value: string) {
+    action.setIcon(value);
+  }
+
+  getActionType(action: AnyAction) {
+    if (action instanceof ActionButton) {
+      return 'Button';
+    }
+    if (action instanceof ActionGroup) {
+      if (action.isDropdown()) {
+        return 'Dropdown';
+      }
+
+      return 'Group';
+    }
   }
 }

@@ -8,8 +8,9 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { ActionMatButtonComponent } from './action-mat-button.component';
 import { ActionMatGroupComponent } from './action-mat-group.component';
-import { ActionMatIconComponent } from './action-mat-icon.component';
+import { ActionMatMenuComponent } from './action-mat-menu.component';
 import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
+import { ActionMatButtonDirective } from './action-mat-button.directive';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
   declarations: [
     ActionMatButtonComponent,
     ActionMatGroupComponent,
-    ActionMatIconComponent,
+    ActionMatMenuComponent,
+    ActionMatButtonDirective,
   ],
   entryComponents: [
     ActionMatButtonComponent,

@@ -4,7 +4,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "action-mat",
+      "actionMat",
       "camelCase"
     ],
     "component-selector": [
