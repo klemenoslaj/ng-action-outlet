@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, HostBinding, ChangeDetectionStrategy, View
 import { AnyAction, ActionGroup, ActionGroupComponentImpl } from '@ng-action-outlet/core';
 import { MatMenu } from '@angular/material/menu';
 
-import { trackByAction } from './common';
+import { trackByAction, TrackByAction } from './common';
 import { actionMatButtonTemplate } from './action-mat-button.template';
 import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
@@ -64,7 +64,7 @@ export class ActionMatMenuComponent implements ActionGroupComponentImpl {
 
   @HostBinding('class')
   readonly _classname = 'action-mat-menu';
-  readonly _trackByAction = trackByAction;
+  readonly _trackByAction: TrackByAction = trackByAction;
 
   constructor(
     @Inject(ACTION_ICON_TYPE_TOKEN)
