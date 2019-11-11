@@ -597,7 +597,7 @@ export class ActionOutletDirective implements OnDestroy {
         const component &#x3D; this.getComponentType(this.action, this.injector);
         const componentFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(component);
         this.componentRef &#x3D; this.viewContainerRef.createComponent(componentFactory);
-        this.componentRef.instance.action &#x3D; this.action.activate();
+        this.componentRef.instance._action &#x3D; this.action.activate();
     }
 
     /**
@@ -698,6 +698,7 @@ export class ActionOutletDirective implements OnDestroy {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
             var COMPODOC_CURRENT_PAGE_URL = 'ActionOutletDirective.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
