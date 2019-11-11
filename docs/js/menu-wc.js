@@ -60,13 +60,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ActionOutletModule.html" data-type="entity-link">ActionOutletModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' : 'data-target="#xs-directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' }>
+                                        'data-target="#directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' : 'data-target="#xs-directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' :
-                                        'id="xs-directives-links-module-ActionOutletModule-59aabf42ce8bb55832d03b4fd8a35dd9"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' :
+                                        'id="xs-directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' }>
                                         <li class="link">
                                             <a href="directives/ActionOutletDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">ActionOutletDirective</a>

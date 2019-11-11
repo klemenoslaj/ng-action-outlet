@@ -151,7 +151,7 @@ export interface ActionAbstractComponentImpl&lt;Action extends AnyAction &#x3D; 
     /**
      * The derived action instance, as Input in angular component
      */
-    action: Action; // @Input
+    _action?: Action | null; // @Input
 }
 
 /**
@@ -215,6 +215,7 @@ export interface ActionAbstractEvent {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'ActionAbstractEvent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
