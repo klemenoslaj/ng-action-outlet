@@ -90,6 +90,8 @@ describe('Class: ActionAbstract', function (): void {
         expect(this.action.isEnabled).toEqual(jasmine.any(Function));
         expect(this.action.getForcedComponent).toEqual(jasmine.any(Function));
         expect(this.action.getParent).toEqual(jasmine.any(Function));
+        expect(this.action.setAriaLabel).toEqual(jasmine.any(Function));
+        expect(this.action.getAriaLabel).toEqual(jasmine.any(Function));
 
         // Private api
         expect(this.action._setParent).toEqual(jasmine.any(Function));
@@ -108,6 +110,7 @@ describe('Class: ActionAbstract', function (): void {
         expect(this.action.setVisibility(true)).toBe(this.action);
         expect(this.action.enable()).toBe(this.action);
         expect(this.action.disable()).toBe(this.action);
+        expect(this.action.setAriaLabel('Aria Label')).toBe(this.action);
 
         // Private api
         expect(this.action._setParent(this.parent)).toBe(this.action);
@@ -120,6 +123,7 @@ describe('Class: ActionAbstract', function (): void {
         expect(this.action.visible$).toEqual(jasmine.any(Observable));
         expect(this.action.disabled$).toEqual(jasmine.any(Observable));
         expect(this.action.state$).toEqual(jasmine.any(Observable));
+        expect(this.action.ariaLabel$).toEqual(jasmine.any(Observable));
         expect(this.action.fire$).toEqual(jasmine.any(Observable));
         expect(this.action.changes$).toEqual(jasmine.any(Observable));
     });
@@ -127,6 +131,7 @@ describe('Class: ActionAbstract', function (): void {
     it('should match default values', function (this: TestContext): void {
         expect(this.action.getTitle()).toBe('');
         expect(this.action.getIcon()).toBe('');
+        expect(this.action.getAriaLabel()).toBe('');
         expect(this.action.isVisible()).toBe(true);
         expect(this.action.isDisabled()).toBe(false);
     });
@@ -140,6 +145,18 @@ describe('Class: ActionAbstract', function (): void {
         expect(this.action.getTitle()).toBe(title);
 
         this.testScheduler.expectObservable(this.action.title$).toBe(expected, values);
+        this.testScheduler.flush();
+    });
+
+    it('should set ariaLabel correctly', function (this: TestContext): void {
+        const label = 'Test Aria Label 1';
+        const values = { l: label };
+        const expected = 'l';
+
+        expect(this.action.setAriaLabel(label)).toBe(this.action);
+        expect(this.action.getAriaLabel()).toBe(label);
+
+        this.testScheduler.expectObservable(this.action.ariaLabel$).toBe(expected, values);
         this.testScheduler.flush();
     });
 
