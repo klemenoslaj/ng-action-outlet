@@ -16,10 +16,13 @@
     </mat-card-header>
     <mat-card-content>
       <mat-form-field class="interactive-card--form-field">
-        <input #titleInput matInput placeholder="Button title" [value]="action.title$ | async" (keyup)="setTitle(action, titleInput.value)">
+        <input #titleInput matInput placeholder="Button title" [value]="action.title$ | async" (keyup)="action.setTitle(titleInput.value)">
       </mat-form-field>
       <mat-form-field class="interactive-card--form-field">
-        <input #iconInput matInput placeholder="Button icon" [value]="action.icon$ | async" (keyup)="setIcon(action, iconInput.value)">
+        <input #iconInput matInput placeholder="Button icon" [value]="action.icon$ | async" (keyup)="action.setIcon(titleInput.value)">
+      </mat-form-field>
+      <mat-form-field class="interactive-card--form-field">
+        <input #iconInput matInput placeholder="Button aria label" [value]="action.ariaLabel$ | async" (keyup)="action.setAriaLabel(titleInput.value)">
       </mat-form-field>
       <mat-checkbox [checked]="action.disabled$ | async" (change)="toggleDisabled(action)">Disabled</mat-checkbox>
       <br>
