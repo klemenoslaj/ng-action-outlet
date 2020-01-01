@@ -50,6 +50,7 @@ export class AppComponent {
   dropdown1 = new ActionGroup({
     dropdown: true,
     icon: 'more_vert',
+    ariaLabel: 'Menu for more actions',
     children: [
       this.menuItem1,
       this.dropdown2,
@@ -77,14 +78,6 @@ export class AppComponent {
 
   toggleVisible(action: AnyAction) {
     action.setVisibility(!action.isVisible());
-  }
-
-  setTitle(action: AnyAction, value: string) {
-    action.setTitle(value);
-  }
-
-  setIcon(action: AnyAction, value: string) {
-    action.setIcon(value);
   }
 
   getActionType(action: AnyAction) {
