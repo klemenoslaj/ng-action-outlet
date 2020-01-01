@@ -11,6 +11,7 @@ import { ActionGroup } from '../action-group/action-group';
  */
 const defaultAbstractOptions: Required<ActionAbstractOptions> = {
     title: '',
+    ariaLabel: '',
     icon: '',
     visible: true,
     disabled: false,
@@ -111,6 +112,10 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     readonly state$: Observable<ActionState>;
     /**
+     * `Observable` that notifies subscribers when the ariaLabel changes.
+     */
+    readonly ariaLabel$: Observable<string>;
+    /**
      * **Abstract** property, holding `Observable`
      * Each derived class **should** implement it's own `fire$` observable,
      * with it's own specific implementation
@@ -165,17 +170,16 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      * Used to complete all **internal** subjects
      */
     protected readonly finish: Observable<ActionState>;
+    /**
+     * `BehaviorSubject`, used to notify subscribers on aria label changes.
+     */
+    protected readonly _ariaLabel$: BehaviorSubject<string>;
 
     /**
      * Parent of current action. This is a parent action,
      * to whom current action belongs to, and renders into
      */
     private parent?: ActionGroup;
-
-    /**
-     * `constructor` should be `ActionAbstract`
-     */
-    ['constructor']: typeof ActionAbstract;
 
     /**
      * Abstract action `constructor`. It will:
@@ -189,12 +193,13 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     constructor(options: Options,
                 component?: Type<ActionAbstractComponentImpl>) {
-        const { title, icon, visible, disabled } = this.options = { ...defaultAbstractOptions, ...options };
+        const { title, icon, visible, disabled, ariaLabel } = this.options = { ...defaultAbstractOptions, ...options };
 
         this.title = new BehaviorSubject(title);
         this.icon = new BehaviorSubject(icon);
         this.visible = new BehaviorSubject(visible);
         this.disabled = new BehaviorSubject(disabled);
+        this._ariaLabel$ = new BehaviorSubject(ariaLabel);
         this.state = new BehaviorSubject(<ActionState>ActionState.Inactive);
         this.finish = this.state.pipe(
             filter(state => state === ActionState.Destroyed)
@@ -202,6 +207,7 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
 
         this.title$ = this.handleLivecycleDistinct(this.title.asObservable());
         this.icon$ = this.handleLivecycleDistinct(this.icon.asObservable());
+        this.ariaLabel$ = this.handleLivecycleDistinct(this._ariaLabel$.asObservable());
         this.visible$ = this.handleLivecycleDistinct(this.visible.asObservable());
         this.disabled$ = this.handleLivecycleDistinct(this.disabled.asObservable());
         this.state$ = this.state.asObservable().pipe(
@@ -335,6 +341,23 @@ export abstract class ActionAbstract<Options extends ActionAbstractOptions, Fire
      */
     getTitle(): string {
         return this.title.getValue();
+    }
+
+    /**
+     * Will set the new ariaLabel and notify all ariaLabel subscribers
+     *
+     * @param ariaLabel The new action title
+     */
+    setAriaLabel(ariaLabel: string): this {
+        this._ariaLabel$.next(ariaLabel);
+        return this;
+    }
+
+    /**
+     * Returns current action ariaLabel
+     */
+    getAriaLabel(): string {
+        return this._ariaLabel$.getValue();
     }
 
     /**
