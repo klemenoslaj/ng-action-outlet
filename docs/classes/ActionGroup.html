@@ -147,12 +147,13 @@ Can be used either as <strong>group</strong> either as <strong>dropdown</strong>
                                 <a href="#fire$">fire$</a>
                             </li>
                             <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#ariaLabel$">ariaLabel$</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Abstract</span>
                                     <span class="modifier">Readonly</span>
                                 <a href="#changes$">changes$</a>
-                            </li>
-                            <li>
-                                <a href="#constructor">constructor</a>
                             </li>
                             <li>
                                     <span class="modifier">Readonly</span>
@@ -273,6 +274,9 @@ Can be used either as <strong>group</strong> either as <strong>dropdown</strong>
                                 <a href="#enable">enable</a>
                             </li>
                             <li>
+                                <a href="#getAriaLabel">getAriaLabel</a>
+                            </li>
+                            <li>
                                 <a href="#getForcedComponent">getForcedComponent</a>
                             </li>
                             <li>
@@ -307,6 +311,9 @@ Can be used either as <strong>group</strong> either as <strong>dropdown</strong>
                             </li>
                             <li>
                                 <a href="#isVisible">isVisible</a>
+                            </li>
+                            <li>
+                                <a href="#setAriaLabel">setAriaLabel</a>
                             </li>
                             <li>
                                 <a href="#setIcon">setIcon</a>
@@ -556,6 +563,47 @@ Empty observable in case of &#39;ActionGroup&#39;</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="ariaLabel$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            ariaLabel$</b>
+                            <a href="#ariaLabel$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:117</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscribers when the ariaLabel changes.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="changes$"></a>
                         <span class="name">
                             <b>
@@ -580,7 +628,7 @@ Empty observable in case of &#39;ActionGroup&#39;</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:124</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:129</a></code>
 </div>
                             </td>
                         </tr>
@@ -590,40 +638,6 @@ Empty observable in case of &#39;ActionGroup&#39;</p>
                         <div class="io-description"><p><strong>Abstract</strong> property, holding <code>Observable</code>
 Each derived class <strong>should</strong> implement it&#39;s own <code>changes$</code> observable,
 merging all public observables, notifying for every change doen to action</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="constructor"></a>
-                        <span class="name">
-                            <b>
-                            constructor</b>
-                            <a href="#constructor"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
-</div>
-                                </td>
-                            </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:178</a></code>
-</div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p><code>constructor</code> should be <code>ActionAbstract</code></p>
 </div>
                     </td>
                 </tr>
@@ -657,7 +671,7 @@ merging all public observables, notifying for every change doen to action</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:107</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:108</a></code>
 </div>
                             </td>
                         </tr>
@@ -699,7 +713,7 @@ merging all public observables, notifying for every change doen to action</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:118</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:123</a></code>
 </div>
                             </td>
                         </tr>
@@ -742,7 +756,7 @@ with it&#39;s own specific implementation</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:98</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:99</a></code>
 </div>
                             </td>
                         </tr>
@@ -783,7 +797,7 @@ with it&#39;s own specific implementation</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:112</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:113</a></code>
 </div>
                             </td>
                         </tr>
@@ -825,7 +839,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:94</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:95</a></code>
 </div>
                             </td>
                         </tr>
@@ -866,7 +880,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:103</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:104</a></code>
 </div>
                             </td>
                         </tr>
@@ -2278,7 +2292,7 @@ In case of <code>ActionGroup</code> <strong>Noop</strong></p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:270</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:276</a></code>
 </div>
                 </td>
             </tr>
@@ -2322,7 +2336,7 @@ In case of <code>ActionGroup</code> <strong>Noop</strong></p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:283</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:289</a></code>
 </div>
                 </td>
             </tr>
@@ -2366,7 +2380,7 @@ In case of <code>ActionGroup</code> <strong>Noop</strong></p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:296</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:302</a></code>
 </div>
                 </td>
             </tr>
@@ -2410,7 +2424,7 @@ complete all observables</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:408</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:431</a></code>
 </div>
                 </td>
             </tr>
@@ -2453,7 +2467,7 @@ complete all observables</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:400</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:423</a></code>
 </div>
                 </td>
             </tr>
@@ -2464,6 +2478,53 @@ complete all observables</p>
                     <div class="io-description"><p>Will enable action, <strong>if prevously disabled</strong></p>
 </div>
 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAriaLabel"></a>
+                    <span class="name">
+                        <b>
+                            getAriaLabel
+                        </b>
+                        <a href="#getAriaLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAriaLabel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:359</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns current action ariaLabel</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
                 </td>
             </tr>
         </tbody>
@@ -2496,7 +2557,7 @@ complete all observables</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:432</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:455</a></code>
 </div>
                 </td>
             </tr>
@@ -2545,7 +2606,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:353</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:376</a></code>
 </div>
                 </td>
             </tr>
@@ -2592,7 +2653,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:439</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:462</a></code>
 </div>
                 </td>
             </tr>
@@ -2639,7 +2700,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:336</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:342</a></code>
 </div>
                 </td>
             </tr>
@@ -2686,7 +2747,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:368</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:391</a></code>
 </div>
                 </td>
             </tr>
@@ -2729,7 +2790,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:305</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:311</a></code>
 </div>
                 </td>
             </tr>
@@ -2776,7 +2837,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:319</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:325</a></code>
 </div>
                 </td>
             </tr>
@@ -2823,7 +2884,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:416</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:439</a></code>
 </div>
                 </td>
             </tr>
@@ -2870,7 +2931,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:423</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:446</a></code>
 </div>
                 </td>
             </tr>
@@ -2917,7 +2978,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:393</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:416</a></code>
 </div>
                 </td>
             </tr>
@@ -2964,7 +3025,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:312</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:318</a></code>
 </div>
                 </td>
             </tr>
@@ -3011,7 +3072,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:386</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:409</a></code>
 </div>
                 </td>
             </tr>
@@ -3025,6 +3086,82 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAriaLabel"></a>
+                    <span class="name">
+                        <b>
+                            setAriaLabel
+                        </b>
+                        <a href="#setAriaLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setAriaLabel(ariaLabel: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:351</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will set the new ariaLabel and notify all ariaLabel subscribers</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ariaLabel</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new action title</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
                     </div>
                 </td>
             </tr>
@@ -3058,7 +3195,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:345</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:368</a></code>
 </div>
                 </td>
             </tr>
@@ -3134,7 +3271,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:328</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:334</a></code>
 </div>
                 </td>
             </tr>
@@ -3210,7 +3347,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:378</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:401</a></code>
 </div>
                 </td>
             </tr>
@@ -3286,7 +3423,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:360</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:383</a></code>
 </div>
                 </td>
             </tr>
@@ -3331,7 +3468,7 @@ the action in DOM, instead the component, provided via Angular <code>Injector</c
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:218</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:224</a></code>
 </div>
                 </td>
             </tr>
