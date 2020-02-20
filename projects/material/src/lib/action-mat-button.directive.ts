@@ -1,4 +1,4 @@
-import { Directive, Input, OnDestroy, ElementRef, Renderer2, HostBinding, Optional, Inject, ChangeDetectorRef } from '@angular/core';
+import { Directive, Input, OnDestroy, ElementRef, Renderer2, Optional, Inject, ChangeDetectorRef } from '@angular/core';
 import { MatMenuTrigger, MatMenuItem } from '@angular/material/menu';
 import { MatButton } from '@angular/material/button';
 import { ActionButton, ActionGroup } from '@ng-action-outlet/core';
@@ -11,9 +11,6 @@ import { takeUntil, switchMap, filter } from 'rxjs/operators';
 export class ActionMatButtonDirective implements OnDestroy {
   private _action$ = new ReplaySubject<ActionButton | ActionGroup>(1);
   private _unsubscribe$ = new Subject<void>();
-
-  @HostBinding('type')
-  readonly _type = 'button';
 
   @Input('actionMatButton')
   set _actionMatButton(action: ActionButton | ActionGroup) {
@@ -40,6 +37,8 @@ export class ActionMatButtonDirective implements OnDestroy {
       (matButton || matMenuItem)!.disabled = disabled;
       cdRef.markForCheck();
     });
+
+    renderer.setAttribute(nativeElement, 'type', 'button');
 
     const ariaLabel$ = this._action$.pipe(switchMap(action => action.ariaLabel$));
     ariaLabel$.pipe(
