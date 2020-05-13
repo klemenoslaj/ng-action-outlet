@@ -18,7 +18,7 @@ interface TestContext {
 })
 class TestComponent {
     @ViewChild(ActionOutletDirective, { static: true }) outlet!: ActionOutletDirective;
-    @ViewChild('el', { static: false }) element!: ElementRef;
+    @ViewChild('el') element!: ElementRef;
     @Input() group?: ActionGroup | null;
     @Input() destroy = true;
 
