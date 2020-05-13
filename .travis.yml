@@ -17,8 +17,14 @@ script:
   - yarn build
   - yarn test:once
   - cat ./coverage/core/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-after_success:
-  - yarn travis-deploy-once "yarn semantic-release"
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - yarn semantic-release
+  on:
+    branch:
+      master
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

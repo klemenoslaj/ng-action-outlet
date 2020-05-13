@@ -44,7 +44,7 @@ import { ActionMatButtonDirective } from './action-mat-button.directive';
   }]
 })
 export class ActionMatModule {
-    static forRoot(iconType: ICON_TYPE): ModuleWithProviders {
+    static forRoot(iconType: ICON_TYPE): ModuleWithProviders<ActionMatModule> {
         return {
             ngModule: ActionMatModule,
             providers: [
