@@ -1,24 +1,40 @@
-sudo: required
+os: linux
 language: node_js
 addons:
   chrome: stable
-before_install: # if "install" is overridden
-  # Repo for Yarn
+before_install:
   - npm install yarn -g
 cache:
   yarn: true
 notifications:
   email: false
-node_js:
-  - "10"
-  - "12"
-script:
-  - yarn commitlint-travis
-  - yarn build
-  - yarn test:once
-  - cat ./coverage/core/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-after_success:
-  - yarn travis-deploy-once "yarn semantic-release"
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+
+script: echo "Running tests against $(node -v) ..."
+
+jobs:
+  include:
+    - stage: lint
+      script: yarn commitlint-travis
+      node_js: 12
+    - stage: test
+      script: build:prod
+    - script: yarn test:once
+    - script: cat ./coverage/core/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+      node_js:
+        - "10"
+        - "11"
+        - "12"
+    - stage: deploy
+      node_js: 12
+      script: skip
+      deploy:
+        provider: script
+        cleanup: true
+        script:
+          - yarn semantic-release
+
+stages:
+  - lint
+  - test
+  - name: deploy
+    if: branch = master
