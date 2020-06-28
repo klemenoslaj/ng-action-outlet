@@ -12,5 +12,8 @@
     "@angular/core": "^8.0.0",
     "@angular/material": "^8.0.0",
     "@ng-action-outlet/core": "^0.0.0-development"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   }
 }
