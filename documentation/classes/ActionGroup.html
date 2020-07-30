@@ -1,0 +1,5140 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-action-outlet-srcs documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-action-outlet-srcs documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>ActionGroup</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/core/src/lib/action-group/action-group.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p><code>ActionGroup</code> used to group certain actions in one logical component
+Can be used either as <strong>group</strong> either as <strong>dropdown</strong></p>
+<h2 id="example">Example</h2>
+<p>```typescript</p>
+<ul>
+<li>const group = new ActionGroup({</li>
+<li>children: [</li>
+<li>new ActionButton({ title: &#39;Test&#39; }),</li>
+<li>new ActionGroup({ dropdown: true }),</li>
+<li>new ActionToggle({ checked: true })</li>
+<li>]</li>
+<li>});</li>
+<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
+</ul>
+<p><strong>Or</strong></p>
+<p>```typescript</p>
+<ul>
+<li>const group = actionFactory.createGroup().appendChildren([</li>
+<li>actionFactory.createButton().setTitle(&#39;Test&#39;),</li>
+<li>actionFactory.createGroup().enableDropdown(),</li>
+<li>actionFactory.createToggle().check()</li>
+<li>]);</li>
+<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
+</ul>
+<p><strong>Or</strong></p>
+<p>```typescript</p>
+<ul>
+<li>const group = actionFactory.createGroup();</li>
+<li>group.createButton().setTitle(&#39;Test&#39;);</li>
+<li>group.createGroup().enableDropdown();</li>
+<li>group.createToggle().check();</li>
+<li>```</li>
+</ul>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+            </p>
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../interfaces/ActionOutlet.html" target="_self" >ActionOutlet</a></code>
+            </p>
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#changes$">changes$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#children">children</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#children$">children$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#dropdown">dropdown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#dropdown$">dropdown$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#fire$">fire$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#_ariaLabel$">_ariaLabel$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#ariaLabel$">ariaLabel$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Abstract</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#changes$">changes$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#disabled">disabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#disabled$">disabled$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#finish">finish</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Abstract</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#fire$">fire$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#forcedComponent">forcedComponent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#icon">icon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#icon$">icon$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#options">options</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#parent">parent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#state">state</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#state$">state$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#title">title</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#title$">title$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#visible">visible</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#visible$">visible$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activate">activate</a>
+                            </li>
+                            <li>
+                                <a href="#appendChild">appendChild</a>
+                            </li>
+                            <li>
+                                <a href="#appendChildren">appendChildren</a>
+                            </li>
+                            <li>
+                                <a href="#createButton">createButton</a>
+                            </li>
+                            <li>
+                                <a href="#createGroup">createGroup</a>
+                            </li>
+                            <li>
+                                <a href="#createToggle">createToggle</a>
+                            </li>
+                            <li>
+                                <a href="#deactivate">deactivate</a>
+                            </li>
+                            <li>
+                                <a href="#destroy">destroy</a>
+                            </li>
+                            <li>
+                                <a href="#disable">disable</a>
+                            </li>
+                            <li>
+                                <a href="#disableDropdown">disableDropdown</a>
+                            </li>
+                            <li>
+                                <a href="#enable">enable</a>
+                            </li>
+                            <li>
+                                <a href="#enableDropdown">enableDropdown</a>
+                            </li>
+                            <li>
+                                <a href="#getChild">getChild</a>
+                            </li>
+                            <li>
+                                <a href="#getChildren">getChildren</a>
+                            </li>
+                            <li>
+                                <a href="#isDropdown">isDropdown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#normalizeChildren">normalizeChildren</a>
+                            </li>
+                            <li>
+                                <a href="#prependChild">prependChild</a>
+                            </li>
+                            <li>
+                                <a href="#prependChildren">prependChildren</a>
+                            </li>
+                            <li>
+                                <a href="#removeChild">removeChild</a>
+                            </li>
+                            <li>
+                                <a href="#removeChildByIndex">removeChildByIndex</a>
+                            </li>
+                            <li>
+                                <a href="#removeChildren">removeChildren</a>
+                            </li>
+                            <li>
+                                <a href="#setChildren">setChildren</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setChildrenInternal">setChildrenInternal</a>
+                            </li>
+                            <li>
+                                <a href="#trigger">trigger</a>
+                            </li>
+                            <li>
+                                <a href="#activate">activate</a>
+                            </li>
+                            <li>
+                                <a href="#deactivate">deactivate</a>
+                            </li>
+                            <li>
+                                <a href="#destroy">destroy</a>
+                            </li>
+                            <li>
+                                <a href="#disable">disable</a>
+                            </li>
+                            <li>
+                                <a href="#enable">enable</a>
+                            </li>
+                            <li>
+                                <a href="#getAriaLabel">getAriaLabel</a>
+                            </li>
+                            <li>
+                                <a href="#getForcedComponent">getForcedComponent</a>
+                            </li>
+                            <li>
+                                <a href="#getIcon">getIcon</a>
+                            </li>
+                            <li>
+                                <a href="#getParent">getParent</a>
+                            </li>
+                            <li>
+                                <a href="#getTitle">getTitle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#handleActivateState">handleActivateState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#handleLivecycle">handleLivecycle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#handleLivecycleDistinct">handleLivecycleDistinct</a>
+                            </li>
+                            <li>
+                                <a href="#hide">hide</a>
+                            </li>
+                            <li>
+                                <a href="#isActive">isActive</a>
+                            </li>
+                            <li>
+                                <a href="#isDestroyed">isDestroyed</a>
+                            </li>
+                            <li>
+                                <a href="#isDisabled">isDisabled</a>
+                            </li>
+                            <li>
+                                <a href="#isEnabled">isEnabled</a>
+                            </li>
+                            <li>
+                                <a href="#isHidden">isHidden</a>
+                            </li>
+                            <li>
+                                <a href="#isInactive">isInactive</a>
+                            </li>
+                            <li>
+                                <a href="#isVisible">isVisible</a>
+                            </li>
+                            <li>
+                                <a href="#setAriaLabel">setAriaLabel</a>
+                            </li>
+                            <li>
+                                <a href="#setIcon">setIcon</a>
+                            </li>
+                            <li>
+                                <a href="#setTitle">setTitle</a>
+                            </li>
+                            <li>
+                                <a href="#setVisibility">setVisibility</a>
+                            </li>
+                            <li>
+                                <a href="#show">show</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#trigger">trigger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(options: <a href="../interfaces/ActionGroupOptions.html">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html">Type<ActionGroupComponentImpl></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:94</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Public <code>constructor</code> used to instantiate <code>ActionGroup</code></p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>options</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Options for <code>ActionGroup</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>component</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/ActionGroup.html" target="_self" >Type&lt;ActionGroupComponentImpl&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Optional custom <code>Component</code></p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changes$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            changes$</b>
+                            <a href="#changes$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >Observable&lt;ActionGroupOptions&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:76</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions on following changes:
+<em>title, icon, visibility, disabled, children, dropdown</em></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="children"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            children</b>
+                            <a href="#children"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >BehaviorSubject&lt;AnyAction[]&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:90</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>BehaviorSubject</code>, holding <strong>all</strong> children of <code>ActionGroup</code> instance</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="children$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            children$</b>
+                            <a href="#children$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >Observable&lt;AnyAction[]&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:81</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions to any change to children:
+<em>append, prepend, remove, etc.</em></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dropdown"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            dropdown</b>
+                            <a href="#dropdown"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:94</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>BehaviorSubject</code>, holding boolean to define whether <code>ActionGroup</code> instance is dropdown</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dropdown$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            dropdown$</b>
+                            <a href="#dropdown$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions when <code>ActionGroup</code> is changed to dropdown or vice versa</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fire$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            fire$</b>
+                            <a href="#fire$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ActionGroupEvent.html" target="_self" >Observable&lt;ActionGroupEvent&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:71</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions on action triggering
+Empty observable in case of &#39;ActionGroup&#39;</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_ariaLabel$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            _ariaLabel$</b>
+                            <a href="#_ariaLabel$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:176</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>BehaviorSubject</code>, used to notify subscribers on aria label changes.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ariaLabel$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            ariaLabel$</b>
+                            <a href="#ariaLabel$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:117</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscribers when the ariaLabel changes.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changes$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Abstract</span>
+                                <span class="modifier">Readonly</span>
+                            changes$</b>
+                            <a href="#changes$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;Options&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:129</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><strong>Abstract</strong> property, holding <code>Observable</code>
+Each derived class <strong>should</strong> implement it&#39;s own <code>changes$</code> observable,
+merging all public observables, notifying for every change doen to action</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            disabled</b>
+                            <a href="#disabled"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:162</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Desabled state <code>BehaviorSubject</code>, used <strong>internally</strong> to notify on disabled state change
+Used to leverage reactive world with non reactive</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            disabled$</b>
+                            <a href="#disabled$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:108</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions when disabled state changes</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="finish"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            finish</b>
+                            <a href="#finish"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#ActionState" target="_self" >Observable&lt;ActionState&gt;</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:172</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that fires, when state matches <code>ActionState.Destroyed</code>
+Used to complete all <strong>internal</strong> subjects</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fire$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Abstract</span>
+                                <span class="modifier">Readonly</span>
+                            fire$</b>
+                            <a href="#fire$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;FireEvent&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:123</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><strong>Abstract</strong> property, holding <code>Observable</code>
+Each derived class <strong>should</strong> implement it&#39;s own <code>fire$</code> observable,
+with it&#39;s own specific implementation</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forcedComponent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                                <span class="modifier">Optional</span>
+                            forcedComponent</b>
+                            <a href="#forcedComponent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ActionAbstractComponentImpl.html" target="_self" >Type&lt;ActionAbstractComponentImpl&gt;</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:142</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Component</code>, provided to action <code>constructor</code>
+Should be forced and used instead of component in <code>Injector</code>
+That is handled by <code>ActionOutletDirective</code></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="icon"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            icon</b>
+                            <a href="#icon"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:152</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Icon <code>BehaviorSubject</code>, used <strong>internally</strong> to notify on icon change
+Used to leverage reactive world with non reactive</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="icon$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            icon$</b>
+                            <a href="#icon$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:99</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions when icon changes</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="options"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            options</b>
+                            <a href="#options"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Options</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:136</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Options of action instance
+<strong>Merged</strong> default options from derived class, default options from abstract class,
+and options provided on action creation to <code>constructor</code></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="parent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                                <span class="modifier">Optional</span>
+                            parent</b>
+                            <a href="#parent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:182</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Parent of current action. This is a parent action,
+to whom current action belongs to, and renders into</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="state"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            state</b>
+                            <a href="#state"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#ActionState" target="_self" >BehaviorSubject&lt;ActionState&gt;</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:167</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Action livecycle state <code>BehaviorSubject</code>, used <strong>internally</strong> to notify on action state change
+Used to leverage reactive world with non reactive</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="state$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            state$</b>
+                            <a href="#state$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#ActionState" target="_self" >Observable&lt;ActionState&gt;</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:113</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions when action state changes
+e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            title</b>
+                            <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:147</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Title <code>BehaviorSubject</code>, used <strong>internally</strong> to notify on title change
+Used to leverage reactive world with non reactive</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            title$</b>
+                            <a href="#title$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:95</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions when title changes</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visible"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                                <span class="modifier">Readonly</span>
+                            visible</b>
+                            <a href="#visible"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:157</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Visibility <code>BehaviorSubject</code>, used <strong>internally</strong> to notify on visibility state change
+Used to leverage reactive world with non reactive</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visible$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            visible$</b>
+                            <a href="#visible$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:104</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>Observable</code> that notifies subscriptions when visibility state changes
+(visible or hidden)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activate"></a>
+                    <span class="name">
+                        <b>
+                            activate
+                        </b>
+                        <a href="#activate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>activate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Activates group action and <strong>all</strong> it&#39;s children</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.activate();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appendChild"></a>
+                    <span class="name">
+                        <b>
+                            appendChild
+                        </b>
+                        <a href="#appendChild"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>appendChild(action: <a href="../undefineds/AnyAction.html">AnyAction</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="288"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:288</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds provided action <strong>at the end</strong> of children stach</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const child = actionFactory.createButton({ title: &#39;Test&#39; });
+     * group.appendChild(child);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Action to append</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appendChildren"></a>
+                    <span class="name">
+                        <b>
+                            appendChildren
+                        </b>
+                        <a href="#appendChildren"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>appendChildren(actions: <a href="../undefineds/AnyAction.html">AnyAction[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="308"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:308</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds provided actions <strong>at the end</strong> of children stach</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+     * const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+     * group.appendChildren([ child1, child2 ]);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>actions</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Actions to append</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createButton"></a>
+                    <span class="name">
+                        <b>
+                            createButton
+                        </b>
+                        <a href="#createButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="234"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:234</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a new <code>ActionButton</code> and <strong>appends</strong> it to the children stack</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const childButton = group.createButton({ title: &#39;Test&#39; });
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ActionButtonOptions.html" target="_self" >ActionButtonOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Options for <code>ActionButton</code></p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../classes/ActionButton.html" target="_self" >Type&lt;ActionButtonComponentImpl&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Optional <code>Component</code></p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionButton.html" target="_self" >ActionButton</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGroup"></a>
+                    <span class="name">
+                        <b>
+                            createGroup
+                        </b>
+                        <a href="#createGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createGroup(options?: <a href="../interfaces/ActionGroupOptions.html">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html">Type<ActionGroupComponentImpl></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:252</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a new <code>ActionGroup</code> and <strong>appends</strong> it to the children stack</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const childGroup = group.createGroup({ dropdown: true });
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ActionGroupOptions.html" target="_self" >ActionGroupOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Options for <code>ActionGroup</code></p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../classes/ActionGroup.html" target="_self" >Type&lt;ActionGroupComponentImpl&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Optional <code>Component</code></p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createToggle"></a>
+                    <span class="name">
+                        <b>
+                            createToggle
+                        </b>
+                        <a href="#createToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createToggle(options?: <a href="../interfaces/ActionToggleOptions.html">ActionToggleOptions</a>, component?: <a href="../classes/ActionToggle.html">Type<ActionToggleComponentImpl></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="270"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:270</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a new <code>ActionToggle</code> and <strong>appends</strong> it to the children stack</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const childToggle = group.createToggle({ checked: true });
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="../interfaces/ActionToggleOptions.html" target="_self" >ActionToggleOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Options for <code>ActionToggle</code></p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../classes/ActionToggle.html" target="_self" >Type&lt;ActionToggleComponentImpl&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Optional <code>Component</code></p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionToggle.html" target="_self" >ActionToggle</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deactivate"></a>
+                    <span class="name">
+                        <b>
+                            deactivate
+                        </b>
+                        <a href="#deactivate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deactivate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deactivates group action and <strong>all</strong> it&#39;s children</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.deactivate();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                        <b>
+                            destroy
+                        </b>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>destroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="186"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:186</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Destroys group action, <strong>destroys</strong> and <strong>removes</strong> <strong>all</strong> it&#39;s children</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.destroy();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disable"></a>
+                    <span class="name">
+                        <b>
+                            disable
+                        </b>
+                        <a href="#disable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>disable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="217"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:217</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Disables group action and <strong>all</strong> it&#39;s children</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.disable();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableDropdown"></a>
+                    <span class="name">
+                        <b>
+                            disableDropdown
+                        </b>
+                        <a href="#disableDropdown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>disableDropdown()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="505"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:505</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Transforms dropdown to group</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.disableDropdown();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enable"></a>
+                    <span class="name">
+                        <b>
+                            enable
+                        </b>
+                        <a href="#enable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="202"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:202</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Enables group action and <strong>all</strong> it&#39;s children</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.enable();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableDropdown"></a>
+                    <span class="name">
+                        <b>
+                            enableDropdown
+                        </b>
+                        <a href="#enableDropdown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enableDropdown()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="490"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:490</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Transforms the group to dropdown</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.enableDropdown();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChild"></a>
+                    <span class="name">
+                        <b>
+                            getChild
+                        </b>
+                        <a href="#getChild"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChild(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="456"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:456</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns child action at given index</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const child = group.getChild(0);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Index of child action</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChildren"></a>
+                    <span class="name">
+                        <b>
+                            getChildren
+                        </b>
+                        <a href="#getChildren"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChildren()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="441"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:441</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the current children</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const children = group.getChildren();
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDropdown"></a>
+                    <span class="name">
+                        <b>
+                            isDropdown
+                        </b>
+                        <a href="#isDropdown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDropdown()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="476"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:476</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether group is dropdown or not</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const isDropdown = group.isDropdown();
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="normalizeChildren"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            normalizeChildren
+                        </b>
+                        <a href="#normalizeChildren"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>normalizeChildren(children: <a href="../undefineds/AnyAction.html">AnyAction[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="516"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:516</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Normalizes the provided array of children by filtering out actions
+that already belong to certain parent group.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>children</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prependChild"></a>
+                    <span class="name">
+                        <b>
+                            prependChild
+                        </b>
+                        <a href="#prependChild"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prependChild(action: <a href="../undefineds/AnyAction.html">AnyAction</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="326"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:326</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds provided action <strong>at the beginning</strong> of children stack</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const child = actionFactory.createButton({ title: &#39;Test&#39; });
+     * group.prependChild(child);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Action to prepend</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prependChildren"></a>
+                    <span class="name">
+                        <b>
+                            prependChildren
+                        </b>
+                        <a href="#prependChildren"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prependChildren(actions: <a href="../undefineds/AnyAction.html">AnyAction[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="345"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:345</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds provided actions <strong>at the beginning</strong> of children stack</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+     * const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+     * group.prependChildren([ child1, child2 ]);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>actions</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Actions to prepend</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeChild"></a>
+                    <span class="name">
+                        <b>
+                            removeChild
+                        </b>
+                        <a href="#removeChild"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeChild(action: <a href="../undefineds/AnyAction.html">AnyAction</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="362"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:362</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Removes provided child action from group</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.removeChild(child);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Child action to be removed</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeChildByIndex"></a>
+                    <span class="name">
+                        <b>
+                            removeChildByIndex
+                        </b>
+                        <a href="#removeChildByIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeChildByIndex(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="378"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:378</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Removes child action from group at given index</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.removeChildByIndex(0);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Index of child action</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeChildren"></a>
+                    <span class="name">
+                        <b>
+                            removeChildren
+                        </b>
+                        <a href="#removeChildren"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeChildren()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="400"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:400</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Removes <strong>all</strong> children from group</p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.removeChildren();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setChildren"></a>
+                    <span class="name">
+                        <b>
+                            setChildren
+                        </b>
+                        <a href="#setChildren"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setChildren(children: <a href="../undefineds/AnyAction.html">AnyAction[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="421"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:421</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Provided actions will <strong>replace</strong> existing children and will:</p>
+<ul>
+<li><strong>Apply</strong> as <strong>unique</strong> array</li>
+<li><strong>Ignore</strong> actions with different parent</li>
+</ul>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+     * const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+     * group.setChildren([ child1, child2 ]);
+     *</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>children</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Actions to become children</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setChildrenInternal"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            setChildrenInternal
+                        </b>
+                        <a href="#setChildrenInternal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setChildrenInternal(children: <a href="../undefineds/AnyAction.html">AnyAction[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="530"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:530</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Does the same thing as <code>setChildren</code> but ignores <code>_setParent</code> call,
+because parent is expceted to be correct already</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>children</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trigger"></a>
+                    <span class="name">
+                        <b>
+                            trigger
+                        </b>
+                        <a href="#trigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>trigger()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">projects/core/src/lib/action-group/action-group.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trigger for group action.
+In case of <code>ActionGroup</code> <strong>Noop</strong></p>
+<h4 id="example">Example:</h4>
+<p><code>typescript
+     * group.trigger();
+     *</code></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activate"></a>
+                    <span class="name">
+                        <b>
+                            activate
+                        </b>
+                        <a href="#activate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>activate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:276</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will <strong>activate</strong> all observables in current action,
+<strong>unless action is already destroyed</strong></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deactivate"></a>
+                    <span class="name">
+                        <b>
+                            deactivate
+                        </b>
+                        <a href="#deactivate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deactivate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:289</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will <strong>deactivate</strong> all observables in current action,
+<strong>unless action is already destroyed</strong></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                        <b>
+                            destroy
+                        </b>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>destroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:302</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will set action state to <code>Destroyed</code>, which will
+complete all observables</p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disable"></a>
+                    <span class="name">
+                        <b>
+                            disable
+                        </b>
+                        <a href="#disable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>disable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:431</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will disable action, <strong>if prevously enabled</strong></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enable"></a>
+                    <span class="name">
+                        <b>
+                            enable
+                        </b>
+                        <a href="#enable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:423</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will enable action, <strong>if prevously disabled</strong></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAriaLabel"></a>
+                    <span class="name">
+                        <b>
+                            getAriaLabel
+                        </b>
+                        <a href="#getAriaLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAriaLabel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:359</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns current action ariaLabel</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getForcedComponent"></a>
+                    <span class="name">
+                        <b>
+                            getForcedComponent
+                        </b>
+                        <a href="#getForcedComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getForcedComponent()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:455</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns a <code>Component</code>, that is provided as forced component via action <code>constructor</code>
+This component should be used by <code>ActionOutletDirective</code>, to represent
+the action in DOM, instead the component, provided via Angular <code>Injector</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Type | undefined</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getIcon"></a>
+                    <span class="name">
+                        <b>
+                            getIcon
+                        </b>
+                        <a href="#getIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getIcon()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:376</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns current action icon</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getParent"></a>
+                    <span class="name">
+                        <b>
+                            getParent
+                        </b>
+                        <a href="#getParent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getParent()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:462</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns current parent of the action</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ActionGroup.html" target="_self" >ActionGroup | undefined</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTitle"></a>
+                    <span class="name">
+                        <b>
+                            getTitle
+                        </b>
+                        <a href="#getTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTitle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:342</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns current action title</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleActivateState"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            handleActivateState
+                        </b>
+                        <a href="#handleActivateState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleActivateState(observable: Observable<T>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:266</a></code>
+</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Used <strong>internally</strong> to handle pausing of observables
+Will deactivate observable, whenever state of the action changes to <code>Inactive</code>,
+and will activate observable again, when it switches back to <code>Active</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>observable</td>
+                                    <td>
+                                            <code>Observable&lt;T&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p><code>Observable</code> to handle pausing</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;T&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleLivecycle"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            handleLivecycle
+                        </b>
+                        <a href="#handleLivecycle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleLivecycle(observable: Observable<T>, shouldPause: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:247</a></code>
+</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Used internally to handle livecycle of observables
+It will handle action state(<code>Active</code>, <code>Inactive</code> - <strong>paused</strong>, <code>Destroyed</code>)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>observable</td>
+                                    <td>
+                                            <code>Observable&lt;T&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p><code>Observable</code> to handle live cycle</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>shouldPause</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Defining, whether it should be possible to pause provided observable. True by default</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;T&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleLivecycleDistinct"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            handleLivecycleDistinct
+                        </b>
+                        <a href="#handleLivecycleDistinct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleLivecycleDistinct(observable: Observable<T>, shouldPause?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:234</a></code>
+</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Used <strong>internally</strong> to handle livecycle of observables
+It will handle action state(<code>Active</code>, <code>Inactive</code> - <strong>paused</strong>, <code>Destroyed</code>),
+and will notify <strong>only</strong> when value or reference <strong>changes</strong></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>observable</td>
+                                    <td>
+                                            <code>Observable&lt;T&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p><code>Observable</code> to handle live cycle</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>shouldPause</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Defining, whether it should be possible to pause provided observable. True by default</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;T&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hide"></a>
+                    <span class="name">
+                        <b>
+                            hide
+                        </b>
+                        <a href="#hide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hide()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:391</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will nide the action, <strong>if previously visible</strong></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isActive"></a>
+                    <span class="name">
+                        <b>
+                            isActive
+                        </b>
+                        <a href="#isActive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isActive()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:311</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action has state <code>ActionState.Active</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDestroyed"></a>
+                    <span class="name">
+                        <b>
+                            isDestroyed
+                        </b>
+                        <a href="#isDestroyed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDestroyed()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:325</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action has state <code>ActionState.Destroyed</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDisabled"></a>
+                    <span class="name">
+                        <b>
+                            isDisabled
+                        </b>
+                        <a href="#isDisabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDisabled()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:439</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action is disabled</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEnabled"></a>
+                    <span class="name">
+                        <b>
+                            isEnabled
+                        </b>
+                        <a href="#isEnabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEnabled()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:446</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action is enabled</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHidden"></a>
+                    <span class="name">
+                        <b>
+                            isHidden
+                        </b>
+                        <a href="#isHidden"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isHidden()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:416</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action is hidden</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isInactive"></a>
+                    <span class="name">
+                        <b>
+                            isInactive
+                        </b>
+                        <a href="#isInactive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isInactive()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:318</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action has state <code>ActionState.Inactive</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isVisible"></a>
+                    <span class="name">
+                        <b>
+                            isVisible
+                        </b>
+                        <a href="#isVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isVisible()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:409</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns boolean defining whether action is visible</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAriaLabel"></a>
+                    <span class="name">
+                        <b>
+                            setAriaLabel
+                        </b>
+                        <a href="#setAriaLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setAriaLabel(ariaLabel: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:351</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will set the new ariaLabel and notify all ariaLabel subscribers</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ariaLabel</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new action title</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setIcon"></a>
+                    <span class="name">
+                        <b>
+                            setIcon
+                        </b>
+                        <a href="#setIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setIcon(icon: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:368</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will set the new icon and notify all icon subscriptions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>icon</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new action icon</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTitle"></a>
+                    <span class="name">
+                        <b>
+                            setTitle
+                        </b>
+                        <a href="#setTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTitle(title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:334</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will set the new title and notify all title subscriptions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>title</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new action title</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setVisibility"></a>
+                    <span class="name">
+                        <b>
+                            setVisibility
+                        </b>
+                        <a href="#setVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setVisibility(visibility: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:401</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will show or hide the action depending from the provided visibility boolean</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>visibility</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new visibility</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="show"></a>
+                    <span class="name">
+                        <b>
+                            show
+                        </b>
+                        <a href="#show"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>show()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:383</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Will show the action, <strong>if previously hidden</strong></p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trigger"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Abstract</span>
+                            trigger
+                        </b>
+                        <a href="#trigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>trigger()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/ActionAbstract.html" target="_self" >ActionAbstract</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/ActionAbstract.html#source" target="_self" >ActionAbstract:224</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Abstract method trigger should be implemented by <strong>each</strong> derived class, in
+combination with <code>fire</code> subject and <code>fire$</code> observable</p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Type } from &#x27;@angular/core&#x27;;
+import { BehaviorSubject, Observable, NEVER, merge } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+
+import { ActionAbstract } from &#x27;../action-abstract/action-abstract&#x27;;
+import { ActionButton } from &#x27;../action-button/action-button&#x27;;
+import { ActionButtonComponentImpl, ActionButtonOptions } from &#x27;../action-button/action-button.model&#x27;;
+import { ActionOutlet, AnyAction } from &#x27;../action-outlet.model&#x27;;
+import { ActionToggle } from &#x27;../action-toggle/action-toggle&#x27;;
+import { ActionToggleComponentImpl, ActionToggleOptions } from &#x27;../action-toggle/action-toggle.model&#x27;;
+import { ActionGroupComponentImpl, ActionGroupEvent, ActionGroupOptions } from &#x27;./action-group.model&#x27;;
+
+/**
+ * Default options for &#x60;ActionGroup&#x60;
+ * Extended by provided options in action &#x60;constructor&#x60;
+ */
+const defaultGroupOptions: ActionGroupOptions &#x3D; {
+    children: [],
+    dropdown: false,
+};
+
+/**
+ * Will return a unique array of actions
+ *
+ * @param children The array of actions
+ */
+const unique &#x3D; (children: AnyAction[]) &#x3D;&gt; Array.from(
+    new Set(children)
+);
+
+/**
+ * &#x60;ActionGroup&#x60; used to group certain actions in one logical component
+ * Can be used either as **group** either as **dropdown**
+ *
+ * ## Example
+ *
+ * &#x60;&#x60;&#x60;typescript
+ * const group &#x3D; new ActionGroup({
+ *    children: [
+ *        new ActionButton({ title: &#x27;Test&#x27; }),
+ *        new ActionGroup({ dropdown: true }),
+ *        new ActionToggle({ checked: true })
+ *    ]
+ * });
+ * &#x60;&#x60;&#x60;
+ *
+ * **Or**
+ *
+ * &#x60;&#x60;&#x60;typescript
+ * const group &#x3D; actionFactory.createGroup().appendChildren([
+ *     actionFactory.createButton().setTitle(&#x27;Test&#x27;),
+ *     actionFactory.createGroup().enableDropdown(),
+ *     actionFactory.createToggle().check()
+ * ]);
+ * &#x60;&#x60;&#x60;
+ *
+ * **Or**
+ *
+ * &#x60;&#x60;&#x60;typescript
+ * const group &#x3D; actionFactory.createGroup();
+ * group.createButton().setTitle(&#x27;Test&#x27;);
+ * group.createGroup().enableDropdown();
+ * group.createToggle().check();
+ * &#x60;&#x60;&#x60;
+ */
+export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGroupEvent&gt; implements ActionOutlet {
+    /**
+     * &#x60;Observable&#x60; that notifies subscriptions on action triggering
+     * Empty observable in case of &#x27;ActionGroup&#x27;
+     */
+    readonly fire$: Observable&lt;ActionGroupEvent&gt;;
+    /**
+     * &#x60;Observable&#x60; that notifies subscriptions on following changes:
+     * *title, icon, visibility, disabled, children, dropdown*
+     */
+    readonly changes$: Observable&lt;ActionGroupOptions&gt;;
+    /**
+     * &#x60;Observable&#x60; that notifies subscriptions to any change to children:
+     * *append, prepend, remove, etc.*
+     */
+    readonly children$: Observable&lt;AnyAction[]&gt;;
+    /**
+     * &#x60;Observable&#x60; that notifies subscriptions when &#x60;ActionGroup&#x60; is changed to dropdown or vice versa
+     */
+    readonly dropdown$: Observable&lt;boolean&gt;;
+
+    /**
+     * &#x60;BehaviorSubject&#x60;, holding **all** children of &#x60;ActionGroup&#x60; instance
+     */
+    protected readonly children: BehaviorSubject&lt;AnyAction[]&gt;;
+    /**
+     * &#x60;BehaviorSubject&#x60;, holding boolean to define whether &#x60;ActionGroup&#x60; instance is dropdown
+     */
+    protected readonly dropdown: BehaviorSubject&lt;boolean&gt;;
+
+    /**
+     * Public &#x60;constructor&#x60; used to instantiate &#x60;ActionGroup&#x60;
+     *
+     * @param options Options for &#x60;ActionGroup&#x60;
+     * @param component Optional custom &#x60;Component&#x60;
+     */
+    constructor(options: ActionGroupOptions &#x3D; defaultGroupOptions,
+                component?: Type&lt;ActionGroupComponentImpl&gt;) {
+        super({ ...defaultGroupOptions, ...options }, component);
+
+        this.children &#x3D; new BehaviorSubject(unique(this.options.children.map(action &#x3D;&gt; action._setParent(this))));
+        this.dropdown &#x3D; new BehaviorSubject(!!this.options.dropdown);
+
+        this.fire$ &#x3D; this.handleLivecycle(NEVER, false);
+        this.children$ &#x3D; this.handleLivecycle(this.children.asObservable());
+        this.dropdown$ &#x3D; this.handleLivecycleDistinct(this.dropdown.asObservable());
+
+        this.changes$ &#x3D; this.handleLivecycle(merge(
+            this.title$.pipe(map(title &#x3D;&gt; (&lt;ActionGroupOptions&gt;{ title }))),
+            this.icon$.pipe(map(icon &#x3D;&gt; (&lt;ActionGroupOptions&gt;{ icon }))),
+            this.visible$.pipe(map(visible &#x3D;&gt; (&lt;ActionGroupOptions&gt;{ visible }))),
+            this.disabled$.pipe(map(disabled &#x3D;&gt; (&lt;ActionGroupOptions&gt;{ disabled }))),
+            this.children$.pipe(map(children &#x3D;&gt; (&lt;ActionGroupOptions&gt;{ children }))),
+            this.dropdown$.pipe(map(dropdown &#x3D;&gt; (&lt;ActionGroupOptions&gt;{ dropdown })))
+        ));
+    }
+
+    /**
+     * Trigger for group action.
+     * In case of &#x60;ActionGroup&#x60; **Noop**
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.trigger();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method trigger
+     */
+    trigger(): this {
+        return this;
+    }
+
+    /**
+     * Activates group action and **all** it&#x27;s children
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.activate();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method activate
+     */
+    activate(): this {
+        if (this.isDestroyed()) {
+            return this;
+        }
+
+        this.getChildren().forEach(child &#x3D;&gt; child.activate());
+        return super.activate();
+    }
+
+    /**
+     * Deactivates group action and **all** it&#x27;s children
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.deactivate();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method deactivate
+     */
+    deactivate(): this {
+        if (this.isDestroyed()) {
+            return this;
+        }
+
+        this.getChildren().forEach(child &#x3D;&gt; child.deactivate());
+        return super.deactivate();
+    }
+
+    /**
+     * Destroys group action, **destroys** and **removes** **all** it&#x27;s children
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.destroy();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method destroy
+     */
+    destroy(): this {
+        this.getChildren().forEach(child &#x3D;&gt; child.destroy());
+        this.removeChildren();
+        return super.destroy();
+    }
+
+    /**
+     * Enables group action and **all** it&#x27;s children
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.enable();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method enable
+     */
+    enable(): this {
+        this.getChildren().forEach(child &#x3D;&gt; child.enable());
+        return super.enable();
+    }
+
+    /**
+     * Disables group action and **all** it&#x27;s children
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.disable();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method disable
+     */
+    disable(): this {
+        this.getChildren().forEach(child &#x3D;&gt; child.disable());
+        return super.disable();
+    }
+
+    /**
+     * Creates a new &#x60;ActionButton&#x60; and **appends** it to the children stack
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const childButton &#x3D; group.createButton({ title: &#x27;Test&#x27; });
+     * &#x60;&#x60;&#x60;
+     *
+     * @method createButton
+     * @param options Options for &#x60;ActionButton&#x60;
+     * @param component Optional &#x60;Component&#x60;
+     */
+    createButton(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton {
+        const action &#x3D; new ActionButton(options, component);
+        this.appendChild(action);
+        return action;
+    }
+
+    /**
+     * Creates a new &#x60;ActionGroup&#x60; and **appends** it to the children stack
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const childGroup &#x3D; group.createGroup({ dropdown: true });
+     * &#x60;&#x60;&#x60;
+     *
+     * @method createGroup
+     * @param options Options for &#x60;ActionGroup&#x60;
+     * @param component Optional &#x60;Component&#x60;
+     */
+    createGroup(options?: ActionGroupOptions, component?: Type&lt;ActionGroupComponentImpl&gt;): ActionGroup {
+        const group &#x3D; new ActionGroup(options, component);
+        this.appendChild(group);
+        return group;
+    }
+
+    /**
+     * Creates a new &#x60;ActionToggle&#x60; and **appends** it to the children stack
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const childToggle &#x3D; group.createToggle({ checked: true });
+     * &#x60;&#x60;&#x60;
+     *
+     * @method createToggle
+     * @param options Options for &#x60;ActionToggle&#x60;
+     * @param component Optional &#x60;Component&#x60;
+     */
+    createToggle(options?: ActionToggleOptions, component?: Type&lt;ActionToggleComponentImpl&gt;): ActionToggle {
+        const toggle &#x3D; new ActionToggle(options, component);
+        this.appendChild(toggle);
+        return toggle;
+    }
+
+    /**
+     * Adds provided action **at the end** of children stach
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
+     * group.appendChild(child);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method appendChild
+     * @param action Action to append
+     */
+    appendChild(action: AnyAction): this {
+        const children &#x3D; this.getChildren();
+        this.setChildrenInternal([...children, action._setParent(this)]);
+        return this;
+    }
+
+    /**
+     * Adds provided actions **at the end** of children stach
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
+     * group.appendChildren([ child1, child2 ]);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method appendChildren
+     * @param actions Actions to append
+     *
+     */
+    appendChildren(actions: AnyAction[]): this {
+        const children &#x3D; this.getChildren();
+        this.setChildrenInternal([...children, ...actions.map(action &#x3D;&gt; action._setParent(this))]);
+        return this;
+    }
+
+    /**
+     * Adds provided action **at the beginning** of children stack
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
+     * group.prependChild(child);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method prependChild
+     * @param action Action to prepend
+     */
+    prependChild(action: AnyAction): this {
+        const children &#x3D; this.getChildren();
+        this.setChildrenInternal([action._setParent(this), ...children]);
+        return this;
+    }
+
+    /**
+     * Adds provided actions **at the beginning** of children stack
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
+     * group.prependChildren([ child1, child2 ]);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method prependChildren
+     * @param actions Actions to prepend
+     */
+    prependChildren(actions: AnyAction[]): this {
+        const children &#x3D; this.getChildren();
+        this.setChildrenInternal([...actions.map(action &#x3D;&gt; action._setParent(this)), ...children]);
+        return this;
+    }
+
+    /**
+     * Removes provided child action from group
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.removeChild(child);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method removeChild
+     * @param action Child action to be removed
+     */
+    removeChild(action: AnyAction): this {
+        const index &#x3D; this.getChildren().indexOf(action);
+        return this.removeChildByIndex(index);
+    }
+
+    /**
+     * Removes child action from group at given index
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.removeChildByIndex(0);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method removeChildByIndex
+     * @param index Index of child action
+     */
+    removeChildByIndex(index: number): this {
+        const children &#x3D; this.getChildren();
+        const action &#x3D; children[index];
+
+        if (action) {
+            action._unsetParent();
+            this.setChildrenInternal(children.filter((_child, childIndex) &#x3D;&gt; index !&#x3D;&#x3D; childIndex));
+        }
+
+        return this;
+    }
+
+    /**
+     * Removes **all** children from group
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.removeChildren();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method removeChildren
+     */
+    removeChildren(): this {
+        this.getChildren().forEach(child &#x3D;&gt; child._unsetParent());
+        this.setChildrenInternal([]);
+        return this;
+    }
+
+    /**
+     * Provided actions will **replace** existing children and will:
+     * - **Apply** as **unique** array
+     * - **Ignore** actions with different parent
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
+     * group.setChildren([ child1, child2 ]);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method setChildren
+     * @param children Actions to become children
+     */
+    setChildren(children: AnyAction[]): this {
+        this.children.getValue().map(child &#x3D;&gt; child._unsetParent());
+        this.children.next(
+            this.normalizeChildren(children)
+                .map(child &#x3D;&gt; child._setParent(this))
+        );
+
+        return this;
+    }
+
+    /**
+     * Returns the current children
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const children &#x3D; group.getChildren();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method getChildren
+     */
+    getChildren(): AnyAction[] {
+        return [...this.children.getValue()];
+    }
+
+    /**
+     * Returns child action at given index
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const child &#x3D; group.getChild(0);
+     * &#x60;&#x60;&#x60;
+     *
+     * @method getChild
+     * @param index Index of child action
+     */
+    getChild(index: number): AnyAction {
+        const children &#x3D; this.getChildren();
+
+        if (index &gt;&#x3D; 0) {
+            return children[index];
+        }
+
+        return children[children.length - (-index)];
+    }
+
+    /**
+     * Returns boolean defining whether group is dropdown or not
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * const isDropdown &#x3D; group.isDropdown();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method isDropdown
+     */
+    isDropdown(): boolean {
+        return this.dropdown.getValue();
+    }
+
+    /**
+     * Transforms the group to dropdown
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.enableDropdown();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method enableDropdown
+     */
+    enableDropdown(): this {
+        this.dropdown.next(true);
+        return this;
+    }
+
+    /**
+     * Transforms dropdown to group
+     *
+     * #### Example:
+     * &#x60;&#x60;&#x60;typescript
+     * group.disableDropdown();
+     * &#x60;&#x60;&#x60;
+     *
+     * @method disableDropdown
+     */
+    disableDropdown(): this {
+        this.dropdown.next(false);
+        return this;
+    }
+
+    /**
+     * Normalizes the provided array of children by filtering out actions
+     * that already belong to certain parent group.
+     *
+     * @method normalizeChildren
+     */
+    private normalizeChildren(children: AnyAction[]) {
+        return unique(children)
+            .filter(child &#x3D;&gt; {
+                const parent &#x3D; child.getParent();
+                return parent &#x3D;&#x3D;&#x3D; this || parent &#x3D;&#x3D;&#x3D; undefined;
+            });
+    }
+
+    /**
+     * Does the same thing as &#x60;setChildren&#x60; but ignores &#x60;_setParent&#x60; call,
+     * because parent is expceted to be correct already
+     *
+     * @method setChildrenInternal
+     */
+    private setChildrenInternal(children: AnyAction[]): this {
+        this.children.next(this.normalizeChildren(children));
+
+        return this;
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'ActionGroup.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
