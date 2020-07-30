@@ -67,25 +67,15 @@
 In order to keep the code clean, use only one approach.</p>
 <h2 id="example">Example</h2>
 <p><strong>Instead of</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const buttonAction = new ActionButton({</li>
-<li>title: &#39;Action Title&#39;,</li>
-<li>icon: &#39;icon&#39;,</li>
-<li>callback: callbackMethod</li>
-<li>});</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Can do</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const buttonAction = this.actionOutletFactory.createButton()</li>
-<li>.setTitle(&#39;Action Title&#39;)</li>
-<li>.setIcon(&#39;icon&#39;)</li>
-<li>.fire$.subscribe(callbackMethod);</li>
-<li>```</li>
-</ul>
-
+<div><pre class="line-numbers"><code class="language-typescript">const buttonAction = new ActionButton({
+    title: &#39;Action Title&#39;,
+    icon: &#39;icon&#39;,
+    callback: callbackMethod
+});</code></pre></div><p><strong>Can do</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const buttonAction = this.actionOutletFactory.createButton()
+    .setTitle(&#39;Action Title&#39;)
+    .setIcon(&#39;icon&#39;)
+    .fire$.subscribe(callbackMethod);</code></pre></div>
             </p>
 
 
@@ -162,10 +152,7 @@ In order to keep the code clean, use only one approach.</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Will create and return a new instance of <code>ActionButton</code> with default options and component</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const button = this.actionOutlet.createButton({ title: &#39;Test&#39; });</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -259,10 +246,7 @@ In order to keep the code clean, use only one approach.</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Will create and return a new instance of <code>ActionGroup</code> with default options and component</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const group = this.actionOutlet.createGroup({ dropdown: true });
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const group = this.actionOutlet.createGroup({ dropdown: true });</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -356,10 +340,7 @@ In order to keep the code clean, use only one approach.</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Will create and return a new instance of <code>ActionToggle</code> with default options and component</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const toggle = this.actionOutlet.createToggle({ checked: true });
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const toggle = this.actionOutlet.createToggle({ checked: true });</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -444,21 +425,21 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from &#x27;./action-to
  * ## Example
  *
  * **Instead of**
- * &#x60;&#x60;&#x60;typescript
- * const buttonAction &#x3D; new ActionButton({
- *    title: &#x27;Action Title&#x27;,
- *    icon: &#x27;icon&#x27;,
- *    callback: callbackMethod
- * });
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const buttonAction &#x3D; new ActionButton({
+    title: &#x27;Action Title&#x27;,
+    icon: &#x27;icon&#x27;,
+    callback: callbackMethod
+});
+&#x60;&#x60;&#x60;
  *
  * **Can do**
- * &#x60;&#x60;&#x60;typescript
- * const buttonAction &#x3D; this.actionOutletFactory.createButton()
- *    .setTitle(&#x27;Action Title&#x27;)
- *    .setIcon(&#x27;icon&#x27;)
- *    .fire$.subscribe(callbackMethod);
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const buttonAction &#x3D; this.actionOutletFactory.createButton()
+    .setTitle(&#x27;Action Title&#x27;)
+    .setIcon(&#x27;icon&#x27;)
+    .fire$.subscribe(callbackMethod);
+&#x60;&#x60;&#x60;
  */
 
 @Injectable({
@@ -469,9 +450,9 @@ export class ActionOutletFactory implements ActionOutlet {
      * Will create and return a new instance of &#x60;ActionButton&#x60; with default options and component
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const button &#x3D; this.actionOutlet.createButton({ title: &#x27;Test&#x27; });
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const button &#x3D; this.actionOutlet.createButton({ title: &#x27;Test&#x27; });
+&#x60;&#x60;&#x60;
      *
      * @method createButton
      * @param options Override the default options for &#x60;ActionButton&#x60;
@@ -485,9 +466,9 @@ export class ActionOutletFactory implements ActionOutlet {
      * Will create and return a new instance of &#x60;ActionGroup&#x60; with default options and component
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const group &#x3D; this.actionOutlet.createGroup({ dropdown: true });
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const group &#x3D; this.actionOutlet.createGroup({ dropdown: true });
+&#x60;&#x60;&#x60;
      *
      * @method createGroup
      * @param options Override the default options for &#x60;ActionGroup&#x60;
@@ -501,9 +482,9 @@ export class ActionOutletFactory implements ActionOutlet {
      * Will create and return a new instance of &#x60;ActionToggle&#x60; with default options and component
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const toggle &#x3D; this.actionOutlet.createToggle({ checked: true });
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const toggle &#x3D; this.actionOutlet.createToggle({ checked: true });
+&#x60;&#x60;&#x60;
      *
      * @method createToggle
      * @param options Override the default options for &#x60;ActionToggle&#x60;

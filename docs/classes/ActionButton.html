@@ -69,24 +69,9 @@
             <p class="comment">
                 <p><code>ActionButton</code> used to create basic button action</p>
 <h2 id="example">Example</h2>
-<p>```typescript</p>
-<ul>
-<li>const button = new ActionButton({ title: &#39;Test&#39; });</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Or</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const button = actionFactory.createButton({ title: &#39;Test&#39; });</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Or</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const button = actionFactory.createButton().setTitle(&#39;Test&#39;);</li>
-<li>```</li>
-</ul>
-
+<div><pre class="line-numbers"><code class="language-typescript">const button = new ActionButton({ title: &#39;Test&#39; });</code></pre></div><p><strong>Or</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const button = actionFactory.createButton({ title: &#39;Test&#39; });</code></pre></div><p><strong>Or</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const button = actionFactory.createButton().setTitle(&#39;Test&#39;);</code></pre></div>
             </p>
 
             <p class="comment">
@@ -263,7 +248,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -350,7 +335,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:47</a></div>
                             </td>
                         </tr>
 
@@ -385,7 +370,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -763,8 +748,8 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">projects/core/src/lib/action-button/action-button.ts:90</a></div>
                 </td>
             </tr>
 
@@ -774,10 +759,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                     <div class="io-description"><p>Will trigger <code>fire$</code> subscribers
 Should be called in view component on click</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * button.trigger();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">button.trigger();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -2031,21 +2013,24 @@ const defaultButtonOptions: ActionButtonOptions &#x3D; { };
  *
  * ## Example
  *
- * &#x60;&#x60;&#x60;typescript
- * const button &#x3D; new ActionButton({ title: &#x27;Test&#x27; });
- * &#x60;&#x60;&#x60;
+ *
+ *
+&#x60;&#x60;&#x60;typescript
+const button &#x3D; new ActionButton({ title: &#x27;Test&#x27; });
+&#x60;&#x60;&#x60;
  *
  * **Or**
  *
- * &#x60;&#x60;&#x60;typescript
- * const button &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
- * &#x60;&#x60;&#x60;
+ *
+&#x60;&#x60;&#x60;typescript
+const button &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
+&#x60;&#x60;&#x60;
  *
  * **Or**
  *
- * &#x60;&#x60;&#x60;typescript
- * const button &#x3D; actionFactory.createButton().setTitle(&#x27;Test&#x27;);
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const button &#x3D; actionFactory.createButton().setTitle(&#x27;Test&#x27;);
+&#x60;&#x60;&#x60;
  */
 export class ActionButton extends ActionAbstract&lt;ActionButtonOptions, ActionButtonEvent&gt; {
     /**
@@ -2093,9 +2078,9 @@ export class ActionButton extends ActionAbstract&lt;ActionButtonOptions, ActionB
      * Should be called in view component on click
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * button.trigger();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+button.trigger();
+&#x60;&#x60;&#x60;
      *
      * @method trigger
      */

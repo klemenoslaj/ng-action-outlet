@@ -25,22 +25,22 @@ import { AnyAction } from './action-outlet.model';
  * ## Example
  *
  * **TypeScript**
- * ```typescript
- * this.group = new ActionGroup({
- *     children: [
- *         new ActionButton({
- *             title: 'Action Title',
- *             icon: 'icon',
- *             callback: callbackMethod
- *         })
- *     ]
- * });
- * ```
+```typescript
+ this.group = new ActionGroup({
+    children: [
+        new ActionButton({
+            title: 'Action Title',
+            icon: 'icon',
+            callback: callbackMethod
+         })
+    ]
+});
+```
  *
  * **Template**
- * ```html
- * <div *actionOutlet="group"></div>
- * ```
+```html
+<div *actionOutlet="group"></div>
+```
  */
 
 @Directive({

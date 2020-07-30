@@ -16,21 +16,24 @@ const defaultButtonOptions: ActionButtonOptions = { };
  *
  * ## Example
  *
- * ```typescript
- * const button = new ActionButton({ title: 'Test' });
- * ```
+ *
+ *
+```typescript
+const button = new ActionButton({ title: 'Test' });
+```
  *
  * **Or**
  *
- * ```typescript
- * const button = actionFactory.createButton({ title: 'Test' });
- * ```
+ *
+```typescript
+const button = actionFactory.createButton({ title: 'Test' });
+```
  *
  * **Or**
  *
- * ```typescript
- * const button = actionFactory.createButton().setTitle('Test');
- * ```
+```typescript
+const button = actionFactory.createButton().setTitle('Test');
+```
  */
 export class ActionButton extends ActionAbstract<ActionButtonOptions, ActionButtonEvent> {
     /**
@@ -78,9 +81,9 @@ export class ActionButton extends ActionAbstract<ActionButtonOptions, ActionButt
      * Should be called in view component on click
      *
      * #### Example:
-     * ```typescript
-     * button.trigger();
-     * ```
+```typescript
+button.trigger();
+```
      *
      * @method trigger
      */

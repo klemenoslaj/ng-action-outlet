@@ -34,34 +34,34 @@ const unique = (children: AnyAction[]) => Array.from(
  *
  * ## Example
  *
- * ```typescript
- * const group = new ActionGroup({
- *    children: [
- *        new ActionButton({ title: 'Test' }),
- *        new ActionGroup({ dropdown: true }),
- *        new ActionToggle({ checked: true })
- *    ]
- * });
- * ```
+```typescript
+const group = new ActionGroup({
+   children: [
+       new ActionButton({ title: 'Test' }),
+       new ActionGroup({ dropdown: true }),
+       new ActionToggle({ checked: true })
+   ]
+});
+```
  *
  * **Or**
  *
- * ```typescript
- * const group = actionFactory.createGroup().appendChildren([
- *     actionFactory.createButton().setTitle('Test'),
- *     actionFactory.createGroup().enableDropdown(),
- *     actionFactory.createToggle().check()
- * ]);
- * ```
+```typescript
+const group = actionFactory.createGroup().appendChildren([
+    actionFactory.createButton().setTitle('Test'),
+    actionFactory.createGroup().enableDropdown(),
+    actionFactory.createToggle().check()
+]);
+```
  *
  * **Or**
  *
- * ```typescript
- * const group = actionFactory.createGroup();
- * group.createButton().setTitle('Test');
- * group.createGroup().enableDropdown();
- * group.createToggle().check();
- * ```
+```typescript
+const group = actionFactory.createGroup();
+group.createButton().setTitle('Test');
+group.createGroup().enableDropdown();
+group.createToggle().check();
+```
  */
 export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupEvent> implements ActionOutlet {
     /**
@@ -125,9 +125,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * In case of `ActionGroup` **Noop**
      *
      * #### Example:
-     * ```typescript
-     * group.trigger();
-     * ```
+```typescript
+group.trigger();
+```
      *
      * @method trigger
      */
@@ -139,9 +139,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Activates group action and **all** it's children
      *
      * #### Example:
-     * ```typescript
-     * group.activate();
-     * ```
+```typescript
+group.activate();
+```
      *
      * @method activate
      */
@@ -158,9 +158,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Deactivates group action and **all** it's children
      *
      * #### Example:
-     * ```typescript
-     * group.deactivate();
-     * ```
+```typescript
+group.deactivate();
+```
      *
      * @method deactivate
      */
@@ -177,9 +177,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Destroys group action, **destroys** and **removes** **all** it's children
      *
      * #### Example:
-     * ```typescript
-     * group.destroy();
-     * ```
+```typescript
+group.destroy();
+```
      *
      * @method destroy
      */
@@ -193,9 +193,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Enables group action and **all** it's children
      *
      * #### Example:
-     * ```typescript
-     * group.enable();
-     * ```
+```typescript
+group.enable();
+```
      *
      * @method enable
      */
@@ -208,9 +208,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Disables group action and **all** it's children
      *
      * #### Example:
-     * ```typescript
-     * group.disable();
-     * ```
+```typescript
+group.disable();
+```
      *
      * @method disable
      */
@@ -223,9 +223,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Creates a new `ActionButton` and **appends** it to the children stack
      *
      * #### Example:
-     * ```typescript
-     * const childButton = group.createButton({ title: 'Test' });
-     * ```
+ ```typescript
+ const childButton = group.createButton({ title: 'Test' });
+ ```
      *
      * @method createButton
      * @param options Options for `ActionButton`
@@ -241,9 +241,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Creates a new `ActionGroup` and **appends** it to the children stack
      *
      * #### Example:
-     * ```typescript
-     * const childGroup = group.createGroup({ dropdown: true });
-     * ```
+```typescript
+const childGroup = group.createGroup({ dropdown: true });
+```
      *
      * @method createGroup
      * @param options Options for `ActionGroup`
@@ -259,9 +259,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Creates a new `ActionToggle` and **appends** it to the children stack
      *
      * #### Example:
-     * ```typescript
-     * const childToggle = group.createToggle({ checked: true });
-     * ```
+```typescript
+const childToggle = group.createToggle({ checked: true });
+```
      *
      * @method createToggle
      * @param options Options for `ActionToggle`
@@ -277,10 +277,10 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided action **at the end** of children stach
      *
      * #### Example:
-     * ```typescript
-     * const child = actionFactory.createButton({ title: 'Test' });
-     * group.appendChild(child);
-     * ```
+```typescript
+const child = actionFactory.createButton({ title: 'Test' });
+group.appendChild(child);
+```
      *
      * @method appendChild
      * @param action Action to append
@@ -295,11 +295,11 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided actions **at the end** of children stach
      *
      * #### Example:
-     * ```typescript
-     * const child1 = actionFactory.createButton({ title: 'Test 1' });
-     * const child2 = actionFactory.createButton({ title: 'Test 2' });
-     * group.appendChildren([ child1, child2 ]);
-     * ```
+```typescript
+const child1 = actionFactory.createButton({ title: 'Test 1' });
+const child2 = actionFactory.createButton({ title: 'Test 2' });
+group.appendChildren([ child1, child2 ]);
+```
      *
      * @method appendChildren
      * @param actions Actions to append
@@ -315,10 +315,10 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided action **at the beginning** of children stack
      *
      * #### Example:
-     * ```typescript
-     * const child = actionFactory.createButton({ title: 'Test' });
-     * group.prependChild(child);
-     * ```
+```typescript
+const child = actionFactory.createButton({ title: 'Test' });
+group.prependChild(child);
+```
      *
      * @method prependChild
      * @param action Action to prepend
@@ -333,11 +333,11 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Adds provided actions **at the beginning** of children stack
      *
      * #### Example:
-     * ```typescript
-     * const child1 = actionFactory.createButton({ title: 'Test 1' });
-     * const child2 = actionFactory.createButton({ title: 'Test 2' });
-     * group.prependChildren([ child1, child2 ]);
-     * ```
+```typescript
+const child1 = actionFactory.createButton({ title: 'Test 1' });
+const child2 = actionFactory.createButton({ title: 'Test 2' });
+group.prependChildren([ child1, child2 ]);
+```
      *
      * @method prependChildren
      * @param actions Actions to prepend
@@ -352,9 +352,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Removes provided child action from group
      *
      * #### Example:
-     * ```typescript
-     * group.removeChild(child);
-     * ```
+```typescript
+group.removeChild(child);
+```
      *
      * @method removeChild
      * @param action Child action to be removed
@@ -368,9 +368,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Removes child action from group at given index
      *
      * #### Example:
-     * ```typescript
-     * group.removeChildByIndex(0);
-     * ```
+```typescript
+group.removeChildByIndex(0);
+```
      *
      * @method removeChildByIndex
      * @param index Index of child action
@@ -391,9 +391,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Removes **all** children from group
      *
      * #### Example:
-     * ```typescript
-     * group.removeChildren();
-     * ```
+```typescript
+group.removeChildren();
+```
      *
      * @method removeChildren
      */
@@ -409,11 +409,11 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * - **Ignore** actions with different parent
      *
      * #### Example:
-     * ```typescript
-     * const child1 = actionFactory.createButton({ title: 'Test 1' });
-     * const child2 = actionFactory.createButton({ title: 'Test 2' });
-     * group.setChildren([ child1, child2 ]);
-     * ```
+```typescript
+const child1 = actionFactory.createButton({ title: 'Test 1' });
+const child2 = actionFactory.createButton({ title: 'Test 2' });
+group.setChildren([ child1, child2 ]);
+```
      *
      * @method setChildren
      * @param children Actions to become children
@@ -432,9 +432,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Returns the current children
      *
      * #### Example:
-     * ```typescript
-     * const children = group.getChildren();
-     * ```
+```typescript
+const children = group.getChildren();
+```
      *
      * @method getChildren
      */
@@ -446,9 +446,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Returns child action at given index
      *
      * #### Example:
-     * ```typescript
-     * const child = group.getChild(0);
-     * ```
+```typescript
+const child = group.getChild(0);
+```
      *
      * @method getChild
      * @param index Index of child action
@@ -467,9 +467,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Returns boolean defining whether group is dropdown or not
      *
      * #### Example:
-     * ```typescript
-     * const isDropdown = group.isDropdown();
-     * ```
+```typescript
+const isDropdown = group.isDropdown();
+```
      *
      * @method isDropdown
      */
@@ -481,9 +481,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Transforms the group to dropdown
      *
      * #### Example:
-     * ```typescript
-     * group.enableDropdown();
-     * ```
+```typescript
+group.enableDropdown();
+```
      *
      * @method enableDropdown
      */
@@ -496,9 +496,9 @@ export class ActionGroup extends ActionAbstract<ActionGroupOptions, ActionGroupE
      * Transforms dropdown to group
      *
      * #### Example:
-     * ```typescript
-     * group.disableDropdown();
-     * ```
+```typescript
+group.disableDropdown();
+```
      *
      * @method disableDropdown
      */

@@ -71,49 +71,44 @@
 Provides all the behaviors, shared between <strong>each</strong> action
 <em>e.g. title, icon, visibility, disabled, active state</em></p>
 <h2 id="example">Example</h2>
-<p>```typescript</p>
-<ul>
-<li>export class ActionCustom extends ActionAbstract&lt;ActionCustomOptions, ActionCustomEvent&gt; {</li>
-<li>// Abstract properties need to be implemented by derived class</li>
-<li>fire$: Observable<ActionCustomEvent>;</li>
-<li>changes$: Observable<ActionCustomOptions>;</li>
-<li>// A custom observable, specific to this action implementation</li>
-<li>custom$: Observable<number>;</li>
-<li></li>
-<li>// A custom subject that is used to bridge reactive and non reactive world</li>
-<li>protected custom: Subject<number>;</li>
-<li></li>
-<li>constructor(options: ActionCustomOptions,</li>
-<li>component?: Type<ActionCustomComponentImpl>) {</li>
-<li>this.fire = new Subject();</li>
-<li>this.custom = new Subject();</li>
-<li></li>
-<li>this.fire$ = this.handleLivecycle(this.fire.asObservable(), false);</li>
-<li>this.custom$ = this.handleLivecycle(this.custom.asObservable());</li>
-<li>this.changes$ = this.handleLivecycle(Observable.merge(</li>
-<li>this.title$.pipe(map(title =&gt; (<ActionCustomOptions>{ title }))),</li>
-<li>this.icon$.pipe(map(icon =&gt; (<ActionCustomOptions>{ icon }))),</li>
-<li>this.visible$.pipe(map(visible =&gt; (<ActionCustomOptions>{ visible }))),</li>
-<li>this.disabled$.pipe(map(disabled =&gt; (<ActionCustomOptions>{ disabled }))),</li>
-<li>this.custom$.pipe(map(custom =&gt; (<ActionCustomOptions>{ custom })))</li>
-<li>));</li>
-<li>}</li>
-<li></li>
-<li>// Abstract method trigger needs to be implemented by every derived class</li>
-<li>trigger(): this {</li>
-<li>this.fire.next({ action: this });</li>
-<li>return this;</li>
-<li>}</li>
-<li></li>
-<li>// A custom method to trigger custom subject and custom$ observable</li>
-<li>fireCustom(): this {</li>
-<li>this.custom.next(Math.random());</li>
-<li>return this;</li>
-<li>}</li>
-<li>}</li>
-<li>```</li>
-</ul>
+<div><pre class="line-numbers"><code class="language-typescript">export class ActionCustom extends ActionAbstract&lt;ActionCustomOptions, ActionCustomEvent&gt; {
+    // Abstract properties need to be implemented by derived class
+    fire$: Observable&lt;ActionCustomEvent&gt;;
+    changes$: Observable&lt;ActionCustomOptions&gt;;
+    // A custom observable, specific to this action implementation
+    custom$: Observable&lt;number&gt;;
 
+    // A custom subject that is used to bridge reactive and non reactive world
+    protected custom: Subject&lt;number&gt;;
+
+    constructor(options: ActionCustomOptions,
+                component?: Type&lt;ActionCustomComponentImpl&gt;) {
+        this.fire = new Subject();
+        this.custom = new Subject();
+
+        this.fire$ = this.handleLivecycle(this.fire.asObservable(), false);
+        this.custom$ = this.handleLivecycle(this.custom.asObservable());
+        this.changes$ = this.handleLivecycle(Observable.merge(
+            this.title$.pipe(map(title =&gt; (&lt;ActionCustomOptions&gt;{ title }))),
+            this.icon$.pipe(map(icon =&gt; (&lt;ActionCustomOptions&gt;{ icon }))),
+            this.visible$.pipe(map(visible =&gt; (&lt;ActionCustomOptions&gt;{ visible }))),
+            this.disabled$.pipe(map(disabled =&gt; (&lt;ActionCustomOptions&gt;{ disabled }))),
+            this.custom$.pipe(map(custom =&gt; (&lt;ActionCustomOptions&gt;{ custom })))
+        ));
+    }
+
+    // Abstract method trigger needs to be implemented by every derived class
+    trigger(): this {
+        this.fire.next({ action: this });
+        return this;
+    }
+
+    // A custom method to trigger custom subject and custom$ observable
+    fireCustom(): this {
+        this.custom.next(Math.random());
+        return this;
+    }
+}</code></pre></div>
             </p>
 
 
@@ -1761,46 +1756,46 @@ let increment &#x3D; 0;
  *
  * ## Example
  *
- * &#x60;&#x60;&#x60;typescript
- * export class ActionCustom extends ActionAbstract&lt;ActionCustomOptions, ActionCustomEvent&gt; {
- *     // Abstract properties need to be implemented by derived class
- *     fire$: Observable&lt;ActionCustomEvent&gt;;
- *     changes$: Observable&lt;ActionCustomOptions&gt;;
- *     // A custom observable, specific to this action implementation
- *     custom$: Observable&lt;number&gt;;
- *
- *     // A custom subject that is used to bridge reactive and non reactive world
- *     protected custom: Subject&lt;number&gt;;
- *
- *     constructor(options: ActionCustomOptions,
- *                 component?: Type&lt;ActionCustomComponentImpl&gt;) {
- *         this.fire &#x3D; new Subject();
- *         this.custom &#x3D; new Subject();
- *
- *         this.fire$ &#x3D; this.handleLivecycle(this.fire.asObservable(), false);
- *         this.custom$ &#x3D; this.handleLivecycle(this.custom.asObservable());
- *         this.changes$ &#x3D; this.handleLivecycle(Observable.merge(
- *             this.title$.pipe(map(title &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ title }))),
- *             this.icon$.pipe(map(icon &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ icon }))),
- *             this.visible$.pipe(map(visible &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ visible }))),
- *             this.disabled$.pipe(map(disabled &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ disabled }))),
- *             this.custom$.pipe(map(custom &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ custom })))
- *         ));
- *     }
- *
- *     // Abstract method trigger needs to be implemented by every derived class
- *     trigger(): this {
- *         this.fire.next({ action: this });
- *         return this;
- *     }
- *
- *     // A custom method to trigger custom subject and custom$ observable
- *     fireCustom(): this {
- *         this.custom.next(Math.random());
- *         return this;
- *     }
- * }
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+export class ActionCustom extends ActionAbstract&lt;ActionCustomOptions, ActionCustomEvent&gt; {
+    // Abstract properties need to be implemented by derived class
+    fire$: Observable&lt;ActionCustomEvent&gt;;
+    changes$: Observable&lt;ActionCustomOptions&gt;;
+    // A custom observable, specific to this action implementation
+    custom$: Observable&lt;number&gt;;
+
+    // A custom subject that is used to bridge reactive and non reactive world
+    protected custom: Subject&lt;number&gt;;
+
+    constructor(options: ActionCustomOptions,
+                component?: Type&lt;ActionCustomComponentImpl&gt;) {
+        this.fire &#x3D; new Subject();
+        this.custom &#x3D; new Subject();
+
+        this.fire$ &#x3D; this.handleLivecycle(this.fire.asObservable(), false);
+        this.custom$ &#x3D; this.handleLivecycle(this.custom.asObservable());
+        this.changes$ &#x3D; this.handleLivecycle(Observable.merge(
+            this.title$.pipe(map(title &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ title }))),
+            this.icon$.pipe(map(icon &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ icon }))),
+            this.visible$.pipe(map(visible &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ visible }))),
+            this.disabled$.pipe(map(disabled &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ disabled }))),
+            this.custom$.pipe(map(custom &#x3D;&gt; (&lt;ActionCustomOptions&gt;{ custom })))
+        ));
+    }
+
+    // Abstract method trigger needs to be implemented by every derived class
+    trigger(): this {
+        this.fire.next({ action: this });
+        return this;
+    }
+
+    // A custom method to trigger custom subject and custom$ observable
+    fireCustom(): this {
+        this.custom.next(Math.random());
+        return this;
+    }
+}
+&#x60;&#x60;&#x60;
  */
 export abstract class ActionAbstract&lt;Options extends ActionAbstractOptions, FireEvent extends ActionAbstractEvent&gt; {
     /**

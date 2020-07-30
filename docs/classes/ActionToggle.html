@@ -70,24 +70,9 @@
                 <p><code>ActionToggle</code> used to create action with toggle functionality,
 <em>e.g. checkbox, toggle slider</em></p>
 <h2 id="example">Example</h2>
-<p>```typescript</p>
-<ul>
-<li>const toggle = new ActionToggle({ checked: true });</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Or</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const toggle = actionFactory.createToggle({ checked: true });</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Or</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const toggle = actionFactory.createToggle().check();</li>
-<li>```</li>
-</ul>
-
+<div><pre class="line-numbers"><code class="language-typescript">const toggle = new ActionToggle({ checked: true });</code></pre></div><p><strong>Or</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const toggle = actionFactory.createToggle({ checked: true });</code></pre></div><p><strong>Or</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const toggle = actionFactory.createToggle().check();</code></pre></div>
             </p>
 
             <p class="comment">
@@ -787,10 +772,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                     <div class="io-description"><p>Will set checked status to <code>true</code>
 It will <strong>not</strong> produce second notification if already checked</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * toggle.check();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">toggle.check();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -828,10 +810,7 @@ It will <strong>not</strong> produce second notification if already checked</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns boolean defining whether action is checked</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const isChecked = toggle.isChecked();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const isChecked = toggle.isChecked();</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
@@ -863,8 +842,8 @@ It will <strong>not</strong> produce second notification if already checked</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">projects/core/src/lib/action-toggle/action-toggle.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">projects/core/src/lib/action-toggle/action-toggle.ts:153</a></div>
                 </td>
             </tr>
 
@@ -873,23 +852,11 @@ It will <strong>not</strong> produce second notification if already checked</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns boolean defining whether action is unchecked</p>
 <h4 id="example">Example:</h4>
-<p>const isUnchecked = toggle.isUnchecked();</p>
-<p><code>typescript
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const isUnchecked = toggle.isUnchecked();</code></pre></div></div>
 
-                    <div>
-                        <b>Example :</b>
-                        <div>
-                            <pre class="line-numbers"><code class="language-html">isUnchecked</code></pre>
-                        </div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -928,10 +895,7 @@ It will <strong>not</strong> produce second notification if already checked</p>
                     <div class="io-description"><p>Will toggle current checked state when invoked
 Should be called in view component on click</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * toggle.trigger();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">toggle.trigger();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -970,10 +934,7 @@ Should be called in view component on click</p>
                     <div class="io-description"><p>Will set checked status to <code>false</code>
 It will <strong>not</strong> produce second notification if already unchecked</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * toggle.uncheck();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">toggle.uncheck();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -2230,21 +2191,21 @@ const defaultToggleOptions: ActionToggleOptions &#x3D; {
  *
  * ## Example
  *
- * &#x60;&#x60;&#x60;typescript
- * const toggle &#x3D; new ActionToggle({ checked: true });
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const toggle &#x3D; new ActionToggle({ checked: true });
+&#x60;&#x60;&#x60;
  *
  * **Or**
  *
- * &#x60;&#x60;&#x60;typescript
- * const toggle &#x3D; actionFactory.createToggle({ checked: true });
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const toggle &#x3D; actionFactory.createToggle({ checked: true });
+&#x60;&#x60;&#x60;
  *
  * **Or**
  *
- * &#x60;&#x60;&#x60;typescript
- * const toggle &#x3D; actionFactory.createToggle().check();
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const toggle &#x3D; actionFactory.createToggle().check();
+&#x60;&#x60;&#x60;
  */
 export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionToggleEvent&gt; {
     /**
@@ -2296,9 +2257,9 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
      * Should be called in view component on click
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * toggle.trigger();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+toggle.trigger();
+&#x60;&#x60;&#x60;
      *
      * @method trigger
      */
@@ -2312,9 +2273,9 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
      * It will **not** produce second notification if already checked
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * toggle.check();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+toggle.check();
+&#x60;&#x60;&#x60;
      *
      * @method check
      */
@@ -2328,9 +2289,9 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
      * It will **not** produce second notification if already unchecked
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * toggle.uncheck();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+toggle.uncheck();
+&#x60;&#x60;&#x60;
      *
      * @method uncheck
      */
@@ -2343,9 +2304,9 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
      * Returns boolean defining whether action is checked
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const isChecked &#x3D; toggle.isChecked();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const isChecked &#x3D; toggle.isChecked();
+&#x60;&#x60;&#x60;
      *
      * @method isChecked
      */
@@ -2357,11 +2318,9 @@ export class ActionToggle extends ActionAbstract&lt;ActionToggleOptions, ActionT
      * Returns boolean defining whether action is unchecked
      *
      * #### Example:
-     * const isUnchecked &#x3D; toggle.isUnchecked();
-     * &#x60;&#x60;&#x60;typescript
-     * &#x60;&#x60;&#x60;
-     *
-     * @example isUnchecked
+&#x60;&#x60;&#x60;typescript
+const isUnchecked &#x3D; toggle.isUnchecked();
+&#x60;&#x60;&#x60;
      */
     isUnchecked(): boolean {
         return !this.fire.getValue();

@@ -15,21 +15,21 @@ import { ActionToggleComponentImpl, ActionToggleOptions } from './action-toggle/
  * ## Example
  *
  * **Instead of**
- * ```typescript
- * const buttonAction = new ActionButton({
- *    title: 'Action Title',
- *    icon: 'icon',
- *    callback: callbackMethod
- * });
- * ```
+```typescript
+const buttonAction = new ActionButton({
+    title: 'Action Title',
+    icon: 'icon',
+    callback: callbackMethod
+});
+```
  *
  * **Can do**
- * ```typescript
- * const buttonAction = this.actionOutletFactory.createButton()
- *    .setTitle('Action Title')
- *    .setIcon('icon')
- *    .fire$.subscribe(callbackMethod);
- * ```
+```typescript
+const buttonAction = this.actionOutletFactory.createButton()
+    .setTitle('Action Title')
+    .setIcon('icon')
+    .fire$.subscribe(callbackMethod);
+```
  */
 
 @Injectable({
@@ -40,9 +40,9 @@ export class ActionOutletFactory implements ActionOutlet {
      * Will create and return a new instance of `ActionButton` with default options and component
      *
      * #### Example:
-     * ```typescript
-     * const button = this.actionOutlet.createButton({ title: 'Test' });
-     * ```
+```typescript
+const button = this.actionOutlet.createButton({ title: 'Test' });
+```
      *
      * @method createButton
      * @param options Override the default options for `ActionButton`
@@ -56,9 +56,9 @@ export class ActionOutletFactory implements ActionOutlet {
      * Will create and return a new instance of `ActionGroup` with default options and component
      *
      * #### Example:
-     * ```typescript
-     * const group = this.actionOutlet.createGroup({ dropdown: true });
-     * ```
+```typescript
+const group = this.actionOutlet.createGroup({ dropdown: true });
+```
      *
      * @method createGroup
      * @param options Override the default options for `ActionGroup`
@@ -72,9 +72,9 @@ export class ActionOutletFactory implements ActionOutlet {
      * Will create and return a new instance of `ActionToggle` with default options and component
      *
      * #### Example:
-     * ```typescript
-     * const toggle = this.actionOutlet.createToggle({ checked: true });
-     * ```
+```typescript
+const toggle = this.actionOutlet.createToggle({ checked: true });
+```
      *
      * @method createToggle
      * @param options Override the default options for `ActionToggle`

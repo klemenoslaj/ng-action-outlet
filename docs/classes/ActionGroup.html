@@ -70,37 +70,22 @@
                 <p><code>ActionGroup</code> used to group certain actions in one logical component
 Can be used either as <strong>group</strong> either as <strong>dropdown</strong></p>
 <h2 id="example">Example</h2>
-<p>```typescript</p>
-<ul>
-<li>const group = new ActionGroup({</li>
-<li>children: [</li>
-<li>new ActionButton({ title: &#39;Test&#39; }),</li>
-<li>new ActionGroup({ dropdown: true }),</li>
-<li>new ActionToggle({ checked: true })</li>
-<li>]</li>
-<li>});</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Or</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const group = actionFactory.createGroup().appendChildren([</li>
-<li>actionFactory.createButton().setTitle(&#39;Test&#39;),</li>
-<li>actionFactory.createGroup().enableDropdown(),</li>
-<li>actionFactory.createToggle().check()</li>
-<li>]);</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Or</strong></p>
-<p>```typescript</p>
-<ul>
-<li>const group = actionFactory.createGroup();</li>
-<li>group.createButton().setTitle(&#39;Test&#39;);</li>
-<li>group.createGroup().enableDropdown();</li>
-<li>group.createToggle().check();</li>
-<li>```</li>
-</ul>
-
+<div><pre class="line-numbers"><code class="language-typescript">const group = new ActionGroup({
+   children: [
+       new ActionButton({ title: &#39;Test&#39; }),
+       new ActionGroup({ dropdown: true }),
+       new ActionToggle({ checked: true })
+   ]
+});</code></pre></div><p><strong>Or</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const group = actionFactory.createGroup().appendChildren([
+    actionFactory.createButton().setTitle(&#39;Test&#39;),
+    actionFactory.createGroup().enableDropdown(),
+    actionFactory.createToggle().check()
+]);</code></pre></div><p><strong>Or</strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">const group = actionFactory.createGroup();
+group.createButton().setTitle(&#39;Test&#39;);
+group.createGroup().enableDropdown();
+group.createToggle().check();</code></pre></div>
             </p>
 
             <p class="comment">
@@ -934,10 +919,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Activates group action and <strong>all</strong> it&#39;s children</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.activate();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.activate();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -975,11 +957,8 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Adds provided action <strong>at the end</strong> of children stach</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const child = actionFactory.createButton({ title: &#39;Test&#39; });
-     * group.appendChild(child);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const child = actionFactory.createButton({ title: &#39;Test&#39; });
+group.appendChild(child);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1050,12 +1029,9 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Adds provided actions <strong>at the end</strong> of children stach</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
-     * const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
-     * group.appendChildren([ child1, child2 ]);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+group.appendChildren([ child1, child2 ]);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1126,10 +1102,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Creates a new <code>ActionButton</code> and <strong>appends</strong> it to the children stack</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const childButton = group.createButton({ title: &#39;Test&#39; });
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript"> const childButton = group.createButton({ title: &#39;Test&#39; });</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1223,10 +1196,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Creates a new <code>ActionGroup</code> and <strong>appends</strong> it to the children stack</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const childGroup = group.createGroup({ dropdown: true });
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const childGroup = group.createGroup({ dropdown: true });</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1320,10 +1290,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Creates a new <code>ActionToggle</code> and <strong>appends</strong> it to the children stack</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const childToggle = group.createToggle({ checked: true });
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const childToggle = group.createToggle({ checked: true });</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1417,10 +1384,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Deactivates group action and <strong>all</strong> it&#39;s children</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.deactivate();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.deactivate();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -1458,10 +1422,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Destroys group action, <strong>destroys</strong> and <strong>removes</strong> <strong>all</strong> it&#39;s children</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.destroy();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.destroy();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -1499,10 +1460,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Disables group action and <strong>all</strong> it&#39;s children</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.disable();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.disable();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -1540,10 +1498,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Transforms dropdown to group</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.disableDropdown();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.disableDropdown();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -1581,10 +1536,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Enables group action and <strong>all</strong> it&#39;s children</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.enable();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.enable();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -1622,10 +1574,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Transforms the group to dropdown</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.enableDropdown();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.enableDropdown();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -1663,10 +1612,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns child action at given index</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const child = group.getChild(0);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const child = group.getChild(0);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1744,10 +1690,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns the current children</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const children = group.getChildren();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const children = group.getChildren();</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction[]</a></code>
@@ -1789,10 +1732,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Returns boolean defining whether group is dropdown or not</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const isDropdown = group.isDropdown();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const isDropdown = group.isDropdown();</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
@@ -1834,11 +1774,8 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Adds provided action <strong>at the beginning</strong> of children stack</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const child = actionFactory.createButton({ title: &#39;Test&#39; });
-     * group.prependChild(child);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const child = actionFactory.createButton({ title: &#39;Test&#39; });
+group.prependChild(child);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1909,12 +1846,9 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Adds provided actions <strong>at the beginning</strong> of children stack</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
-     * const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
-     * group.prependChildren([ child1, child2 ]);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+group.prependChildren([ child1, child2 ]);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1985,10 +1919,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Removes provided child action from group</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.removeChild(child);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.removeChild(child);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -2059,10 +1990,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Removes child action from group at given index</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.removeChildByIndex(0);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.removeChildByIndex(0);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -2133,10 +2061,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Removes <strong>all</strong> children from group</p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.removeChildren();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.removeChildren();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -2178,12 +2103,9 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
 <li><strong>Ignore</strong> actions with different parent</li>
 </ul>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
-     * const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
-     * group.setChildren([ child1, child2 ]);
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">const child1 = actionFactory.createButton({ title: &#39;Test 1&#39; });
+const child2 = actionFactory.createButton({ title: &#39;Test 2&#39; });
+group.setChildren([ child1, child2 ]);</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -2255,10 +2177,7 @@ e.g. <code>Active</code>, <code>Inactive</code>, <code>Destroyed</code></p>
                     <div class="io-description"><p>Trigger for group action.
 In case of <code>ActionGroup</code> <strong>Noop</strong></p>
 <h4 id="example">Example:</h4>
-<p><code>typescript
-     * group.trigger();
-     *</code></p>
-</div>
+<div><pre class="line-numbers"><code class="language-typescript">group.trigger();</code></pre></div></div>
 
                 </td>
             </tr>
@@ -3530,34 +3449,34 @@ const unique &#x3D; (children: AnyAction[]) &#x3D;&gt; Array.from(
  *
  * ## Example
  *
- * &#x60;&#x60;&#x60;typescript
- * const group &#x3D; new ActionGroup({
- *    children: [
- *        new ActionButton({ title: &#x27;Test&#x27; }),
- *        new ActionGroup({ dropdown: true }),
- *        new ActionToggle({ checked: true })
- *    ]
- * });
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const group &#x3D; new ActionGroup({
+   children: [
+       new ActionButton({ title: &#x27;Test&#x27; }),
+       new ActionGroup({ dropdown: true }),
+       new ActionToggle({ checked: true })
+   ]
+});
+&#x60;&#x60;&#x60;
  *
  * **Or**
  *
- * &#x60;&#x60;&#x60;typescript
- * const group &#x3D; actionFactory.createGroup().appendChildren([
- *     actionFactory.createButton().setTitle(&#x27;Test&#x27;),
- *     actionFactory.createGroup().enableDropdown(),
- *     actionFactory.createToggle().check()
- * ]);
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const group &#x3D; actionFactory.createGroup().appendChildren([
+    actionFactory.createButton().setTitle(&#x27;Test&#x27;),
+    actionFactory.createGroup().enableDropdown(),
+    actionFactory.createToggle().check()
+]);
+&#x60;&#x60;&#x60;
  *
  * **Or**
  *
- * &#x60;&#x60;&#x60;typescript
- * const group &#x3D; actionFactory.createGroup();
- * group.createButton().setTitle(&#x27;Test&#x27;);
- * group.createGroup().enableDropdown();
- * group.createToggle().check();
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const group &#x3D; actionFactory.createGroup();
+group.createButton().setTitle(&#x27;Test&#x27;);
+group.createGroup().enableDropdown();
+group.createToggle().check();
+&#x60;&#x60;&#x60;
  */
 export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGroupEvent&gt; implements ActionOutlet {
     /**
@@ -3621,9 +3540,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * In case of &#x60;ActionGroup&#x60; **Noop**
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.trigger();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.trigger();
+&#x60;&#x60;&#x60;
      *
      * @method trigger
      */
@@ -3635,9 +3554,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Activates group action and **all** it&#x27;s children
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.activate();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.activate();
+&#x60;&#x60;&#x60;
      *
      * @method activate
      */
@@ -3654,9 +3573,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Deactivates group action and **all** it&#x27;s children
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.deactivate();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.deactivate();
+&#x60;&#x60;&#x60;
      *
      * @method deactivate
      */
@@ -3673,9 +3592,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Destroys group action, **destroys** and **removes** **all** it&#x27;s children
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.destroy();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.destroy();
+&#x60;&#x60;&#x60;
      *
      * @method destroy
      */
@@ -3689,9 +3608,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Enables group action and **all** it&#x27;s children
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.enable();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.enable();
+&#x60;&#x60;&#x60;
      *
      * @method enable
      */
@@ -3704,9 +3623,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Disables group action and **all** it&#x27;s children
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.disable();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.disable();
+&#x60;&#x60;&#x60;
      *
      * @method disable
      */
@@ -3719,9 +3638,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Creates a new &#x60;ActionButton&#x60; and **appends** it to the children stack
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const childButton &#x3D; group.createButton({ title: &#x27;Test&#x27; });
-     * &#x60;&#x60;&#x60;
+ &#x60;&#x60;&#x60;typescript
+ const childButton &#x3D; group.createButton({ title: &#x27;Test&#x27; });
+ &#x60;&#x60;&#x60;
      *
      * @method createButton
      * @param options Options for &#x60;ActionButton&#x60;
@@ -3737,9 +3656,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Creates a new &#x60;ActionGroup&#x60; and **appends** it to the children stack
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const childGroup &#x3D; group.createGroup({ dropdown: true });
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const childGroup &#x3D; group.createGroup({ dropdown: true });
+&#x60;&#x60;&#x60;
      *
      * @method createGroup
      * @param options Options for &#x60;ActionGroup&#x60;
@@ -3755,9 +3674,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Creates a new &#x60;ActionToggle&#x60; and **appends** it to the children stack
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const childToggle &#x3D; group.createToggle({ checked: true });
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const childToggle &#x3D; group.createToggle({ checked: true });
+&#x60;&#x60;&#x60;
      *
      * @method createToggle
      * @param options Options for &#x60;ActionToggle&#x60;
@@ -3773,10 +3692,10 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided action **at the end** of children stach
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
-     * group.appendChild(child);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
+group.appendChild(child);
+&#x60;&#x60;&#x60;
      *
      * @method appendChild
      * @param action Action to append
@@ -3791,11 +3710,11 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided actions **at the end** of children stach
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
-     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
-     * group.appendChildren([ child1, child2 ]);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
+group.appendChildren([ child1, child2 ]);
+&#x60;&#x60;&#x60;
      *
      * @method appendChildren
      * @param actions Actions to append
@@ -3811,10 +3730,10 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided action **at the beginning** of children stack
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
-     * group.prependChild(child);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const child &#x3D; actionFactory.createButton({ title: &#x27;Test&#x27; });
+group.prependChild(child);
+&#x60;&#x60;&#x60;
      *
      * @method prependChild
      * @param action Action to prepend
@@ -3829,11 +3748,11 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Adds provided actions **at the beginning** of children stack
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
-     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
-     * group.prependChildren([ child1, child2 ]);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
+group.prependChildren([ child1, child2 ]);
+&#x60;&#x60;&#x60;
      *
      * @method prependChildren
      * @param actions Actions to prepend
@@ -3848,9 +3767,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Removes provided child action from group
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.removeChild(child);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.removeChild(child);
+&#x60;&#x60;&#x60;
      *
      * @method removeChild
      * @param action Child action to be removed
@@ -3864,9 +3783,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Removes child action from group at given index
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.removeChildByIndex(0);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.removeChildByIndex(0);
+&#x60;&#x60;&#x60;
      *
      * @method removeChildByIndex
      * @param index Index of child action
@@ -3887,9 +3806,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Removes **all** children from group
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.removeChildren();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.removeChildren();
+&#x60;&#x60;&#x60;
      *
      * @method removeChildren
      */
@@ -3905,11 +3824,11 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * - **Ignore** actions with different parent
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
-     * const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
-     * group.setChildren([ child1, child2 ]);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const child1 &#x3D; actionFactory.createButton({ title: &#x27;Test 1&#x27; });
+const child2 &#x3D; actionFactory.createButton({ title: &#x27;Test 2&#x27; });
+group.setChildren([ child1, child2 ]);
+&#x60;&#x60;&#x60;
      *
      * @method setChildren
      * @param children Actions to become children
@@ -3928,9 +3847,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Returns the current children
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const children &#x3D; group.getChildren();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const children &#x3D; group.getChildren();
+&#x60;&#x60;&#x60;
      *
      * @method getChildren
      */
@@ -3942,9 +3861,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Returns child action at given index
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const child &#x3D; group.getChild(0);
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const child &#x3D; group.getChild(0);
+&#x60;&#x60;&#x60;
      *
      * @method getChild
      * @param index Index of child action
@@ -3963,9 +3882,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Returns boolean defining whether group is dropdown or not
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * const isDropdown &#x3D; group.isDropdown();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+const isDropdown &#x3D; group.isDropdown();
+&#x60;&#x60;&#x60;
      *
      * @method isDropdown
      */
@@ -3977,9 +3896,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Transforms the group to dropdown
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.enableDropdown();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.enableDropdown();
+&#x60;&#x60;&#x60;
      *
      * @method enableDropdown
      */
@@ -3992,9 +3911,9 @@ export class ActionGroup extends ActionAbstract&lt;ActionGroupOptions, ActionGro
      * Transforms dropdown to group
      *
      * #### Example:
-     * &#x60;&#x60;&#x60;typescript
-     * group.disableDropdown();
-     * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+group.disableDropdown();
+&#x60;&#x60;&#x60;
      *
      * @method disableDropdown
      */

@@ -72,26 +72,16 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
 </ul>
 <h2 id="example">Example</h2>
 <p><strong>TypeScript</strong></p>
-<p>```typescript</p>
-<ul>
-<li>this.group = new ActionGroup({</li>
-<li>children: [</li>
-<li>new ActionButton({</li>
-<li>title: &#39;Action Title&#39;,</li>
-<li>icon: &#39;icon&#39;,</li>
-<li>callback: callbackMethod</li>
-<li>})</li>
-<li>]</li>
-<li>});</li>
-<li><div><pre class="line-numbers"><code class="language-none"></code></pre></div></li>
-</ul>
-<p><strong>Template</strong></p>
-<p>```html</p>
-<ul>
-<li><div *actionOutlet="group"></div></li>
-<li>```</li>
-</ul>
-
+<div><pre class="line-numbers"><code class="language-typescript"> this.group = new ActionGroup({
+    children: [
+        new ActionButton({
+            title: &#39;Action Title&#39;,
+            icon: &#39;icon&#39;,
+            callback: callbackMethod
+         })
+    ]
+});</code></pre></div><p><strong>Template</strong></p>
+<div><pre class="line-numbers"><code class="language-html">&lt;div *actionOutlet=&quot;group&quot;&gt;&lt;/div&gt;</code></pre></div>
             </p>
 
             <p class="comment">
@@ -544,22 +534,22 @@ import { AnyAction } from &#x27;./action-outlet.model&#x27;;
  * ## Example
  *
  * **TypeScript**
- * &#x60;&#x60;&#x60;typescript
- * this.group &#x3D; new ActionGroup({
- *     children: [
- *         new ActionButton({
- *             title: &#x27;Action Title&#x27;,
- *             icon: &#x27;icon&#x27;,
- *             callback: callbackMethod
- *         })
- *     ]
- * });
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;typescript
+ this.group &#x3D; new ActionGroup({
+    children: [
+        new ActionButton({
+            title: &#x27;Action Title&#x27;,
+            icon: &#x27;icon&#x27;,
+            callback: callbackMethod
+         })
+    ]
+});
+&#x60;&#x60;&#x60;
  *
  * **Template**
- * &#x60;&#x60;&#x60;html
- * &lt;div *actionOutlet&#x3D;&quot;group&quot;&gt;&lt;/div&gt;
- * &#x60;&#x60;&#x60;
+&#x60;&#x60;&#x60;html
+&lt;div *actionOutlet&#x3D;&quot;group&quot;&gt;&lt;/div&gt;
+&#x60;&#x60;&#x60;
  */
 
 @Directive({
