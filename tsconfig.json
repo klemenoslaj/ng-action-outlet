@@ -1,29 +1,35 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./projects/core/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/core/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/playground/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/playground/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/material/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/material/tsconfig.spec.json"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "@ng-action-outlet/core": [
+        "dist/core",
+        "projects/core/src/public_api.ts"
+      ],
+      "@ng-action-outlet/material": [
+        "dist/material",
+        "projects/material/src/public_api.ts"
+      ]
     }
-  ]
+  }
 }
