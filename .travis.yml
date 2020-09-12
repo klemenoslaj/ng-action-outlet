@@ -2,10 +2,6 @@ os: linux
 language: node_js
 addons:
   chrome: stable
-before_install:
-  - npm install yarn -g
-cache:
-  yarn: true
 notifications:
   email: false
 node_js:
