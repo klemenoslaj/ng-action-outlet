@@ -7,27 +7,30 @@ import { isMenuItem } from './common';
 import { actionMatButtonTemplate } from './action-mat-button.template';
 import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
 
-export const enum ButtonType {
-  Button,
-  ButtonMenu,
-  MenuItem,
-  MenuItemMenu,
-}
+export const ButtonType = <const>{
+  Button: 0,
+  ButtonMenu: 1,
+  MenuItem: 2,
+  MenuItemMenu: 3,
+};
 
 @Component({
   selector: 'action-mat-button',
   template: `
     <ng-container *ngIf="_action && _action.visible$ | async" [ngSwitch]="_getButtonType(_action!)">
-      <button *ngSwitchCase="${ButtonType.Button}" mat-button [actionMatButton]="_action">
+      <button *ngSwitchCase="ButtonType.Button" mat-button [actionMatButton]="_action">
         <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
       </button>
-      <button *ngSwitchCase="${ButtonType.ButtonMenu}" mat-button [actionMatButton]="_action" [matMenuTriggerFor]="_forMatMenu">
+
+      <button *ngSwitchCase="ButtonType.ButtonMenu" mat-button [actionMatButton]="_action" [matMenuTriggerFor]="_forMatMenu">
         <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
       </button>
-      <button *ngSwitchCase="${ButtonType.MenuItem}" mat-menu-item [actionMatButton]="_action">
+
+      <button *ngSwitchCase="ButtonType.MenuItem" mat-menu-item [actionMatButton]="_action">
         <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
       </button>
-      <button *ngSwitchCase="${ButtonType.MenuItemMenu}" mat-menu-item [actionMatButton]="_action" [matMenuTriggerFor]="_forMatMenu">
+
+      <button *ngSwitchCase="ButtonType.MenuItemMenu" mat-menu-item [actionMatButton]="_action" [matMenuTriggerFor]="_forMatMenu">
         <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
       </button>
     </ng-container>
@@ -56,6 +59,8 @@ export class ActionMatButtonComponent implements ActionButtonComponentImpl, Focu
 
   @HostBinding('class')
   readonly _classname = 'action-mat-button';
+
+  ButtonType = ButtonType;
 
   constructor(
     @Inject(ACTION_ICON_TYPE_TOKEN)
