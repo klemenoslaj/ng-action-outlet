@@ -453,7 +453,7 @@ const child = group.getChild(0);
      * @method getChild
      * @param index Index of child action
      */
-    getChild(index: number): AnyAction {
+    getChild(index: number): AnyAction | undefined {
         const children = this.getChildren();
 
         if (index >= 0) {
