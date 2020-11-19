@@ -5,9 +5,8 @@ addons:
 notifications:
   email: false
 node_js:
+  - "14"
   - "12"
-  - "11"
-  - "10"
 
 script: echo "Running tests against $(node -v) ..."
 
