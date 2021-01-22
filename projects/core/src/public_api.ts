@@ -18,3 +18,6 @@ export * from './lib/action-group/action-group.model';
 
 export * from './lib/action-toggle/action-toggle';
 export * from './lib/action-toggle/action-toggle.model';
+
+export * from './lib/action-anchor/action-anchor';
+export * from './lib/action-anchor/action-anchor.model';

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ActionGroup, ActionButtonEvent, ActionButton, AnyAction } from '@ng-action-outlet/core';
+import { ActionGroup, ActionButtonEvent, ActionButton, AnyAction, ActionAnchor } from '@ng-action-outlet/core';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +13,9 @@ export class AppComponent {
     callback: this.callback,
     disabled: true
   });
-  button2 = new ActionButton({
-    title: 'Button 2',
-    callback: this.callback
+  link1 = new ActionAnchor({
+    title: 'Hello route (this tab)',
+    href: ['hello'],
   });
   menuItem1 = new ActionButton({
     title: 'Menu item 1',
@@ -53,13 +53,36 @@ export class AppComponent {
     ariaLabel: 'Menu for more actions',
     children: [
       this.menuItem1,
+      new ActionAnchor({
+        title: 'Hello route (new tab)',
+        href: ['hello'],
+        target: '_blank',
+      }),
+      new ActionAnchor({
+        title: 'Home route (this tab)',
+        href: ['home'],
+      }),
+      new ActionAnchor({
+        title: 'Home route (new tab)',
+        href: ['home'],
+        target: '_blank',
+      }),
+      new ActionAnchor({
+        title: 'Google (this tab)',
+        href: 'http://www.google.com',
+      }),
+      new ActionAnchor({
+        title: 'Google (new tab)',
+        href: 'http://www.google.com',
+        target: '_blank',
+      }),
       this.dropdown2,
     ]
   });
   group1 = new ActionGroup({
     children: [
       this.button1,
-      this.button2,
+      this.link1,
       this.dropdown1
     ]
   });

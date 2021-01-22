@@ -82,7 +82,7 @@ export class ActionCustom extends ActionAbstract<ActionCustomOptions, ActionCust
 }
 ```
  */
-export abstract class ActionAbstract<Options extends ActionAbstractOptions, FireEvent extends ActionAbstractEvent> {
+export abstract class ActionAbstract<Options extends ActionAbstractOptions, FireEvent extends ActionAbstractEvent | null> {
     /**
      * @internal
      *

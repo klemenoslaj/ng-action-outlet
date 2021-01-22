@@ -3,7 +3,7 @@
 <br>
 
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: button1  }"></ng-container>
-<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: button2  }"></ng-container>
+<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: link1  }"></ng-container>
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: dropdown1  }"></ng-container>
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: menuItem1  }"></ng-container>
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: dropdown2  }"></ng-container>
@@ -33,3 +33,15 @@
     </mat-card-actions>
   </mat-card>
 </ng-template>
+
+<br>
+<br>
+<mat-divider></mat-divider>
+<br>
+
+<mat-card>
+  <span>Current route: </span>
+  <span class="router-outlet">
+    <router-outlet></router-outlet>
+  </span>
+</mat-card>
