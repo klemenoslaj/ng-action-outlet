@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, HostBinding, ChangeDetectionStrategy, ViewEncapsulation, Inject } from '@angular/core';
-import { AnyAction, ActionGroup, ActionGroupComponentImpl } from '@ng-action-outlet/core';
+import { AnyAction, ActionGroup, ActionGroupComponentImpl, ActionAnchor } from '@ng-action-outlet/core';
 import { MatMenu } from '@angular/material/menu';
 
 import { trackByAction, TrackByAction } from './common';
@@ -22,9 +22,10 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
         </ng-template>
 
         <ng-template #actionOutlet let-action>
-          <button *ngIf="action.visible$ | async" mat-menu-item [actionMatButton]="action">
-            <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
-          </button>
+          <ng-container *ngIf="action.visible$ | async" [ngSwitch]="_isAnchor(action)">
+            <action-mat-anchor *ngSwitchCase="true" [action]="action"></action-mat-anchor>
+            <action-mat-button *ngSwitchDefault [action]="action"></action-mat-button>
+          </ng-container>
         </ng-template>
 
         <ng-template #nestedGroup let-action>
@@ -77,6 +78,10 @@ export class ActionMatMenuComponent implements ActionGroupComponentImpl {
 
   _isDropdown(action?: AnyAction): action is ActionGroup {
     return action instanceof ActionGroup && action.isDropdown();
+  }
+
+  _isAnchor(action?: AnyAction): action is ActionAnchor {
+    return action instanceof ActionAnchor;
   }
 
   _showDivider(action: ActionGroup) {

@@ -1,19 +1,19 @@
 import { Directive, Input, OnDestroy, ElementRef, Renderer2, Optional, Inject, ChangeDetectorRef } from '@angular/core';
 import { MatMenuTrigger, MatMenuItem } from '@angular/material/menu';
 import { MatButton } from '@angular/material/button';
-import { ActionButton, ActionGroup } from '@ng-action-outlet/core';
-import { Subject, fromEvent, ReplaySubject } from 'rxjs';
+import { ActionButton, ActionGroup, ActionAnchor } from '@ng-action-outlet/core';
+import { Subject, fromEvent, ReplaySubject, EMPTY } from 'rxjs';
 import { takeUntil, switchMap, filter } from 'rxjs/operators';
 
 @Directive({
-  selector: 'button[actionMatButton]',
+  selector: 'button[actionMatButton], a[actionMatButton]',
 })
 export class ActionMatButtonDirective implements OnDestroy {
-  private _action$ = new ReplaySubject<ActionButton | ActionGroup>(1);
+  private _action$ = new ReplaySubject<ActionButton | ActionGroup | ActionAnchor>(1);
   private _unsubscribe$ = new Subject<void>();
 
   @Input('actionMatButton')
-  set _actionMatButton(action: ActionButton | ActionGroup) {
+  set _actionMatButton(action: ActionButton | ActionGroup | ActionAnchor) {
     this._action$.next(action);
   }
 
@@ -29,16 +29,18 @@ export class ActionMatButtonDirective implements OnDestroy {
     cdRef: ChangeDetectorRef,
   ) {
     this._action$.pipe(
-      switchMap(action => action.disabled$),
+      switchMap(action => action instanceof ActionAnchor ? EMPTY : action.disabled$),
       takeUntil(this._unsubscribe$),
     ).subscribe(disabled => {
       // Either MatButton, either MatMenuItem should always be present.
       // tslint:disable-next-line: no-non-null-assertion
-      (matButton || matMenuItem)!.disabled = disabled;
+      (matButton ?? matMenuItem)!.disabled = disabled;
       cdRef.markForCheck();
     });
 
-    renderer.setAttribute(nativeElement, 'type', 'button');
+    if (nativeElement.tagName === 'BUTTON') {
+      renderer.setAttribute(nativeElement, 'type', 'button');
+    }
 
     const ariaLabel$ = this._action$.pipe(switchMap(action => action.ariaLabel$));
     ariaLabel$.pipe(
