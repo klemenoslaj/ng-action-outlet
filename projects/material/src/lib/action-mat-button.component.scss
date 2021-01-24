@@ -1,12 +1,12 @@
-.action-mat-button {
+.action-contents {
   display: contents;
 }
 
-.action-mat-button .mat-button,
-.action-mat-button .mat-icon-button {
+.action-mat-button.mat-button,
+.action-mat-button.mat-icon-button {
   vertical-align: top;
 }
 
-.action-mat-button a:hover {
+a.action-mat-button:hover {
   text-decoration: underline;
 }

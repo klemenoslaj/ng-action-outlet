@@ -2,7 +2,7 @@ import { Directive, Input, OnDestroy, ElementRef, Renderer2, Optional, Inject, C
 import { MatMenuTrigger, MatMenuItem } from '@angular/material/menu';
 import { MatButton } from '@angular/material/button';
 import { ActionButton, ActionGroup, ActionAnchor } from '@ng-action-outlet/core';
-import { Subject, fromEvent, ReplaySubject, EMPTY } from 'rxjs';
+import { Subject, fromEvent, ReplaySubject } from 'rxjs';
 import { takeUntil, switchMap, filter } from 'rxjs/operators';
 
 @Directive({
@@ -28,18 +28,26 @@ export class ActionMatButtonDirective implements OnDestroy {
     renderer: Renderer2,
     cdRef: ChangeDetectorRef,
   ) {
-    this._action$.pipe(
-      switchMap(action => action instanceof ActionAnchor ? EMPTY : action.disabled$),
-      takeUntil(this._unsubscribe$),
-    ).subscribe(disabled => {
-      // Either MatButton, either MatMenuItem should always be present.
-      // tslint:disable-next-line: no-non-null-assertion
-      (matButton ?? matMenuItem)!.disabled = disabled;
-      cdRef.markForCheck();
-    });
-
+    renderer.addClass(nativeElement, 'action-mat-button');
     if (nativeElement.tagName === 'BUTTON') {
       renderer.setAttribute(nativeElement, 'type', 'button');
+
+      if (!matMenuTrigger) {
+        fromEvent(nativeElement, 'click').pipe(
+          switchMap(() => this._action$),
+          takeUntil(this._unsubscribe$),
+        ).subscribe(action => action.trigger());
+      }
+
+      this._action$.pipe(
+        switchMap(action => action.disabled$),
+        takeUntil(this._unsubscribe$),
+      ).subscribe(disabled => {
+        // Either MatButton, either MatMenuItem should always be present.
+        // tslint:disable-next-line: no-non-null-assertion
+        (matButton ?? matMenuItem)!.disabled = disabled;
+        cdRef.markForCheck();
+      });
     }
 
     const ariaLabel$ = this._action$.pipe(switchMap(action => action.ariaLabel$));
@@ -68,13 +76,6 @@ export class ActionMatButtonDirective implements OnDestroy {
         renderer.removeClass(nativeElement, 'mat-button');
         renderer.addClass(nativeElement, 'mat-icon-button');
       });
-    }
-
-    if (!matMenuTrigger) {
-      fromEvent(nativeElement, 'click').pipe(
-        switchMap(() => this._action$),
-        takeUntil(this._unsubscribe$),
-      ).subscribe(action => action.trigger());
     }
   }
 

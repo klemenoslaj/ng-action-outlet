@@ -11,7 +11,6 @@ export class AppComponent {
   button1 = new ActionButton({
     title: 'Button 1',
     callback: this.callback,
-    disabled: true
   });
   link1 = new ActionAnchor({
     title: 'Hello route (this tab)',
@@ -53,30 +52,35 @@ export class AppComponent {
     ariaLabel: 'Menu for more actions',
     children: [
       this.menuItem1,
-      new ActionAnchor({
-        title: 'Hello route (new tab)',
-        href: ['hello'],
-        target: '_blank',
+      new ActionGroup({
+        children: [
+          new ActionAnchor({
+            title: 'Hello route (new tab)',
+            href: ['hello'],
+            target: '_blank',
+          }),
+          new ActionAnchor({
+            title: 'Home route (this tab)',
+            href: ['home'],
+          }),
+          new ActionAnchor({
+            title: 'Home route (new tab)',
+            href: ['home'],
+            target: '_blank',
+          }),
+          new ActionAnchor({
+            title: 'Google (this tab)',
+            href: 'http://www.google.com',
+          }),
+          new ActionAnchor({
+            title: 'Google (new tab)',
+            href: 'http://www.google.com',
+            target: '_blank',
+          }),]
       }),
-      new ActionAnchor({
-        title: 'Home route (this tab)',
-        href: ['home'],
-      }),
-      new ActionAnchor({
-        title: 'Home route (new tab)',
-        href: ['home'],
-        target: '_blank',
-      }),
-      new ActionAnchor({
-        title: 'Google (this tab)',
-        href: 'http://www.google.com',
-      }),
-      new ActionAnchor({
-        title: 'Google (new tab)',
-        href: 'http://www.google.com',
-        target: '_blank',
-      }),
-      this.dropdown2,
+      new ActionGroup({
+        children: [this.dropdown2]
+      })
     ]
   });
   group1 = new ActionGroup({

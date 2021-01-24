@@ -23,8 +23,18 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
         <ng-template #actionOutlet let-action>
           <ng-container *ngIf="action.visible$ | async" [ngSwitch]="_isAnchor(action)">
-            <action-mat-anchor *ngSwitchCase="true" [action]="action"></action-mat-anchor>
-            <action-mat-button *ngSwitchDefault [action]="action"></action-mat-button>
+            <ng-container *ngSwitchCase="true">
+              <a *ngIf="action.isExternalLink()" mat-menu-item [actionMatButton]="action" [href]="action.href$ | async" [attr.target]="action.target$ | async">
+                <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+              </a>
+              <a *ngIf="!action.isExternalLink()" mat-menu-item [actionMatButton]="action" [routerLink]="action.href$ | async" [target]="action.target$ | async">
+                <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+              </a>
+            </ng-container>
+
+            <button *ngSwitchDefault mat-menu-item [actionMatButton]="action">
+              <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+            </button>
           </ng-container>
         </ng-template>
 
