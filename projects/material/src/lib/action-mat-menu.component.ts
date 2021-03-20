@@ -1,4 +1,12 @@
-import { Component, Input, ViewChild, HostBinding, ChangeDetectionStrategy, ViewEncapsulation, Inject } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  HostBinding,
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  Inject,
+} from '@angular/core';
 import { AnyAction, ActionGroup, ActionGroupComponentImpl, ActionAnchor } from '@ng-action-outlet/core';
 import { MatMenu } from '@angular/material/menu';
 
@@ -17,17 +25,31 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
         <ng-template #nestedMenu let-action>
           <mat-divider *ngIf="_showDivider(action)"></mat-divider>
           <ng-container *ngFor="let child of action.children$ | async; trackBy: _trackByAction">
-            <ng-container *ngTemplateOutlet="_isGroup(child) ? nestedGroup : actionOutlet; context: { $implicit: child }"></ng-container>
+            <ng-container
+              *ngTemplateOutlet="_isGroup(child) ? nestedGroup : actionOutlet; context: { $implicit: child }"
+            ></ng-container>
           </ng-container>
         </ng-template>
 
         <ng-template #actionOutlet let-action>
           <ng-container *ngIf="action.visible$ | async" [ngSwitch]="_isAnchor(action)">
             <ng-container *ngSwitchCase="true">
-              <a *ngIf="action.isExternalLink()" mat-menu-item [actionMatButton]="action" [href]="action.href$ | async" [attr.target]="action.target$ | async">
+              <a
+                *ngIf="action.isExternalLink()"
+                mat-menu-item
+                [actionMatButton]="action"
+                [href]="action.href$ | async"
+                [attr.target]="action.target$ | async"
+              >
                 <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
               </a>
-              <a *ngIf="!action.isExternalLink()" mat-menu-item [actionMatButton]="action" [routerLink]="action.href$ | async" [target]="action.target$ | async">
+              <a
+                *ngIf="!action.isExternalLink()"
+                mat-menu-item
+                [actionMatButton]="action"
+                [routerLink]="action.href$ | async"
+                [target]="action.target$ | async"
+              >
                 <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
               </a>
             </ng-container>
@@ -40,32 +62,39 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
         <ng-template #nestedGroup let-action>
           <ng-container *ngIf="(action.children$ | async)?.length > 0">
-            <ng-container *ngTemplateOutlet="_isDropdown(action) ? nestedDropdown : nestedMenu; context: { $implicit: action }"></ng-container>
+            <ng-container
+              *ngTemplateOutlet="_isDropdown(action) ? nestedDropdown : nestedMenu; context: { $implicit: action }"
+            ></ng-container>
           </ng-container>
         </ng-template>
 
         <ng-template #nestedDropdown let-action>
           <action-mat-menu [action]="action" #nestedActionMenu="actionMatMenu"></action-mat-menu>
 
-          <button *ngIf="(action.visible$ | async) && nestedActionMenu._menu; let menu" mat-menu-item [actionMatButton]="action" [matMenuTriggerFor]="menu">
+          <button
+            *ngIf="(action.visible$ | async) && nestedActionMenu._menu; let menu"
+            mat-menu-item
+            [actionMatButton]="action"
+            [matMenuTriggerFor]="menu"
+          >
             <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
           </button>
         </ng-template>
-
       </ng-template>
     </mat-menu>
 
     ${actionMatButtonTemplate}
   `,
-  styles: [`
-    .action-mat-menu {
-      display: contents;
-    }
-  `],
+  styles: [
+    `
+      .action-mat-menu {
+        display: contents;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-
 export class ActionMatMenuComponent implements ActionGroupComponentImpl {
   @ViewChild(MatMenu, { static: true })
   _menu?: MatMenu;

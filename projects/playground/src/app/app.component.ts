@@ -5,7 +5,7 @@ import { ActionGroup, ActionButtonEvent, ActionButton, AnyAction, ActionAnchor }
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   button1 = new ActionButton({
@@ -18,7 +18,7 @@ export class AppComponent {
   });
   menuItem1 = new ActionButton({
     title: 'Menu item 1',
-    callback: this.callback
+    callback: this.callback,
   });
   dropdown2 = new ActionGroup({
     dropdown: true,
@@ -27,24 +27,24 @@ export class AppComponent {
       new ActionGroup({
         children: [
           new ActionButton({
-            title: 'Menu Item 2'
+            title: 'Menu Item 2',
           }),
           new ActionButton({
-            title: 'Menu Item 3'
-          })
-        ]
+            title: 'Menu Item 3',
+          }),
+        ],
       }),
       new ActionGroup({
         children: [
           new ActionButton({
-            title: 'Menu Item 4'
+            title: 'Menu Item 4',
           }),
           new ActionButton({
-            title: 'Menu Item 5'
-          })
-        ]
-      })
-    ]
+            title: 'Menu Item 5',
+          }),
+        ],
+      }),
+    ],
   });
   dropdown1 = new ActionGroup({
     dropdown: true,
@@ -76,23 +76,20 @@ export class AppComponent {
             title: 'Google (new tab)',
             href: 'http://www.google.com',
             target: '_blank',
-          }),]
+          }),
+        ],
       }),
       new ActionGroup({
-        children: [this.dropdown2]
-      })
-    ]
+        children: [this.dropdown2],
+      }),
+    ],
   });
   group1 = new ActionGroup({
-    children: [
-      this.button1,
-      this.link1,
-      this.dropdown1
-    ]
+    children: [this.button1, this.link1, this.dropdown1],
   });
 
   callback({ action }: ActionButtonEvent) {
-    alert('Clicked: ' + action.getTitle() || action.getIcon())
+    alert('Clicked: ' + action.getTitle() || action.getIcon());
   }
 
   toggleDisabled(action: AnyAction) {

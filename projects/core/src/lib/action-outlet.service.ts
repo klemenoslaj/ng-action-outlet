@@ -33,10 +33,10 @@ const buttonAction = this.actionOutletFactory.createButton()
  */
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ActionOutletFactory implements ActionOutlet {
-    /**
+  /**
      * Will create and return a new instance of `ActionButton` with default options and component
      *
      * #### Example:
@@ -48,11 +48,11 @@ const button = this.actionOutlet.createButton({ title: 'Test' });
      * @param options Override the default options for `ActionButton`
      * @param component Override the default component for `ActionButton`
      */
-    createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton {
-        return new ActionButton(options, component);
-    }
+  createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton {
+    return new ActionButton(options, component);
+  }
 
-    /**
+  /**
      * Will create and return a new instance of `ActionGroup` with default options and component
      *
      * #### Example:
@@ -64,11 +64,11 @@ const group = this.actionOutlet.createGroup({ dropdown: true });
      * @param options Override the default options for `ActionGroup`
      * @param component Override the default component for `ActionGroup`
      */
-    createGroup(options?: ActionGroupOptions, component?: Type<ActionGroupComponentImpl>): ActionGroup {
-        return new ActionGroup(options, component);
-    }
+  createGroup(options?: ActionGroupOptions, component?: Type<ActionGroupComponentImpl>): ActionGroup {
+    return new ActionGroup(options, component);
+  }
 
-    /**
+  /**
      * Will create and return a new instance of `ActionToggle` with default options and component
      *
      * #### Example:
@@ -80,7 +80,7 @@ const toggle = this.actionOutlet.createToggle({ checked: true });
      * @param options Override the default options for `ActionToggle`
      * @param component Override the default component for `ActionToggle`
      */
-    createToggle(options?: ActionToggleOptions, component?: Type<ActionToggleComponentImpl>): ActionToggle {
-        return new ActionToggle(options, component);
-    }
+  createToggle(options?: ActionToggleOptions, component?: Type<ActionToggleComponentImpl>): ActionToggle {
+    return new ActionToggle(options, component);
+  }
 }

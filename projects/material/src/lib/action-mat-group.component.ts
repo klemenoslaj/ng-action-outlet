@@ -10,11 +10,14 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
   exportAs: 'actionMatGroup',
   template: `
     <ng-container *ngIf="_action && (_action.visible$ | async) && (_action.children$ | async)!.length">
-      <ng-container *ngIf="_action.dropdown$ | async; then dropdown else group"></ng-container>
+      <ng-container *ngIf="_action.dropdown$ | async; then dropdown; else group"></ng-container>
     </ng-container>
 
     <ng-template #group>
-      <ng-container *ngFor="let child of _action!.children$ | async; trackBy: _trackByAction" [actionOutlet]="child"></ng-container>
+      <ng-container
+        *ngFor="let child of _action!.children$ | async; trackBy: _trackByAction"
+        [actionOutlet]="child"
+      ></ng-container>
     </ng-template>
 
     <ng-template #dropdown>
@@ -26,13 +29,15 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
     ${actionMatButtonTemplate}
   `,
-  styles: [`
-    .action-mat-group {
-      display: contents;
-    }
-  `],
+  styles: [
+    `
+      .action-mat-group {
+        display: contents;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ActionMatGroupComponent implements ActionGroupComponentImpl {
   @HostBinding('class')
@@ -41,8 +46,8 @@ export class ActionMatGroupComponent implements ActionGroupComponentImpl {
 
   constructor(
     @Inject(ACTION_ICON_TYPE_TOKEN)
-    readonly _iconType: ICON_TYPE
-  ) { }
+    readonly _iconType: ICON_TYPE,
+  ) {}
 
   @Input('action')
   _action?: ActionGroup | null;

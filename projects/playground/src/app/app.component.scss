@@ -1,30 +1,30 @@
 :host {
-  display: inline-block;
-  text-align: center;
-  padding: 8px;
-  margin: 16px;
-  max-height: calc(100% - 16px);
-  overflow: auto;
-  border-radius: 4px;
-  background: #fafafa;
-  box-shadow: 3px 1px -2px rgba(0, 0, 0, 0.2), 2px 2px 0 rgba(0, 0, 0, 0.14), 1px 5px 0 rgba(0, 0, 0, 0.12);
-
-  .interactive-card {
     display: inline-block;
-    text-align: left;
-    vertical-align: top;
-    margin: 8px;
-  }
+    text-align: center;
+    padding: 8px;
+    margin: 16px;
+    max-height: calc(100% - 16px);
+    overflow: auto;
+    border-radius: 4px;
+    background: #fafafa;
+    box-shadow: 3px 1px -2px rgba(0, 0, 0, 0.2), 2px 2px 0 rgba(0, 0, 0, 0.14), 1px 5px 0 rgba(0, 0, 0, 0.12);
 
-  .interactive-card--action-container {
-    display: inline-block;
-  }
+    .interactive-card {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        margin: 8px;
+    }
 
-  .interactive-card--form-field {
-    display: block;
-  }
+    .interactive-card--action-container {
+        display: inline-block;
+    }
 
-  .router-outlet {
-    font-weight: bold;
-  }
+    .interactive-card--form-field {
+        display: block;
+    }
+
+    .router-outlet {
+        font-weight: bold;
+    }
 }

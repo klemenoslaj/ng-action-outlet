@@ -1,9 +1,9 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

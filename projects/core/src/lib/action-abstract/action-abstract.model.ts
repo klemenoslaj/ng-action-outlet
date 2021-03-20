@@ -5,36 +5,36 @@ import { AnyAction } from '../action-outlet.model';
  * All components will shere this interface after implementing derived component implementation types
  */
 export interface ActionAbstractComponentImpl<Action extends AnyAction = AnyAction> {
-    /**
-     * The derived action instance, as Input in angular component
-     */
-    _action?: Action | null; // @Input
+  /**
+   * The derived action instance, as Input in angular component
+   */
+  _action?: Action | null; // @Input
 }
 
 /**
  * Abstract action options, extended by all options of every derived action class
  */
 export interface ActionAbstractOptions {
-    /**
-     * Optional **initial** action title
-     */
-    readonly title?: string;
-    /**
-     * Optional **initial** action icon
-     */
-    readonly icon?: string;
-    /**
-     * Optional **initial** action visibility state
-     */
-    readonly visible?: boolean;
-    /**
-     * Optional **initial** action disabled state
-     */
-    readonly disabled?: boolean;
-    /**
-     * An aria label added to the button element: https://www.w3.org/TR/wai-aria/#aria-label
-     */
-    readonly ariaLabel?: string;
+  /**
+   * Optional **initial** action title
+   */
+  readonly title?: string;
+  /**
+   * Optional **initial** action icon
+   */
+  readonly icon?: string;
+  /**
+   * Optional **initial** action visibility state
+   */
+  readonly visible?: boolean;
+  /**
+   * Optional **initial** action disabled state
+   */
+  readonly disabled?: boolean;
+  /**
+   * An aria label added to the button element: https://www.w3.org/TR/wai-aria/#aria-label
+   */
+  readonly ariaLabel?: string;
 }
 
 /**
@@ -42,9 +42,9 @@ export interface ActionAbstractOptions {
  * Used as a value provided to `fire$` observable subscribers
  */
 export interface ActionAbstractEvent {
-    /**
-     * The action instance, tha this event is comming from
-     * Should be overriden by derived interface with more specific action
-     */
-    readonly action: AnyAction;
+  /**
+   * The action instance, tha this event is comming from
+   * Should be overriden by derived interface with more specific action
+   */
+  readonly action: AnyAction;
 }

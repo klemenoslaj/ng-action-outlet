@@ -1,5 +1,5 @@
 import { UrlTree } from '@angular/router';
-import { ActionAbstractComponentImpl,  ActionAbstractOptions } from '../action-abstract/action-abstract.model';
+import { ActionAbstractComponentImpl, ActionAbstractOptions } from '../action-abstract/action-abstract.model';
 import { ActionAnchor } from './action-anchor';
 
 /**
@@ -19,6 +19,6 @@ export type AnchorTarget = '_self' | '_blank' | '_parent' | '_top';
  * `ActionAnchor` specific options, extending abstract options with it's specific properties
  */
 export interface ActionAnchorOptions extends ActionAbstractOptions {
-    readonly href?: UrlTree | string | string[];
-    readonly target?: AnchorTarget;
+  readonly href?: UrlTree | string | string[];
+  readonly target?: AnchorTarget;
 }

@@ -25,11 +25,7 @@ export class HomeComponent {}
 export class HelloComponent {}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    HelloComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, HelloComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,16 +39,16 @@ export class HelloComponent {}
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
       },
       {
         path: 'hello',
-        component: HelloComponent
+        component: HelloComponent,
       },
       { path: '**', redirectTo: 'search' },
     ]),
-    ActionMatModule.forRoot(ICON_TYPE.Font)
+    ActionMatModule.forRoot(ICON_TYPE.Font),
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

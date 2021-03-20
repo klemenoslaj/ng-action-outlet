@@ -18,11 +18,14 @@ export class ActionMatButtonDirective implements OnDestroy {
   }
 
   constructor(
-    @Optional() @Inject(MatMenuTrigger)
+    @Optional()
+    @Inject(MatMenuTrigger)
     matMenuTrigger: MatMenuTrigger | null,
-    @Optional() @Inject(MatMenuItem)
+    @Optional()
+    @Inject(MatMenuItem)
     matMenuItem: MatMenuItem | null,
-    @Optional() @Inject(MatButton)
+    @Optional()
+    @Inject(MatButton)
     matButton: MatButton | null,
     { nativeElement }: ElementRef<HTMLButtonElement>,
     renderer: Renderer2,
@@ -33,49 +36,61 @@ export class ActionMatButtonDirective implements OnDestroy {
       renderer.setAttribute(nativeElement, 'type', 'button');
 
       if (!matMenuTrigger) {
-        fromEvent(nativeElement, 'click').pipe(
-          switchMap(() => this._action$),
-          takeUntil(this._unsubscribe$),
-        ).subscribe(action => action.trigger());
+        fromEvent(nativeElement, 'click')
+          .pipe(
+            switchMap(() => this._action$),
+            takeUntil(this._unsubscribe$),
+          )
+          .subscribe(action => action.trigger());
       }
 
-      this._action$.pipe(
-        switchMap(action => action.disabled$),
-        takeUntil(this._unsubscribe$),
-      ).subscribe(disabled => {
-        // Either MatButton, either MatMenuItem should always be present.
-        // tslint:disable-next-line: no-non-null-assertion
-        (matButton ?? matMenuItem)!.disabled = disabled;
-        cdRef.markForCheck();
-      });
+      this._action$
+        .pipe(
+          switchMap(action => action.disabled$),
+          takeUntil(this._unsubscribe$),
+        )
+        .subscribe(disabled => {
+          // Either MatButton, either MatMenuItem should always be present.
+          // tslint:disable-next-line: no-non-null-assertion
+          (matButton ?? matMenuItem)!.disabled = disabled;
+          cdRef.markForCheck();
+        });
     }
 
     const ariaLabel$ = this._action$.pipe(switchMap(action => action.ariaLabel$));
-    ariaLabel$.pipe(
-      filter((ariaLabel): ariaLabel is string => !!ariaLabel),
-      takeUntil(this._unsubscribe$),
-    ).subscribe(ariaLabel => renderer.setAttribute(nativeElement, 'aria-label', ariaLabel));
-    ariaLabel$.pipe(
-      filter((ariaLabel): ariaLabel is '' => !ariaLabel),
-      takeUntil(this._unsubscribe$),
-    ).subscribe(() => renderer.removeAttribute(nativeElement, 'aria-label'));
+    ariaLabel$
+      .pipe(
+        filter((ariaLabel): ariaLabel is string => !!ariaLabel),
+        takeUntil(this._unsubscribe$),
+      )
+      .subscribe(ariaLabel => renderer.setAttribute(nativeElement, 'aria-label', ariaLabel));
+    ariaLabel$
+      .pipe(
+        filter((ariaLabel): ariaLabel is '' => !ariaLabel),
+        takeUntil(this._unsubscribe$),
+      )
+      .subscribe(() => renderer.removeAttribute(nativeElement, 'aria-label'));
 
     if (!matMenuItem) {
       const title$ = this._action$.pipe(switchMap(action => action.title$));
-      title$.pipe(
-        filter((title): title is string => !!title),
-        takeUntil(this._unsubscribe$),
-      ).subscribe(() => {
-        renderer.removeClass(nativeElement, 'mat-icon-button');
-        renderer.addClass(nativeElement, 'mat-button');
-      });
-      title$.pipe(
-        filter((title): title is '' => !title),
-        takeUntil(this._unsubscribe$),
-      ).subscribe(() => {
-        renderer.removeClass(nativeElement, 'mat-button');
-        renderer.addClass(nativeElement, 'mat-icon-button');
-      });
+      title$
+        .pipe(
+          filter((title): title is string => !!title),
+          takeUntil(this._unsubscribe$),
+        )
+        .subscribe(() => {
+          renderer.removeClass(nativeElement, 'mat-icon-button');
+          renderer.addClass(nativeElement, 'mat-button');
+        });
+      title$
+        .pipe(
+          filter((title): title is '' => !title),
+          takeUntil(this._unsubscribe$),
+        )
+        .subscribe(() => {
+          renderer.removeClass(nativeElement, 'mat-button');
+          renderer.addClass(nativeElement, 'mat-icon-button');
+        });
     }
   }
 

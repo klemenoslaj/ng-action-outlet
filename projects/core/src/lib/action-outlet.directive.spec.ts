@@ -9,165 +9,172 @@ import { ActionToggle } from './action-toggle/action-toggle';
 import { AnyAction } from './action-outlet.model';
 
 interface TestContext {
-    fixture: ComponentFixture<TestComponent>;
-    component: TestComponent;
+  fixture: ComponentFixture<TestComponent>;
+  component: TestComponent;
 }
 
 @Component({
-    template: `<div #el><div *actionOutlet="group; destroy: destroy"></div></div>`,
+  template: `<div #el><div *actionOutlet="group; destroy: destroy"></div></div>`,
 })
 class TestComponent {
-    @ViewChild(ActionOutletDirective, { static: true }) outlet!: ActionOutletDirective;
-    @ViewChild('el') element!: ElementRef;
-    @Input() group?: ActionGroup | null;
-    @Input() destroy = true;
+  @ViewChild(ActionOutletDirective, { static: true }) outlet!: ActionOutletDirective;
+  @ViewChild('el') element!: ElementRef;
+  @Input() group?: ActionGroup | null;
+  @Input() destroy = true;
 
-    /**
-     * Action Factory will set default components for the actions
-     */
-    constructor(_: ActionOutletFactory) { }
+  /**
+   * Action Factory will set default components for the actions
+   */
+  constructor(_: ActionOutletFactory) {}
 }
 
 @Component({
-    selector: 'lib-dumb',
-    template: '',
+  selector: 'lib-dumb',
+  template: '',
 })
 class DumbComponent {
-    action?: AnyAction;
-    hidden!: boolean;
+  action?: AnyAction;
+  hidden!: boolean;
 }
 
 @Component({
-    selector: 'lib-dumb',
-    template: '',
+  selector: 'lib-dumb',
+  template: '',
 })
 class Dumb2Component {
-    action?: AnyAction;
-    hidden!: boolean;
+  action?: AnyAction;
+  hidden!: boolean;
 }
 
 describe('Directive: ActionOutletDirective', function (): void {
-    beforeEach(function (this: TestContext): void {
-        TestBed.configureTestingModule({
-            declarations: [TestComponent, ActionOutletDirective, DumbComponent, Dumb2Component],
-            providers: [
-                ActionOutletFactory,
-                { provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: [DumbComponent, Dumb2Component], multi: true },
-                { provide: ActionButton, useValue: DumbComponent },
-                { provide: ActionGroup, useValue: DumbComponent },
-                { provide: ActionToggle, useValue: DumbComponent },
-            ],
-        });
-
-        this.fixture = TestBed.createComponent(TestComponent);
-        this.component = this.fixture.componentInstance;
+  beforeEach(function (this: TestContext): void {
+    TestBed.configureTestingModule({
+      declarations: [TestComponent, ActionOutletDirective, DumbComponent, Dumb2Component],
+      providers: [
+        ActionOutletFactory,
+        { provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: [DumbComponent, Dumb2Component], multi: true },
+        { provide: ActionButton, useValue: DumbComponent },
+        { provide: ActionGroup, useValue: DumbComponent },
+        { provide: ActionToggle, useValue: DumbComponent },
+      ],
     });
 
-    afterEach(function (this: TestContext): void {
-        this.fixture.destroy();
-    });
+    this.fixture = TestBed.createComponent(TestComponent);
+    this.component = this.fixture.componentInstance;
+  });
 
-    it('should render one instance of child component', function (this: TestContext): void {
-        this.component.group = new ActionGroup();
-        this.fixture.detectChanges();
+  afterEach(function (this: TestContext): void {
+    this.fixture.destroy();
+  });
 
-        expect(this.component.element.nativeElement.children.length).toBe(1);
-        expect(this.component.element.nativeElement.children[0].tagName.toLowerCase()).toBe('lib-dumb');
-        expect((<any>this.component.outlet).componentRef.instance).toEqual(jasmine.any(DumbComponent));
-    });
+  it('should render one instance of child component', function (this: TestContext): void {
+    this.component.group = new ActionGroup();
+    this.fixture.detectChanges();
 
-    it('should use forced component from Action if defined', function (this: TestContext): void {
-        const forcedComponentGroup = new ActionGroup(undefined, <any>Dumb2Component);
-        const defaultComponentGroup = new ActionGroup();
+    expect(this.component.element.nativeElement.children.length).toBe(1);
+    expect(this.component.element.nativeElement.children[0].tagName.toLowerCase()).toBe('lib-dumb');
+    expect((<any>this.component.outlet).componentRef.instance).toEqual(jasmine.any(DumbComponent));
+  });
 
-        const usedDefaultComponent = this.component.outlet.getComponentType(defaultComponentGroup, (<any>this.component.outlet).injector);
-        const usedForcedComponent = this.component.outlet.getComponentType(forcedComponentGroup, (<any>this.component.outlet).injector);
+  it('should use forced component from Action if defined', function (this: TestContext): void {
+    const forcedComponentGroup = new ActionGroup(undefined, <any>Dumb2Component);
+    const defaultComponentGroup = new ActionGroup();
 
-        expect(usedDefaultComponent).toBe(DumbComponent);
-        expect(usedForcedComponent).toBe(Dumb2Component);
-        expect(usedDefaultComponent).not.toBe(usedForcedComponent);
-    });
+    const usedDefaultComponent = this.component.outlet.getComponentType(
+      defaultComponentGroup,
+      (<any>this.component.outlet).injector,
+    );
+    const usedForcedComponent = this.component.outlet.getComponentType(
+      forcedComponentGroup,
+      (<any>this.component.outlet).injector,
+    );
 
-    it('should accept only the instance of AbstractAction or undefined', function (this: TestContext): void {
-        this.component.group = null;
-        expect(() => this.fixture.detectChanges())
-            .toThrow(new Error('Illegal state: "actionOutlet" should be instance of AbstractAction'));
-    });
+    expect(usedDefaultComponent).toBe(DumbComponent);
+    expect(usedForcedComponent).toBe(Dumb2Component);
+    expect(usedDefaultComponent).not.toBe(usedForcedComponent);
+  });
 
-    it('should clear viewcontainer on change hook', fakeAsync(function (this: TestContext): void {
-        this.component.group = new ActionGroup();
-        this.fixture.detectChanges();
-        tick();
+  it('should accept only the instance of AbstractAction or undefined', function (this: TestContext): void {
+    this.component.group = null;
+    expect(() => this.fixture.detectChanges()).toThrow(
+      new Error('Illegal state: "actionOutlet" should be instance of AbstractAction'),
+    );
+  });
 
-        expect(this.component.element.nativeElement.children.length).toBe(1);
+  it('should clear viewcontainer on change hook', fakeAsync(function (this: TestContext): void {
+    this.component.group = new ActionGroup();
+    this.fixture.detectChanges();
+    tick();
 
-        this.component.group = undefined;
-        this.fixture.detectChanges();
-        tick();
+    expect(this.component.element.nativeElement.children.length).toBe(1);
 
-        expect(this.component.element.nativeElement.children.length).toBe(0);
-        expect((<any>this.component.outlet).componentRef).toBeUndefined();
-    }));
+    this.component.group = undefined;
+    this.fixture.detectChanges();
+    tick();
 
-    it('should activate the action', fakeAsync(function (this: TestContext): void {
-        this.component.group = new ActionGroup();
-        this.fixture.detectChanges();
-        tick();
+    expect(this.component.element.nativeElement.children.length).toBe(0);
+    expect((<any>this.component.outlet).componentRef).toBeUndefined();
+  }));
 
-        expect(this.component.group.isActive()).toBe(true);
-    }));
+  it('should activate the action', fakeAsync(function (this: TestContext): void {
+    this.component.group = new ActionGroup();
+    this.fixture.detectChanges();
+    tick();
 
-    it('should destroy action on ngOnDestroy', fakeAsync(function (this: TestContext): void {
-        const group = new ActionGroup();
+    expect(this.component.group.isActive()).toBe(true);
+  }));
 
-        this.component.group = group;
-        this.fixture.detectChanges();
-        tick();
+  it('should destroy action on ngOnDestroy', fakeAsync(function (this: TestContext): void {
+    const group = new ActionGroup();
 
-        expect(group.isDestroyed()).toBe(false);
-        expect(this.component.outlet.actionOutlet).toBeDefined();
+    this.component.group = group;
+    this.fixture.detectChanges();
+    tick();
 
-        this.fixture.destroy();
-        tick();
+    expect(group.isDestroyed()).toBe(false);
+    expect(this.component.outlet.actionOutlet).toBeDefined();
 
-        expect(group.isDestroyed()).toBe(true);
-        expect(this.component.outlet.actionOutlet).toBeUndefined();
-    }));
+    this.fixture.destroy();
+    tick();
 
-    it('should not destroy the action if false flag is provided', fakeAsync(function (this: TestContext): void {
-        const group = new ActionGroup();
+    expect(group.isDestroyed()).toBe(true);
+    expect(this.component.outlet.actionOutlet).toBeUndefined();
+  }));
 
-        this.component.group = group;
-        this.component.destroy = false;
-        this.fixture.detectChanges();
-        tick();
+  it('should not destroy the action if false flag is provided', fakeAsync(function (this: TestContext): void {
+    const group = new ActionGroup();
 
-        expect(group.isDestroyed()).toBe(false);
-        expect(this.component.outlet.actionOutlet).toBeDefined();
+    this.component.group = group;
+    this.component.destroy = false;
+    this.fixture.detectChanges();
+    tick();
 
-        this.fixture.destroy();
-        tick();
+    expect(group.isDestroyed()).toBe(false);
+    expect(this.component.outlet.actionOutlet).toBeDefined();
 
-        // Only the directive is destroyed, not the action
-        expect(group.isDestroyed()).toBe(false);
-        expect(this.component.outlet.actionOutlet).toBeUndefined();
-    }));
+    this.fixture.destroy();
+    tick();
 
-    it('should destroy action if new action was provided', fakeAsync(function (this: TestContext): void {
-        const group = new ActionGroup();
-        const group2 = new ActionGroup();
+    // Only the directive is destroyed, not the action
+    expect(group.isDestroyed()).toBe(false);
+    expect(this.component.outlet.actionOutlet).toBeUndefined();
+  }));
 
-        this.component.group = group;
-        this.fixture.detectChanges();
-        tick();
+  it('should destroy action if new action was provided', fakeAsync(function (this: TestContext): void {
+    const group = new ActionGroup();
+    const group2 = new ActionGroup();
 
-        expect(group.isDestroyed()).toBe(false);
-        expect(this.component.outlet.actionOutlet).toBeDefined();
+    this.component.group = group;
+    this.fixture.detectChanges();
+    tick();
 
-        this.component.group = group2;
-        this.fixture.detectChanges();
-        tick();
+    expect(group.isDestroyed()).toBe(false);
+    expect(this.component.outlet.actionOutlet).toBeDefined();
 
-        expect(group.isDestroyed()).toBe(true);
-    }));
+    this.component.group = group2;
+    this.fixture.detectChanges();
+    tick();
+
+    expect(group.isDestroyed()).toBe(true);
+  }));
 });

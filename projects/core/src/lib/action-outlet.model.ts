@@ -20,24 +20,24 @@ export type AnyAction = ActionAbstract<ActionAbstractOptions, ActionAbstractEven
  * e.g. `ActionOutletFactory` and `ActionGroup`
  */
 export interface ActionOutlet {
-    /**
-     * When implemented should create and return a new instance of `ActionButton` with default options and component
-     * @param options Should override the default options for `ActionButton`
-     * @param component Should override the default component for `ActionButton`
-     */
-    createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton;
+  /**
+   * When implemented should create and return a new instance of `ActionButton` with default options and component
+   * @param options Should override the default options for `ActionButton`
+   * @param component Should override the default component for `ActionButton`
+   */
+  createButton(options?: ActionButtonOptions, component?: Type<ActionButtonComponentImpl>): ActionButton;
 
-    /**
-     * When implemented should create and return a new instance of `ActionGroup` with default options and component
-     * @param options Should override the default options for `ActionGroup`
-     * @param component Should override the default component for `ActionGroup`
-     */
-    createGroup(options?: ActionGroupOptions, component?: Type<ActionGroupComponentImpl>): ActionGroup;
+  /**
+   * When implemented should create and return a new instance of `ActionGroup` with default options and component
+   * @param options Should override the default options for `ActionGroup`
+   * @param component Should override the default component for `ActionGroup`
+   */
+  createGroup(options?: ActionGroupOptions, component?: Type<ActionGroupComponentImpl>): ActionGroup;
 
-    /**
-     * When implemented should create and return a new instance of `ActionToggle` with default options and component
-     * @param options Should override the default options for `ActionToggle`
-     * @param component Should override the default component for `ActionToggle`
-     */
-    createToggle(options?: ActionToggleOptions, component?: Type<ActionToggleComponentImpl>): ActionToggle;
+  /**
+   * When implemented should create and return a new instance of `ActionToggle` with default options and component
+   * @param options Should override the default options for `ActionToggle`
+   * @param component Should override the default component for `ActionToggle`
+   */
+  createToggle(options?: ActionToggleOptions, component?: Type<ActionToggleComponentImpl>): ActionToggle;
 }

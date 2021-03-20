@@ -31,35 +31,33 @@ import { RouterModule } from '@angular/router';
     ActionMatButtonDirective,
     ActionMatAnchorComponent,
   ],
-  entryComponents: [
-    ActionMatButtonComponent,
-    ActionMatGroupComponent
+  entryComponents: [ActionMatButtonComponent, ActionMatGroupComponent],
+  exports: [ActionMatButtonComponent, ActionMatGroupComponent],
+  providers: [
+    {
+      provide: ActionButton,
+      useValue: ActionMatButtonComponent,
+    },
+    {
+      provide: ActionAnchor,
+      useValue: ActionMatAnchorComponent,
+    },
+    {
+      provide: ActionGroup,
+      useValue: ActionMatGroupComponent,
+    },
   ],
-  exports: [
-    ActionMatButtonComponent,
-    ActionMatGroupComponent
-  ],
-  providers: [{
-    provide: ActionButton,
-    useValue: ActionMatButtonComponent
-  }, {
-    provide: ActionAnchor,
-    useValue: ActionMatAnchorComponent
-  }, {
-    provide: ActionGroup,
-    useValue: ActionMatGroupComponent
-  }]
 })
 export class ActionMatModule {
-    static forRoot(iconType: ICON_TYPE): ModuleWithProviders<ActionMatModule> {
-        return {
-            ngModule: ActionMatModule,
-            providers: [
-                {
-                    provide: ACTION_ICON_TYPE_TOKEN,
-                    useValue: iconType
-                }
-            ]
-        };
-    }
+  static forRoot(iconType: ICON_TYPE): ModuleWithProviders<ActionMatModule> {
+    return {
+      ngModule: ActionMatModule,
+      providers: [
+        {
+          provide: ACTION_ICON_TYPE_TOKEN,
+          useValue: iconType,
+        },
+      ],
+    };
+  }
 }

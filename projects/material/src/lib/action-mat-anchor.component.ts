@@ -1,4 +1,12 @@
-import { Component, Input, ChangeDetectionStrategy, ViewEncapsulation, ElementRef, Inject, HostBinding } from '@angular/core';
+import {
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  ElementRef,
+  Inject,
+  HostBinding,
+} from '@angular/core';
 import { ActionAnchor, ActionAnchorComponentImpl } from '@ng-action-outlet/core';
 import { FocusableOption, FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
 
@@ -9,7 +17,11 @@ import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
   selector: 'action-mat-anchor',
   template: `
     <ng-container *ngIf="(_action?.visible$ | async) && _action; let action">
-      <ng-container *ngIf="(action.href$ | async); let href" [ngTemplateOutlet]="action.isExternalLink() ? external : internal" [ngTemplateOutletContext]="{ $implicit: href }"></ng-container>
+      <ng-container
+        *ngIf="action.href$ | async; let href"
+        [ngTemplateOutlet]="action.isExternalLink() ? external : internal"
+        [ngTemplateOutletContext]="{ $implicit: href }"
+      ></ng-container>
 
       <ng-template #external let-href>
         <a mat-button [actionMatButton]="action" [href]="href" [attr.target]="action.target$ | async">
@@ -35,7 +47,6 @@ export class ActionMatAnchorComponent implements ActionAnchorComponentImpl, Focu
 
   @Input('action')
   readonly _action?: ActionAnchor | null;
-
 
   constructor(
     @Inject(ACTION_ICON_TYPE_TOKEN)
