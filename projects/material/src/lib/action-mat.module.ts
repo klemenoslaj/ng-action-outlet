@@ -31,8 +31,7 @@ import { RouterModule } from '@angular/router';
     ActionMatButtonDirective,
     ActionMatAnchorComponent,
   ],
-  entryComponents: [ActionMatButtonComponent, ActionMatGroupComponent],
-  exports: [ActionMatButtonComponent, ActionMatGroupComponent],
+  exports: [ActionMatButtonComponent, ActionMatAnchorComponent, ActionMatGroupComponent],
   providers: [
     {
       provide: ActionButton,

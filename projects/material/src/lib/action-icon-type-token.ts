@@ -1,6 +1,6 @@
 import { InjectionToken } from '@angular/core';
 
-export enum ICON_TYPE {
+export const enum ICON_TYPE {
   Font,
   Svg,
 }
