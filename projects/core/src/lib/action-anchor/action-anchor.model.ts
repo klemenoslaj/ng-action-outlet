@@ -18,7 +18,14 @@ export type AnchorTarget = '_self' | '_blank' | '_parent' | '_top';
 /**
  * `ActionAnchor` specific options, extending abstract options with it's specific properties
  */
-export interface ActionAnchorOptions extends ActionAbstractOptions {
-  readonly href?: UrlTree | string | string[];
-  readonly target?: AnchorTarget;
-}
+export type ActionAnchorOptions = ActionAbstractOptions &
+  (
+    | {
+        readonly href: string;
+        readonly target?: AnchorTarget;
+      }
+    | {
+        readonly routerLink: string | readonly string[] | UrlTree;
+        readonly target?: AnchorTarget;
+      }
+  );

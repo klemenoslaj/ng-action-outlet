@@ -14,7 +14,8 @@ export class AppComponent {
   });
   link1 = new ActionAnchor({
     title: 'Hello route (this tab)',
-    href: ['hello'],
+    routerLink: ['hello'],
+    target: '_blank',
   });
   menuItem1 = new ActionButton({
     title: 'Menu item 1',
@@ -56,16 +57,16 @@ export class AppComponent {
         children: [
           new ActionAnchor({
             title: 'Hello route (new tab)',
-            href: ['hello'],
+            routerLink: ['hello'],
             target: '_blank',
           }),
           new ActionAnchor({
             title: 'Home route (this tab)',
-            href: ['home'],
+            routerLink: ['home'],
           }),
           new ActionAnchor({
             title: 'Home route (new tab)',
-            href: ['home'],
+            routerLink: ['home'],
             target: '_blank',
           }),
           new ActionAnchor({

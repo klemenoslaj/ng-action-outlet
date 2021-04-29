@@ -28,16 +28,16 @@ describe('Class: ActionAnchor', function (): void {
   });
 
   it('should properly differentiate external url and router links', function (this: TestContext): void {
-    this.action.setHref('/home');
+    this.action.setRouterLink('/home');
     expect(this.action.isExternalLink()).toBeFalse();
 
-    this.action.setHref('home');
+    this.action.setRouterLink('home');
     expect(this.action.isExternalLink()).toBeFalse();
 
-    this.action.setHref(['user', '11111', 'overview']);
+    this.action.setRouterLink(['user', '11111', 'overview']);
     expect(this.action.isExternalLink()).toBeFalse();
 
-    this.action.setHref(new UrlTree());
+    this.action.setRouterLink(new UrlTree());
     expect(this.action.isExternalLink()).toBeFalse();
 
     this.action.setHref('www.external.com');
@@ -48,13 +48,14 @@ describe('Class: ActionAnchor', function (): void {
   });
 
   it('should notify every change with changes$', function (this: TestContext): void {
-    const marble = '(tivdlg)';
+    const marble = '(tivdhrg)';
     const values = {
       t: { title: 'Test Title' },
       i: { icon: 'test-icon' },
       v: { visible: true },
       d: { disabled: false },
-      l: { link: '/home' },
+      r: { routerLink: null },
+      h: { href: '/home' },
       g: { target: '_blank' },
     };
 

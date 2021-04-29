@@ -10,7 +10,7 @@ import { ActionAnchorComponentImpl, ActionAnchorOptions, AnchorTarget } from './
  * Default options for `ActionAnchor`
  * Extended by provided options in action `constructor`
  */
-const defaultButtonOptions: ActionAnchorOptions = {};
+const defaultButtonOptions = <ActionAnchorOptions>{};
 
 /**
  * `ActionAnchor` used to create basic link
@@ -47,10 +47,12 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
    */
   readonly changes$: Observable<ActionAnchorOptions>;
 
-  readonly href$: Observable<UrlTree | string | string[] | null>;
+  readonly href$: Observable<string | null>;
+  readonly routerLink$: Observable<UrlTree | string | readonly string[] | null>;
   readonly target$: Observable<AnchorTarget | null>;
 
-  protected href: BehaviorSubject<UrlTree | string | string[] | null>;
+  protected href: BehaviorSubject<string | null>;
+  protected routerLink: BehaviorSubject<UrlTree | string | readonly string[] | null>;
   protected target: BehaviorSubject<AnchorTarget | null>;
 
   /**
@@ -62,10 +64,12 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
   constructor(options: ActionAnchorOptions = defaultButtonOptions, component?: Type<ActionAnchorComponentImpl>) {
     super({ ...defaultButtonOptions, ...options }, component);
 
-    this.href = new BehaviorSubject(options.href ?? null);
+    this.href = new BehaviorSubject('href' in options ? options.href : null);
+    this.routerLink = new BehaviorSubject('routerLink' in options ? options.routerLink : null);
     this.target = new BehaviorSubject(options.target ?? null);
 
     this.href$ = this.handleLivecycleDistinct(this.href.asObservable(), false);
+    this.routerLink$ = this.handleLivecycleDistinct(this.routerLink.asObservable(), false);
     this.target$ = this.handleLivecycleDistinct(this.target.asObservable(), false);
     this.changes$ = this.handleLivecycle(
       merge(
@@ -73,7 +77,8 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
         this.icon$.pipe(map(icon => <ActionAnchorOptions>{ icon })),
         this.visible$.pipe(map(visible => <ActionAnchorOptions>{ visible })),
         this.disabled$.pipe(map(disabled => <ActionAnchorOptions>{ disabled })),
-        this.href$.pipe(map(href => <ActionAnchorOptions>{ link: href })),
+        this.href$.pipe(map(href => <ActionAnchorOptions>{ href })),
+        this.routerLink$.pipe(map(routerLink => <ActionAnchorOptions>{ routerLink })),
         this.target$.pipe(map(target => <ActionAnchorOptions>{ target })),
       ),
     );
@@ -83,8 +88,15 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
     return this;
   }
 
-  setHref(link: UrlTree | string | string[] | null) {
-    this.href.next(link);
+  setHref(href: string | null) {
+    this.href.next(href);
+    this.routerLink.next(null);
+    return this;
+  }
+
+  setRouterLink(routerLink: UrlTree | string | readonly string[] | null) {
+    this.routerLink.next(routerLink);
+    this.href.next(null);
     return this;
   }
 
@@ -104,7 +116,6 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
   }
 
   isExternalLink() {
-    const link = this.href.getValue();
-    return typeof link === 'string' && (link.startsWith('http') || link.startsWith('www'));
+    return this.href.getValue() !== null;
   }
 }
