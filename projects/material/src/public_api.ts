@@ -6,3 +6,4 @@ export * from './lib/action-mat-button.component';
 export * from './lib/action-mat-group.component';
 export * from './lib/action-mat.module';
 export * from './lib/action-icon-type-token';
+export * from './lib/action-mat-anchor.component';
