@@ -67,7 +67,12 @@
               "projects/playground/src/styles.scss"
             ],
             "scripts": [],
-            "aot": true
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {

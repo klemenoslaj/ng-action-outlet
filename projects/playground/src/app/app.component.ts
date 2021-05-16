@@ -15,7 +15,6 @@ export class AppComponent {
   link1 = new ActionAnchor({
     title: 'Hello route (this tab)',
     routerLink: ['hello'],
-    target: '_blank',
   });
   menuItem1 = new ActionButton({
     title: 'Menu item 1',
@@ -61,7 +60,7 @@ export class AppComponent {
             target: '_blank',
           }),
           new ActionAnchor({
-            title: 'Home route (this tab)',
+            title: 'Home route 123 (this tab)',
             routerLink: ['home'],
           }),
           new ActionAnchor({
