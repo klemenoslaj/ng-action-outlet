@@ -1,7 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, ViewEncapsulation, HostBinding, Inject } from '@angular/core';
 import { ActionButton, ActionButtonComponentImpl } from '@ng-action-outlet/core';
 
-import { actionMatButtonTemplate } from './action-mat-button.template';
 import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
 
 @Component({
@@ -9,11 +8,9 @@ import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
   template: `
     <ng-container *ngIf="_action && _action.visible$ | async">
       <button mat-button [actionMatButton]="_action">
-        <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
+        <action-mat-content [action]="_action"></action-mat-content>
       </button>
     </ng-container>
-
-    ${actionMatButtonTemplate}
   `,
   styleUrls: ['./action-mat-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

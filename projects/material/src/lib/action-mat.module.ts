@@ -13,6 +13,7 @@ import { ActionMatMenuComponent } from './action-mat-menu.component';
 import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
 import { ActionMatButtonDirective } from './action-mat-button.directive';
 import { RouterModule } from '@angular/router';
+import { ActionMatContentComponent } from './action-mat-content.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { RouterModule } from '@angular/router';
     ActionMatMenuComponent,
     ActionMatButtonDirective,
     ActionMatAnchorComponent,
+    ActionMatContentComponent,
   ],
   exports: [ActionMatButtonComponent, ActionMatAnchorComponent, ActionMatGroupComponent],
   providers: [

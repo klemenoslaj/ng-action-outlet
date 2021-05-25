@@ -1,7 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, ViewEncapsulation, Inject, HostBinding } from '@angular/core';
 import { ActionAnchor, ActionAnchorComponentImpl } from '@ng-action-outlet/core';
 
-import { actionMatButtonTemplate } from './action-mat-button.template';
 import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
 
 @Component({
@@ -15,7 +14,7 @@ import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
         [href]="href"
         [attr.target]="_action.target$ | async"
       >
-        <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
+        <action-mat-content [action]="_action"></action-mat-content>
       </a>
 
       <a
@@ -25,11 +24,9 @@ import { ICON_TYPE, ACTION_ICON_TYPE_TOKEN } from './action-icon-type-token';
         [routerLink]="routerLink"
         [target]="_action.target$ | async"
       >
-        <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
+        <action-mat-content [action]="_action"></action-mat-content>
       </a>
     </ng-container>
-
-    ${actionMatButtonTemplate}
   `,
   styleUrls: ['./action-mat-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

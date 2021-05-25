@@ -11,7 +11,6 @@ import { AnyAction, ActionGroup, ActionGroupComponentImpl, ActionAnchor } from '
 import { MatMenu } from '@angular/material/menu';
 
 import { trackByAction, TrackByAction } from './common';
-import { actionMatButtonTemplate } from './action-mat-button.template';
 import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
 @Component({
@@ -41,7 +40,7 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
                 [href]="href"
                 [attr.target]="action.target$ | async"
               >
-                <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+                <action-mat-content [action]="action"></action-mat-content>
               </a>
               <a
                 *ngIf="action.routerLink$ | async; let routerLink"
@@ -50,12 +49,12 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
                 [routerLink]="routerLink"
                 [target]="action.target$ | async"
               >
-                <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+                <action-mat-content [action]="action"></action-mat-content>
               </a>
             </ng-container>
 
             <button *ngSwitchDefault mat-menu-item [actionMatButton]="action">
-              <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+              <action-mat-content [action]="action"></action-mat-content>
             </button>
           </ng-container>
         </ng-template>
@@ -77,13 +76,11 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
             [actionMatButton]="action"
             [matMenuTriggerFor]="menu"
           >
-            <ng-container *ngTemplateOutlet="content; context: { $implicit: action }"></ng-container>
+            <action-mat-content [action]="action"></action-mat-content>
           </button>
         </ng-template>
       </ng-template>
     </mat-menu>
-
-    ${actionMatButtonTemplate}
   `,
   styles: [
     `

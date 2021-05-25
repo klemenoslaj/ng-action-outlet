@@ -2,7 +2,6 @@ import { Component, ChangeDetectionStrategy, ViewEncapsulation, Input, HostBindi
 import { ActionGroup, ActionGroupComponentImpl } from '@ng-action-outlet/core';
 
 import { trackByAction, TrackByAction } from './common';
-import { actionMatButtonTemplate } from './action-mat-button.template';
 import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
 
 @Component({
@@ -23,11 +22,9 @@ import { ACTION_ICON_TYPE_TOKEN, ICON_TYPE } from './action-icon-type-token';
     <ng-template #dropdown>
       <action-mat-menu [action]="_action" #actionMenu="actionMatMenu"></action-mat-menu>
       <button mat-button [actionMatButton]="_action" [matMenuTriggerFor]="actionMenu._menu">
-        <ng-container *ngTemplateOutlet="content; context: { $implicit: _action }"></ng-container>
+        <action-mat-content [action]="_action"></action-mat-content>
       </button>
     </ng-template>
-
-    ${actionMatButtonTemplate}
   `,
   styles: [
     `
