@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -41,9 +42,12 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>ActionOutlet</li>
+  <li
+  >
+  ActionOutlet</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,6 +67,7 @@
         <p class="comment">
             <code>projects/core/src/lib/action-outlet.model.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -87,13 +92,22 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#createButton">createButton</a>
+                                    <a href="#createButton" 
+>
+                                        createButton
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#createGroup">createGroup</a>
+                                    <a href="#createGroup" 
+>
+                                        createGroup
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#createToggle">createToggle</a>
+                                    <a href="#createToggle" 
+>
+                                        createToggle
+                                    </a>
                                 </li>
                             </ul>
                         </td>
@@ -113,16 +127,14 @@
                 <td class="col-md-4">
                     <a name="createButton"></a>
                     <span class="name">
-                        <b>
-                            createButton
-                        </b>
+                        <span ><b>createButton</b></span>
                         <a href="#createButton"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html">Type<ActionButtonComponentImpl></a>)</code>
+<code>createButton(options?: <a href="../interfaces/ActionButtonOptions.html" target="_self">ActionButtonOptions</a>, component?: <a href="../classes/ActionButton.html" target="_self">Type&lt;ActionButtonComponentImpl&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -142,6 +154,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -206,16 +219,14 @@
                 <td class="col-md-4">
                     <a name="createGroup"></a>
                     <span class="name">
-                        <b>
-                            createGroup
-                        </b>
+                        <span ><b>createGroup</b></span>
                         <a href="#createGroup"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createGroup(options?: <a href="../interfaces/ActionGroupOptions.html">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html">Type<ActionGroupComponentImpl></a>)</code>
+<code>createGroup(options?: <a href="../interfaces/ActionGroupOptions.html" target="_self">ActionGroupOptions</a>, component?: <a href="../classes/ActionGroup.html" target="_self">Type&lt;ActionGroupComponentImpl&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -235,6 +246,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -299,16 +311,14 @@
                 <td class="col-md-4">
                     <a name="createToggle"></a>
                     <span class="name">
-                        <b>
-                            createToggle
-                        </b>
+                        <span ><b>createToggle</b></span>
                         <a href="#createToggle"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createToggle(options?: <a href="../interfaces/ActionToggleOptions.html">ActionToggleOptions</a>, component?: <a href="../classes/ActionToggle.html">Type<ActionToggleComponentImpl></a>)</code>
+<code>createToggle(options?: <a href="../interfaces/ActionToggleOptions.html" target="_self">ActionToggleOptions</a>, component?: <a href="../classes/ActionToggle.html" target="_self">Type&lt;ActionToggleComponentImpl&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -328,6 +338,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -414,40 +425,41 @@ export type AnyAction &#x3D; ActionAbstract&lt;ActionAbstractOptions, ActionAbst
  * e.g. &#x60;ActionOutletFactory&#x60; and &#x60;ActionGroup&#x60;
  */
 export interface ActionOutlet {
-    /**
-     * When implemented should create and return a new instance of &#x60;ActionButton&#x60; with default options and component
-     * @param options Should override the default options for &#x60;ActionButton&#x60;
-     * @param component Should override the default component for &#x60;ActionButton&#x60;
-     */
-    createButton(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton;
+  /**
+   * When implemented should create and return a new instance of &#x60;ActionButton&#x60; with default options and component
+   * @param options Should override the default options for &#x60;ActionButton&#x60;
+   * @param component Should override the default component for &#x60;ActionButton&#x60;
+   */
+  createButton(options?: ActionButtonOptions, component?: Type&lt;ActionButtonComponentImpl&gt;): ActionButton;
 
-    /**
-     * When implemented should create and return a new instance of &#x60;ActionGroup&#x60; with default options and component
-     * @param options Should override the default options for &#x60;ActionGroup&#x60;
-     * @param component Should override the default component for &#x60;ActionGroup&#x60;
-     */
-    createGroup(options?: ActionGroupOptions, component?: Type&lt;ActionGroupComponentImpl&gt;): ActionGroup;
+  /**
+   * When implemented should create and return a new instance of &#x60;ActionGroup&#x60; with default options and component
+   * @param options Should override the default options for &#x60;ActionGroup&#x60;
+   * @param component Should override the default component for &#x60;ActionGroup&#x60;
+   */
+  createGroup(options?: ActionGroupOptions, component?: Type&lt;ActionGroupComponentImpl&gt;): ActionGroup;
 
-    /**
-     * When implemented should create and return a new instance of &#x60;ActionToggle&#x60; with default options and component
-     * @param options Should override the default options for &#x60;ActionToggle&#x60;
-     * @param component Should override the default component for &#x60;ActionToggle&#x60;
-     */
-    createToggle(options?: ActionToggleOptions, component?: Type&lt;ActionToggleComponentImpl&gt;): ActionToggle;
+  /**
+   * When implemented should create and return a new instance of &#x60;ActionToggle&#x60; with default options and component
+   * @param options Should override the default options for &#x60;ActionToggle&#x60;
+   * @param component Should override the default component for &#x60;ActionToggle&#x60;
+   */
+  createToggle(options?: ActionToggleOptions, component?: Type&lt;ActionToggleComponentImpl&gt;): ActionToggle;
 }
 </code></pre>
     </div>
 </div>
 
 
-                   
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -459,6 +471,15 @@ export interface ActionOutlet {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
@@ -468,9 +489,9 @@ export interface ActionOutlet {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

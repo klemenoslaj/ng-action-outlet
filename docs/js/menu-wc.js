@@ -1,6 +1,5 @@
 'use strict';
 
-
 customElements.define('compodoc-menu', class extends HTMLElement {
     constructor() {
         super();
@@ -44,6 +43,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <span class="icon ion-ios-list"></span>Dependencies
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="properties.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-apps"></span>Properties
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter modules">
@@ -57,19 +61,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/ActionOutletModule.html" data-type="entity-link">ActionOutletModule</a>
+                                <a href="modules/ActionOutletModule.html" data-type="entity-link" >ActionOutletModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' : 'data-target="#xs-directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' }>
+                                        'data-target="#directives-links-module-ActionOutletModule-66152ead1e8847133f9ad6a21b434d01262a04939c26b427f8c797e87f1f3b2cece606c80b90050a258e117158bcdb9aaeaf0492b909a0a17212c8b18d018c91"' : 'data-target="#xs-directives-links-module-ActionOutletModule-66152ead1e8847133f9ad6a21b434d01262a04939c26b427f8c797e87f1f3b2cece606c80b90050a258e117158bcdb9aaeaf0492b909a0a17212c8b18d018c91"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' :
-                                        'id="xs-directives-links-module-ActionOutletModule-a0fdde8a75138082c1989068b7f52264"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-ActionOutletModule-66152ead1e8847133f9ad6a21b434d01262a04939c26b427f8c797e87f1f3b2cece606c80b90050a258e117158bcdb9aaeaf0492b909a0a17212c8b18d018c91"' :
+                                        'id="xs-directives-links-module-ActionOutletModule-66152ead1e8847133f9ad6a21b434d01262a04939c26b427f8c797e87f1f3b2cece606c80b90050a258e117158bcdb9aaeaf0492b909a0a17212c8b18d018c91"' }>
                                         <li class="link">
-                                            <a href="directives/ActionOutletDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">ActionOutletDirective</a>
+                                            <a href="directives/ActionOutletDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ActionOutletDirective</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -85,16 +88,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/ActionAbstract.html" data-type="entity-link">ActionAbstract</a>
+                                <a href="classes/ActionAbstract.html" data-type="entity-link" >ActionAbstract</a>
                             </li>
                             <li class="link">
-                                <a href="classes/ActionButton.html" data-type="entity-link">ActionButton</a>
+                                <a href="classes/ActionAnchor.html" data-type="entity-link" >ActionAnchor</a>
                             </li>
                             <li class="link">
-                                <a href="classes/ActionGroup.html" data-type="entity-link">ActionGroup</a>
+                                <a href="classes/ActionButton.html" data-type="entity-link" >ActionButton</a>
                             </li>
                             <li class="link">
-                                <a href="classes/ActionToggle.html" data-type="entity-link">ActionToggle</a>
+                                <a href="classes/ActionGroup.html" data-type="entity-link" >ActionGroup</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ActionToggle.html" data-type="entity-link" >ActionToggle</a>
                             </li>
                         </ul>
                     </li>
@@ -107,7 +113,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
-                                    <a href="injectables/ActionOutletFactory.html" data-type="entity-link">ActionOutletFactory</a>
+                                    <a href="injectables/ActionOutletFactory.html" data-type="entity-link" >ActionOutletFactory</a>
                                 </li>
                             </ul>
                         </li>
@@ -120,34 +126,34 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/ActionAbstractComponentImpl.html" data-type="entity-link">ActionAbstractComponentImpl</a>
+                                <a href="interfaces/ActionAbstractComponentImpl.html" data-type="entity-link" >ActionAbstractComponentImpl</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionAbstractEvent.html" data-type="entity-link">ActionAbstractEvent</a>
+                                <a href="interfaces/ActionAbstractEvent.html" data-type="entity-link" >ActionAbstractEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionAbstractOptions.html" data-type="entity-link">ActionAbstractOptions</a>
+                                <a href="interfaces/ActionAbstractOptions.html" data-type="entity-link" >ActionAbstractOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionButtonEvent.html" data-type="entity-link">ActionButtonEvent</a>
+                                <a href="interfaces/ActionButtonEvent.html" data-type="entity-link" >ActionButtonEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionButtonOptions.html" data-type="entity-link">ActionButtonOptions</a>
+                                <a href="interfaces/ActionButtonOptions.html" data-type="entity-link" >ActionButtonOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionGroupEvent.html" data-type="entity-link">ActionGroupEvent</a>
+                                <a href="interfaces/ActionGroupEvent.html" data-type="entity-link" >ActionGroupEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionGroupOptions.html" data-type="entity-link">ActionGroupOptions</a>
+                                <a href="interfaces/ActionGroupOptions.html" data-type="entity-link" >ActionGroupOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionOutlet.html" data-type="entity-link">ActionOutlet</a>
+                                <a href="interfaces/ActionOutlet.html" data-type="entity-link" >ActionOutlet</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionToggleEvent.html" data-type="entity-link">ActionToggleEvent</a>
+                                <a href="interfaces/ActionToggleEvent.html" data-type="entity-link" >ActionToggleEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionToggleOptions.html" data-type="entity-link">ActionToggleOptions</a>
+                                <a href="interfaces/ActionToggleOptions.html" data-type="entity-link" >ActionToggleOptions</a>
                             </li>
                         </ul>
                     </li>

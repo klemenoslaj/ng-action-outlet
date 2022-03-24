@@ -47,12 +47,30 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
    */
   readonly changes$: Observable<ActionAnchorOptions>;
 
+  /**
+   * `Observable` notifying subscribers of the change to the href
+   */
   readonly href$: Observable<string | null>;
+  /**
+   * `Observable` notifying subscribers of the change to the routerLink
+   */
   readonly routerLink$: Observable<UrlTree | string | readonly string[] | null>;
+  /**
+   * `Observable` notifying subscribers of the change to the target
+   */
   readonly target$: Observable<AnchorTarget | null>;
 
+  /**
+   * Subject storing the link/href
+   */
   protected href: BehaviorSubject<string | null>;
+  /**
+   * Subject storing the routerLink
+   */
   protected routerLink: BehaviorSubject<UrlTree | string | readonly string[] | null>;
+  /**
+   * Subject storing the target
+   */
   protected target: BehaviorSubject<AnchorTarget | null>;
 
   /**
@@ -84,37 +102,58 @@ export class ActionAnchor extends ActionAbstract<ActionAnchorOptions, null> {
     );
   }
 
+  /**
+   * Noop: cannot manually trigger the anchor
+   */
   trigger(): this {
     return this;
   }
 
+  /**
+   * Set the url for the anchor element
+   */
   setHref(href: string | null) {
     this.href.next(href);
     this.routerLink.next(null);
     return this;
   }
 
+  /**
+   * Set the routerLink binding for router link directive
+   */
   setRouterLink(routerLink: UrlTree | string | readonly string[] | null) {
     this.routerLink.next(routerLink);
     this.href.next(null);
     return this;
   }
 
+  /**
+   * Set the target for the anchor element
+   */
   setTarget(target: AnchorTarget) {
     this.target.next(target);
     return this;
   }
 
+  /**
+   * Noop: cannot disable the anchor
+   */
   disable() {
     // HTML Anchors cannot be disabled
     return this;
   }
 
+  /**
+   * Noop: cannot disable the anchor
+   */
   enable() {
     // HTML Anchors cannot be disabled
     return this;
   }
 
+  /**
+   * Determines if the link is external
+   */
   isExternalLink() {
     return this.href.getValue() !== null;
   }
