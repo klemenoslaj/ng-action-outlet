@@ -1,6 +1,8 @@
-<ng-container *ngTemplateOutlet="singleAction; context: { $implicit: group1, title: 'Main group' }"></ng-container>
+<ng-container
+  *ngTemplateOutlet="singleAction; context: { $implicit: group1, title: 'Main group', main: true }"
+></ng-container>
 
-<br />
+<div class="width-full"></div>
 
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: button1 }"></ng-container>
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: link1 }"></ng-container>
@@ -8,8 +10,8 @@
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: menuItem1 }"></ng-container>
 <ng-container *ngTemplateOutlet="singleAction; context: { $implicit: dropdown2 }"></ng-container>
 
-<ng-template #singleAction let-action let-title="title">
-  <mat-card class="interactive-card">
+<ng-template #singleAction let-action let-title="title" let-main="main">
+  <mat-card class="card-interactive" [ngClass]="{ 'card-interactive--main': main }">
     <mat-card-header>
       <mat-card-title
         [innerHTML]="title || (action.title$ | async) || (action.icon$ | async) || 'No title'"
@@ -17,7 +19,7 @@
       <mat-card-subtitle>{{ getActionType(action) }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <mat-form-field class="interactive-card--form-field">
+      <mat-form-field class="card-interactive__form-field">
         <input
           #titleInput
           matInput
@@ -26,7 +28,7 @@
           (keyup)="action.setTitle(titleInput.value)"
         />
       </mat-form-field>
-      <mat-form-field class="interactive-card--form-field">
+      <mat-form-field class="card-interactive__form-field">
         <input
           #iconInput
           matInput
@@ -35,7 +37,7 @@
           (keyup)="action.setIcon(titleInput.value)"
         />
       </mat-form-field>
-      <mat-form-field class="interactive-card--form-field">
+      <mat-form-field class="card-interactive__form-field">
         <input
           #iconInput
           matInput
@@ -54,12 +56,9 @@
   </mat-card>
 </ng-template>
 
-<br />
-<br />
-<mat-divider></mat-divider>
-<br />
+<mat-divider class="width-full"></mat-divider>
 
-<mat-card>
+<mat-card class="card-status width-full">
   <span>Current route: </span>
   <span class="router-outlet">
     <router-outlet></router-outlet>
