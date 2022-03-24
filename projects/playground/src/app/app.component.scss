@@ -1,30 +1,40 @@
 :host {
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 8px;
     margin: 16px;
     max-height: calc(100% - 16px);
     overflow: auto;
     border-radius: 4px;
-    background: #fafafa;
-    box-shadow: 3px 1px -2px rgba(0, 0, 0, 0.2), 2px 2px 0 rgba(0, 0, 0, 0.14), 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: #ebebeb;
 
-    .interactive-card {
-        display: inline-block;
+    .card-interactive {
         text-align: left;
         vertical-align: top;
         margin: 8px;
+        width: 25%;
+        min-width: 200px;
+
+        &__form-field {
+            display: block;
+        }
+
+        &--main {
+            border: 2px solid lightblue;
+        }
     }
 
-    .interactive-card--action-container {
-        display: inline-block;
-    }
-
-    .interactive-card--form-field {
-        display: block;
+    .card-status,
+    .mat-divider {
+        margin: 8px;
     }
 
     .router-outlet {
         font-weight: bold;
+    }
+
+    .width-full {
+        width: 100%;
     }
 }

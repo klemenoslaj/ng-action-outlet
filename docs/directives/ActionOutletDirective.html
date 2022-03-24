@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -35,9 +36,10 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Directives</li>
-  <li>ActionOutletDirective</li>
+  <li >ActionOutletDirective</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,6 +60,7 @@
             <code>projects/core/src/lib/action-outlet.directive.ts</code>
         </p>
 
+
             <p class="comment">
                 <h3>Description</h3>
             </p>
@@ -72,17 +75,18 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
 </ul>
 <h2 id="example">Example</h2>
 <p><strong>TypeScript</strong></p>
-<div><pre class="line-numbers"><code class="language-typescript"> this.group = new ActionGroup({
-    children: [
-        new ActionButton({
-            title: &#39;Action Title&#39;,
-            icon: &#39;icon&#39;,
-            callback: callbackMethod
-         })
-    ]
+<div><pre class="line-numbers"><code class="language-typescript">this.group = new ActionGroup({
+children: [
+new ActionButton({
+title: &#39;Action Title&#39;,
+icon: &#39;icon&#39;,
+callback: callbackMethod
+})
+]
 });</code></pre></div><p><strong>Template</strong></p>
 <div><pre class="line-numbers"><code class="language-html">&lt;div *actionOutlet=&quot;group&quot;&gt;&lt;/div&gt;</code></pre></div>
             </p>
+
 
             <p class="comment">
                 <h3>Implements</h3>
@@ -94,7 +98,7 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
 
         <section>
             <h3>Metadata</h3>
-            <table class="table table-sm table-hover">
+            <table class="table table-sm table-hover metadata">
                 <tbody>
 
                     <tr>
@@ -120,7 +124,7 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getComponentType">getComponentType</a>
+                                <a href="#getComponentType" >getComponentType</a>
                             </li>
                         </ul>
                     </td>
@@ -135,10 +139,10 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#actionOutlet">actionOutlet</a>
+                                <a href="#actionOutlet" >actionOutlet</a>
                             </li>
                             <li>
-                                <a href="#actionOutletDestroy">actionOutletDestroy</a>
+                                <a href="#actionOutletDestroy" >actionOutletDestroy</a>
                             </li>
                         </ul>
                     </td>
@@ -156,7 +160,7 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#actionOutlet">actionOutlet</a>
+                                    <a href="#actionOutlet" >actionOutlet</a>
                                 </li>
                             </ul>
                         </td>
@@ -208,8 +212,8 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Used for Component creation via <code>.createComponent()</code></p>
-</code>
+                                                                <p>Used for Component creation via <code>.createComponent()</code></p>
+
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -224,8 +228,8 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Used to resolve component factory via <code>.resolveComponentFactory()</code></p>
-</code>
+                                                                <p>Used to resolve component factory via <code>.resolveComponentFactory()</code></p>
+
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -261,6 +265,12 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                         <b>actionOutlet</b>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction | undefined</a></code>
+
+                    </td>
+                </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
                                     <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/core/src/lib/action-outlet.directive.ts:58</a></div>
@@ -286,6 +296,12 @@ It compiles and attaches the action components <strong>dinamically</strong> on t
                     <td class="col-md-4">
                         <a name="actionOutletDestroy"></a>
                         <b>actionOutletDestroy</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
                     </td>
                 </tr>
                 <tr>
@@ -322,16 +338,14 @@ If <code>false</code>, destruction of action should be handled <strong>MANUALLY<
                 <td class="col-md-4">
                     <a name="getComponentType"></a>
                     <span class="name">
-                        <b>
-                            getComponentType
-                        </b>
+                        <span ><b>getComponentType</b></span>
                         <a href="#getComponentType"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getComponentType(action: <a href="../undefineds/AnyAction.html">AnyAction</a>, injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>)</code>
+<code>getComponentType(action: <a href="../undefineds/AnyAction.html" target="_self">AnyAction</a>, injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>)</code>
                 </td>
             </tr>
 
@@ -353,6 +367,7 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -450,7 +465,7 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>set</b><code>actionOutlet(action)</code></span>
+                        <span class="accessor"><b>set</b><code>actionOutlet(action: <a href="../undefineds/AnyAction.html" target="_self">AnyAction | undefined</a>)</code></span>
                     </td>
                 </tr>
                             <tr>
@@ -475,6 +490,7 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
                                             <thead>
                                                 <tr>
                                                     <td>Name</td>
+                                                        <td>Type</td>
                                                     <td>Optional</td>
                                                 </tr>
                                             </thead>
@@ -482,6 +498,9 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
                                                     <tr>
                                                             <td>action</td>
                                                     
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/typealiases.html#AnyAction" target="_self" >AnyAction | undefined</a></code>
+                                                            </td>
                                                     
                                                         <td>
                                                                 No
@@ -508,14 +527,14 @@ If action <strong>does not have</strong> directly assigned <code>Component</code
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    ComponentFactoryResolver,
-    ComponentRef,
-    Directive,
-    Injector,
-    Input,
-    OnDestroy,
-    Type,
-    ViewContainerRef,
+  ComponentFactoryResolver,
+  ComponentRef,
+  Directive,
+  Injector,
+  Input,
+  OnDestroy,
+  Type,
+  ViewContainerRef,
 } from &#x27;@angular/core&#x27;;
 
 import { ActionAbstract } from &#x27;./action-abstract/action-abstract&#x27;;
@@ -553,105 +572,105 @@ import { AnyAction } from &#x27;./action-outlet.model&#x27;;
  */
 
 @Directive({
-    selector: &#x27;[actionOutlet]&#x27;,
+  selector: &#x27;[actionOutlet]&#x27;,
 })
 export class ActionOutletDirective implements OnDestroy {
-    /**
-     * Action setter, providing action, to be rendered in the component&#x27;s view container.
-     * *e.g. &#x60;ActionButton&#x60;, &#x60;ActionGroup&#x60;, etc.*
-     *
-     * On set, it will:
-     * - **Compile** and render a &#x60;Component&#x60; **dinamically** for provided &#x60;@Input&#x60; action
-     * - **Change/Update** the &#x60;Component&#x60; accordingly to the change detection
-     */
-    @Input() set actionOutlet(action: AnyAction | undefined) {
-        if (this.componentRef) {
-            this.viewContainerRef.clear();
-            this.componentRef &#x3D; undefined;
-        }
-
-        if (this.action) {
-            this.action.destroy();
-        }
-
-        this.action &#x3D; action;
-
-        if (this.action &#x3D;&#x3D;&#x3D; undefined) {
-            return;
-        }
-
-        if (this.action instanceof ActionAbstract &#x3D;&#x3D;&#x3D; false) {
-            throw new Error(&#x27;Illegal state: &quot;actionOutlet&quot; should be instance of AbstractAction&#x27;);
-        }
-
-        const component &#x3D; this.getComponentType(this.action, this.injector);
-        const componentFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(component);
-        this.componentRef &#x3D; this.viewContainerRef.createComponent(componentFactory);
-        this.componentRef.instance._action &#x3D; this.action.activate();
+  /**
+   * Action setter, providing action, to be rendered in the component&#x27;s view container.
+   * *e.g. &#x60;ActionButton&#x60;, &#x60;ActionGroup&#x60;, etc.*
+   *
+   * On set, it will:
+   * - **Compile** and render a &#x60;Component&#x60; **dinamically** for provided &#x60;@Input&#x60; action
+   * - **Change/Update** the &#x60;Component&#x60; accordingly to the change detection
+   */
+  @Input() set actionOutlet(action: AnyAction | undefined) {
+    if (this.componentRef) {
+      this.viewContainerRef.clear();
+      this.componentRef &#x3D; undefined;
     }
 
-    /**
-     * Getter for **internally** used action
-     */
-    get actionOutlet(): AnyAction | undefined {
-        return this.action;
+    if (this.action) {
+      this.action.destroy();
     }
 
-    /**
-     * Defines whether underlying child action instance will be destroyed automatically
-     * If &#x60;false&#x60;, destruction of action should be handled **MANUALLY**
-     */
-    @Input() actionOutletDestroy &#x3D; true;
+    this.action &#x3D; action;
 
-    /**
-     * &#x60;Component&#x60; reference to the component, used by rendered action
-     */
-    private componentRef?: ComponentRef&lt;ActionAbstractComponentImpl&gt;;
-
-    /**
-     * Action instance, used **internally** by the directive
-     * Should **never** be directly exposed
-     */
-    private action?: AnyAction;
-
-    /**
-     * Invoked by Angular with dependency injection
-     *
-     * @param viewContainerRef Used for Component creation via &#x60;.createComponent()&#x60;
-     * @param componentFactoryResolver Used to resolve component factory via &#x60;.resolveComponentFactory()&#x60;
-     */
-    constructor(
-        private viewContainerRef: ViewContainerRef,
-        private componentFactoryResolver: ComponentFactoryResolver,
-        private injector: Injector
-    ) { }
-
-    /**
-     * Angular &#x60;ngOnDestroy&#x60; hook will:
-     * - **Destroy** provided @Input action
-     * - **Clear** the view container
-     */
-    ngOnDestroy(): void {
-        if (this.actionOutletDestroy &amp;&amp; this.action &amp;&amp; !this.action.getParent()) {
-            this.action.destroy();
-        }
-
-        this.viewContainerRef.clear();
-        this.action &#x3D; undefined;
-        this.componentRef &#x3D; undefined;
+    if (this.action &#x3D;&#x3D;&#x3D; undefined) {
+      return;
     }
 
-    /**
-     * Will return the &#x60;Component&#x60; type for provided action
-     * If action **has** directly assigned &#x60;Component&#x60; type via &#x60;constructor&#x60;, then that component is **forced** and used
-     * If action **does not have** directly assigned &#x60;Component&#x60; type via &#x60;constructor&#x60;, &#x60;Injector&#x60; is used to fetch proper &#x60;Component&#x60;
-     *
-     * @param action Action to get &#x60;Component&#x60; for
-     * @param injector &#x60;Injector&#x60; from current directive instance
-     */
-    getComponentType(action: AnyAction, injector: Injector): Type&lt;ActionAbstractComponentImpl&gt; {
-        return action.getForcedComponent() || &lt;Type&lt;ActionAbstractComponentImpl&gt;&gt;injector.get&lt;any&gt;(&lt;any&gt;action.constructor);
+    if (this.action instanceof ActionAbstract &#x3D;&#x3D;&#x3D; false) {
+      throw new Error(&#x27;Illegal state: &quot;actionOutlet&quot; should be instance of AbstractAction&#x27;);
     }
+
+    const component &#x3D; this.getComponentType(this.action, this.injector);
+    const componentFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(component);
+    this.componentRef &#x3D; this.viewContainerRef.createComponent(componentFactory);
+    this.componentRef.instance._action &#x3D; this.action.activate();
+  }
+
+  /**
+   * Getter for **internally** used action
+   */
+  get actionOutlet(): AnyAction | undefined {
+    return this.action;
+  }
+
+  /**
+   * Defines whether underlying child action instance will be destroyed automatically
+   * If &#x60;false&#x60;, destruction of action should be handled **MANUALLY**
+   */
+  @Input() actionOutletDestroy &#x3D; true;
+
+  /**
+   * &#x60;Component&#x60; reference to the component, used by rendered action
+   */
+  private componentRef?: ComponentRef&lt;ActionAbstractComponentImpl&gt;;
+
+  /**
+   * Action instance, used **internally** by the directive
+   * Should **never** be directly exposed
+   */
+  private action?: AnyAction;
+
+  /**
+   * Invoked by Angular with dependency injection
+   *
+   * @param viewContainerRef Used for Component creation via &#x60;.createComponent()&#x60;
+   * @param componentFactoryResolver Used to resolve component factory via &#x60;.resolveComponentFactory()&#x60;
+   */
+  constructor(
+    private viewContainerRef: ViewContainerRef,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private injector: Injector,
+  ) {}
+
+  /**
+   * Angular &#x60;ngOnDestroy&#x60; hook will:
+   * - **Destroy** provided @Input action
+   * - **Clear** the view container
+   */
+  ngOnDestroy(): void {
+    if (this.actionOutletDestroy &amp;&amp; this.action &amp;&amp; !this.action.getParent()) {
+      this.action.destroy();
+    }
+
+    this.viewContainerRef.clear();
+    this.action &#x3D; undefined;
+    this.componentRef &#x3D; undefined;
+  }
+
+  /**
+   * Will return the &#x60;Component&#x60; type for provided action
+   * If action **has** directly assigned &#x60;Component&#x60; type via &#x60;constructor&#x60;, then that component is **forced** and used
+   * If action **does not have** directly assigned &#x60;Component&#x60; type via &#x60;constructor&#x60;, &#x60;Injector&#x60; is used to fetch proper &#x60;Component&#x60;
+   *
+   * @param action Action to get &#x60;Component&#x60; for
+   * @param injector &#x60;Injector&#x60; from current directive instance
+   */
+  getComponentType(action: AnyAction, injector: Injector): Type&lt;ActionAbstractComponentImpl&gt; {
+    return action.getForcedComponent() || &lt;Type&lt;ActionAbstractComponentImpl&gt;&gt;injector.get&lt;any&gt;(&lt;any&gt;action.constructor);
+  }
 }
 </code></pre>
     </div>
@@ -665,14 +684,15 @@ export class ActionOutletDirective implements OnDestroy {
 
 
 
-                   
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -684,6 +704,15 @@ export class ActionOutletDirective implements OnDestroy {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
@@ -693,9 +722,9 @@ export class ActionOutletDirective implements OnDestroy {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

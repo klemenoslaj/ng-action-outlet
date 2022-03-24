@@ -6,8 +6,6 @@
     <img src="https://img.shields.io/travis/klemenoslaj/ng-action-outlet/master.svg" /></a>
 <a href="https://coveralls.io/github/klemenoslaj/ng-action-outlet?branch=master">
     <img src="https://img.shields.io/coveralls/klemenoslaj/ng-action-outlet/master.svg" /></a>
-<a href="https://david-dm.org/klemenoslaj/ng-action-outlet">
-    <img src="https://img.shields.io/david/klemenoslaj/ng-action-outlet.svg" /></a>
 
 <br />
 
@@ -157,8 +155,8 @@ Bind created actions to `actionOutlet` renderer directive.
 
 ## Available actions
 
--   [ActionButton](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionButton.html)
--   [ActionGroup](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionGroup.html)
--   [ActionToggle](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionToggle.html)
+- [ActionButton](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionButton.html)
+- [ActionGroup](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionGroup.html)
+- [ActionToggle](https://klemenoslaj.github.io/ng-action-outlet/classes/ActionToggle.html)
 
 In order to create custom action class, refer to [ActionAbstract](./classes/ActionAbstract.html) class.

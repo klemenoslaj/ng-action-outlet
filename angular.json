@@ -30,16 +30,6 @@
             "sourceMap": true,
             "codeCoverage": true
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/core/tsconfig.lib.json",
-              "projects/core/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -101,12 +91,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "playground:build",
-            "sourceMap": {
-              "vendor": true,
-              "scripts": true,
-              "styles": true
-            }
+            "browserTarget": "playground:build"
           },
           "configurations": {
             "production": {
@@ -138,16 +123,6 @@
               "projects/playground/src/assets"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/playground/tsconfig.app.json",
-              "projects/playground/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -175,16 +150,6 @@
             "main": "projects/material/src/test.ts",
             "tsConfig": "projects/material/tsconfig.spec.json",
             "karmaConfig": "projects/material/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/material/tsconfig.lib.json",
-              "projects/material/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
